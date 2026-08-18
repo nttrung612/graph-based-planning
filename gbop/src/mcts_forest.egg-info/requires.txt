@@ -1,0 +1,7 @@
+gymnasium[toy-text]>=1.2.3
+numba>=0.65.0
+numpy>=2.4.4
+pandas>=3.0.2
+rich>=15.0.0
+setuptools<70.0.0
+torch>=2.12.1

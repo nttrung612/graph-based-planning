@@ -1,0 +1,51 @@
+# GBOP Implementation
+
+This repository contains the implementation and benchmarking suite for the GBOP (Graph-Based Optimistic Planning) and GBOP-D solvers, based on the "Monte Carlo Graph Search - The value of merging similar states" paper.
+
+## Installation
+
+This project uses `uv` for dependency management.
+
+```bash
+uv sync
+```
+
+## Usage
+
+### Benchmarking
+
+Run the benchmarking script to evaluate a solver on an environment.
+
+### Example Commands
+
+#### 1. Frozen Lake (Slippery)
+```bash
+# GBOP Analysis
+uv run benchmark --env frozenlake8x8_slip_0.5 --solver gbop --sims "(128, 256, 512, 1024)" --seeds 100 --parallel --table --solver_args "{'budget_strategy': 'generous', 'horizon': 200}"
+```
+
+#### 2. Custom Envs (Factored River Swim, Four Rooms, Passenger Grid, Sysadmin)
+```bash
+# Passenger Grid
+uv run benchmark --env passenger_grid --solver gbop --sims "(1024)" --seeds 100 --parallel --solver_args "{'budget_strategy': 'generous', 'horizon': 70}" --table
+
+# Factored River Swim
+uv run benchmark --env riverswim_n3x4 --solver gbop --sims "(1024)" --seeds 100 --parallel --solver_args "{'budget_strategy': 'generous', 'horizon': 35, 'v_max': 35}" --table
+
+# Sysadmin Ring
+uv run benchmark --env sysadmin_n20 --solver gbop --sims "(64, 128)" --seeds 100 --parallel --solver_args "{'budget_strategy': 'generous', 'horizon': 50, 'v_max': 50}" --table
+
+# Four Rooms
+uv run benchmark --env fourrooms_n5 --solver gbop --sims "(256, 512, 1024)" --seeds 100 --parallel --solver_args "{'budget_strategy': 'generous', 'horizon': 50}" --table
+```
+
+## Project Structure
+
+- `core/`: GBOP and GBOP-D solver logic.
+- `envs/`: Gymnasium adapters and custom environment implementations.
+- `utils/`: Registry and statistical utilities.
+- `scripts/`: Benchmarking entry point.
+
+## License
+
+MIT

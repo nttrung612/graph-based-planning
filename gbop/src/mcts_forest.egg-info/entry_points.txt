@@ -1,0 +1,2 @@
+[console_scripts]
+benchmark = mcts_forest.scripts.benchmark:main
