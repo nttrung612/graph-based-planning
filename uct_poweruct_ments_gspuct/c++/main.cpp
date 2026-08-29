@@ -1,6 +1,7 @@
 #include <iostream>
 #include <tree_search.h>
 #include <mc_graph.h>
+#include <mc_graph_e3w.h>
 #include <envs/frozen_lake.h>
 #include <envs/factored_river_swim.h>
 #include <envs/four_rooms.h>
@@ -49,12 +50,19 @@ PerformanceStats compute_performance_stats(const double *rewards, uint32_t n_exp
     return stats;
 }
 
+bool is_graph_e3w_algorithm(const string &type) {
+    return type == "gs_ments" || type == "gs_ments_f" ||
+           type == "gs_rents" || type == "gs_rents_f" ||
+           type == "gs_tents" || type == "gs_tents_f";
+}
+
 uint32_t get_algorithm_required_argc(const string &type) {
     if (type == "max_uct") {
         return 5;
     }
     if (type == "power_uct" || type == "ments" ||
-        type == "gs_power_uct" || type == "gs_power_uct_f") {
+        type == "gs_power_uct" || type == "gs_power_uct_f" ||
+        is_graph_e3w_algorithm(type)) {
         return 6;
     }
 
@@ -87,7 +95,7 @@ vector<string> get_algorithm_parameter_names(const string &type) {
     if (type == "gs_power_uct" || type == "gs_power_uct_f") {
         return {"c", "p"};
     }
-    if (type == "ments") {
+    if (type == "ments" || is_graph_e3w_algorithm(type)) {
         return {"tau", "epsilon"};
     }
 
@@ -178,6 +186,28 @@ shared_ptr<AbstractSearchTree<S>> create_search_tree(shared_ptr<Environment<S>> 
         return make_shared<MCGraphSearchTree<S>>(search_env, search_env->getInitialState(),
                                                 search_env->getInitialObservation(),
                                                 discount_factor, c, p, GraphSearchMode::Full);
+    }
+    if (is_graph_e3w_algorithm(type)) {
+        auto tau = stod(argv[0]);
+        auto epsilon = stod(argv[1]);
+
+        RegularizerType regularizer;
+        if (type == "gs_ments" || type == "gs_ments_f") {
+            regularizer = RegularizerType::MaxEntropy;
+        } else if (type == "gs_rents" || type == "gs_rents_f") {
+            regularizer = RegularizerType::RelativeEntropy;
+        } else {
+            regularizer = RegularizerType::TsallisEntropy;
+        }
+
+        // '_f' merges a state across depths, which can close cycles; the bias-corrected
+        // (non-expansive) operator is required there and harmless in the DAG-shaped Depth mode.
+        bool full_mode = type.size() > 2 && type.compare(type.size() - 2, 2, "_f") == 0;
+        auto mode = full_mode ? GraphSearchMode::Full : GraphSearchMode::Depth;
+
+        return make_shared<MCGraphE3WSearchTree<S>>(search_env, search_env->getInitialState(),
+                                                    search_env->getInitialObservation(),
+                                                    discount_factor, tau, epsilon, regularizer, mode);
     }
 
     return create_classic_search_tree<S>(search_env, discount_factor, type, argv);
@@ -321,6 +351,9 @@ int main(int argc, char *argv[]) {
         cout << "\t\tN_EXPERIMENTS gs_power_uct ENV C P" << endl;
         cout << "\t\tN_EXPERIMENTS gs_power_uct_f ENV C P" << endl;
         cout << "\t\tN_EXPERIMENTS ments ENV TAU EPSILON" << endl;
+        cout << "\t\tN_EXPERIMENTS gs_ments ENV TAU EPSILON      (also gs_ments_f)" << endl;
+        cout << "\t\tN_EXPERIMENTS gs_rents ENV TAU EPSILON      (also gs_rents_f)" << endl;
+        cout << "\t\tN_EXPERIMENTS gs_tents ENV TAU EPSILON      (also gs_tents_f)" << endl;
         cout << "\t\tENV=factored_river_swim uses fixed compile-time parameters with no extra env arguments" << endl;
         cout << "\t\tENV=four_rooms uses fixed compile-time parameters with no extra env arguments" << endl;
         cout << "\t\tENV=sysadmin_ring uses fixed compile-time parameters with no extra env arguments" << endl;
