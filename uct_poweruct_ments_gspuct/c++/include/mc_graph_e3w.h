@@ -157,6 +157,11 @@ namespace poweruct {
         // Successor counts N(s,a,s'), used to recompute Q(s,a) as a fresh expectation over current V(s').
         // Terminal transitions are deliberately omitted: they contribute a future value of zero.
         std::map<GraphStateKey, uint32_t> successors;
+        // The terminal half of the same counts, split out because the two consumers disagree about
+        // them: the value backup must exclude terminal successors (future value zero), while the ER
+        // child channel must include them -- it sums over the empirical support of p(.|s,h,a), and
+        // its envelope relies on the counts summing to N(s,a). Only filled when c3 > 0.
+        std::map<GraphStateKey, uint32_t> terminal_successors;
     };
 
     struct E3WGraphNodeStats {
@@ -209,6 +214,22 @@ namespace poweruct {
      * RENTS additionally needs its parent's action distribution. A graph node has many parents, so the
      * distribution cannot live on the node; it is carried along the sampled path (in E3WGraphTransition)
      * exactly as THTS++ threads it through a per-trial ThtsEnvContext.
+     *
+     * With c2 or c3 positive this becomes GS-E3W-ER: the action values fed to grad Omega* are
+     * perturbed by the effective-resistance bonus,
+     *
+     *      Q^ER(s,h,a) = Q_Omega(s,h,a) + B^ER(s,h,a),
+     *      pi^ER(a|s,h) = (1 - lambda) * grad Omega*(Q^ER/tau)_a + lambda/K,
+     *
+     * and actions are sampled from pi^ER. The perturbation reaches *nothing else*: the backup
+     * evaluates Omega* on the unperturbed Q, the RENTS anchor handed to the child is the
+     * unperturbed policy, and the recommendation stays argmax Q_Omega. That is what keeps the
+     * algorithm on the same regularized fixed point (V*_Omega, Q*_Omega) as its base -- see
+     * evaluate_operator's 'perturb' flag, which is true at exactly one call site.
+     *
+     * Like GS-Power-UCT-ER, ER is available in the layered Depth mode only; the constructor
+     * enforces it, because the resistance the bonus truncates is a topological recursion over a
+     * DAG and cross-depth merging can close cycles.
      */
     template<typename S>
     class MCGraphE3WSearchTree : public AbstractSearchTree<S> {
@@ -217,10 +238,12 @@ namespace poweruct {
         MCGraphE3WSearchTree(std::shared_ptr<Environment<S>> env, S initial_state, uint32_t initial_observation,
                              double discount_factor, double tau, double epsilon, RegularizerType regularizer,
                              GraphSearchMode mode, bool bias_correct = true, double max_explore_prob = 1.0,
-                             double default_q_value = 0.0)
+                             double default_q_value = 0.0, double c2 = 0., double c3 = 0.,
+                             double lambda_log_offset = 1.)
                 : env(std::move(env)), na(this->env->getNumberOfActions()), discount_factor(discount_factor),
                   tau(tau), epsilon(epsilon), regularizer(regularizer), mode(mode), bias_correct(bias_correct),
-                  max_explore_prob(max_explore_prob), default_q_value(default_q_value),
+                  max_explore_prob(max_explore_prob), default_q_value(default_q_value), c2(c2), c3(c3),
+                  lambda_log_offset(lambda_log_offset),
                   random_utils(std::make_shared<RandomUtils>()), current_state(initial_state) {
             (void) initial_observation;
 
@@ -229,6 +252,17 @@ namespace poweruct {
             }
             if (epsilon < 0.) {
                 throw std::runtime_error("MCGraphE3WSearchTree requires epsilon >= 0");
+            }
+            if (c2 < 0. || c3 < 0.) {
+                throw std::runtime_error("MCGraphE3WSearchTree requires c2 >= 0 and c3 >= 0");
+            }
+            if (lambda_log_offset < 1.) {
+                throw std::runtime_error("MCGraphE3WSearchTree requires lambda_log_offset >= 1");
+            }
+            if ((c2 > 0. || c3 > 0.) && mode != GraphSearchMode::Depth) {
+                throw std::runtime_error("The effective-resistance bonus requires the layered "
+                                         "depth-augmented graph (GraphSearchMode::Depth); the "
+                                         "recursive resistance is undefined under cross-depth merging");
             }
 
             ensure_node(current_state);
@@ -289,6 +323,13 @@ namespace poweruct {
         bool bias_correct;
         double max_explore_prob;
         double default_q_value;
+        double c2;
+        double c3;
+        // Denominator offset of the E3W mixture schedule: lambda = epsilon*K / log(offset + N(s)).
+        // 1 reproduces the tree-level MENTS schedule this suite has always used (log(N+1), which is
+        // 0 at N = 0 and therefore relies on the max_explore_prob clip); 2 is eq. (13) of the paper,
+        // whose analysis needs a denominator bounded away from zero. The ER algorithms use 2.
+        double lambda_log_offset;
         std::shared_ptr<RandomUtils> random_utils;
         using E3WGraphNodeMap = std::unordered_map<GraphStateKey, E3WGraphNodeStats, GraphStateKeyHash>;
         E3WGraphNodeMap graph;
@@ -326,6 +367,58 @@ namespace poweruct {
                 return default_q_value;
             }
             return it->second.q_value;
+        }
+
+        bool er_active() const {
+            return c2 > 0. || c3 > 0.;
+        }
+
+        /** Pooled visit count N(s') of a node, from all incoming paths. */
+        uint32_t node_visits(const GraphStateKey &key) const {
+            auto it = graph.find(key);
+            return it == graph.end() ? 0 : it->second.visits;
+        }
+
+        /**
+         * The effective-resistance bonus of eq. (8), identical to the one GS-Power-UCT-ER pays:
+         *
+         *                     c2                    N(s,a,s')        1
+         *      B^ER(s,h,a) = ------ + c3 * sum_s' ------------ * ----------
+         *                    N(s,a)                  N(s,a)         N(s')
+         *
+         * with the sum running over the whole empirical support -- terminal successors included,
+         * which is why they are counted separately in E3WGraphEdgeStats rather than dropped as the
+         * value backup drops them. N(s') is the successor's pooled count over all of its parents,
+         * so the child channel is damped exactly where transpositions already supply evidence.
+         *
+         * An action nothing has selected yet gets no bonus rather than an infinite one: 1/N(s,a) is
+         * undefined at N = 0, and E3W does not have an "initialize every action once" phase to lean
+         * on. Coverage of such actions is the job of the lambda-uniform mixture in sample_action,
+         * and the paper's analysis lives in the post-initialization regime where N >= 1.
+         */
+        double er_bonus(const E3WGraphNodeStats &node, uint32_t action) const {
+            auto it = node.edges.find(action);
+            if (!er_active() || it == node.edges.end() || it->second.visits == 0) {
+                return 0.;
+            }
+
+            const auto &edge = it->second;
+            double edge_visits = static_cast<double>(edge.visits);
+            double bonus = c2 / edge_visits;
+
+            if (c3 > 0.) {
+                double child_channel = 0.;
+                for (const auto *counts : {&edge.successors, &edge.terminal_successors}) {
+                    for (const auto &successor : *counts) {
+                        uint32_t pooled_visits = node_visits(successor.first);
+                        double child_visits = static_cast<double>(pooled_visits > 0 ? pooled_visits : 1);
+                        child_channel += (static_cast<double>(successor.second) / edge_visits) / child_visits;
+                    }
+                }
+                bonus += c3 * child_channel;
+            }
+
+            return bonus;
         }
 
         /**
@@ -369,13 +462,23 @@ namespace poweruct {
 
         /**
          * Evaluates the operator at a node: returns tau * Omega*(Q/tau) and fills the regularized policy.
+         *
+         * 'perturb' switches between the two objects of eq. (12): grad Omega* of the ER-perturbed
+         * values, which is what actions are sampled from, and Omega* of the plain values, which is
+         * what gets stored as V and handed to RENTS children as their anchor. Only the sampling
+         * call site passes true.
          */
         double evaluate_operator(const E3WGraphNodeStats &node, const std::vector<double> &reference,
-                                 std::vector<double> &policy) const {
+                                 std::vector<double> &policy, bool perturb) const {
             std::size_t n = node.valid_actions.size();
             std::vector<double> z(n, 0.);
             for (std::size_t i = 0; i < n; i++) {
-                z[i] = edge_q_value(node, node.valid_actions[i]) / tau;
+                uint32_t action = node.valid_actions[i];
+                double q_value = edge_q_value(node, action);
+                if (perturb) {
+                    q_value += er_bonus(node, action);
+                }
+                z[i] = q_value / tau;
             }
 
             double value_over_tau;
@@ -399,7 +502,8 @@ namespace poweruct {
         uint32_t sample_action(const E3WGraphNodeStats &node, const std::vector<double> &policy) {
             const auto &valid_actions = node.valid_actions;
             double n_actions = static_cast<double>(valid_actions.size());
-            double lambda = (epsilon * n_actions) / std::log(static_cast<double>(node.visits) + 1.);
+            double lambda = (epsilon * n_actions) /
+                            std::log(static_cast<double>(node.visits) + lambda_log_offset);
             if (!std::isfinite(lambda) || lambda > max_explore_prob) {
                 lambda = max_explore_prob;
             }
@@ -480,7 +584,7 @@ namespace poweruct {
 
                 auto reference = build_reference(current_node, parent_policy);
                 std::vector<double> policy;
-                evaluate_operator(current_node, reference, policy);
+                evaluate_operator(current_node, reference, policy, er_active());
                 uint32_t action = sample_action(current_node, policy);
 
                 S next_state;
@@ -489,16 +593,33 @@ namespace poweruct {
                 bool done;
                 std::tie(next_state, next_obs, reward, done) = env->simulate(sim_state, action);
 
-                // Re-index the policy by action id so the child can read it as its parent distribution.
+                // The anchor a RENTS child sees must be the *unperturbed* policy. It is reused by the
+                // backup (through E3WGraphTransition::reference), so letting the bonus leak into it
+                // would move the stored values and with them the fixed point the algorithm targets.
+                // Without ER the two policies are the same object, so no extra work is done.
+                const std::vector<double> *anchor = &policy;
+                std::vector<double> unperturbed_policy;
+                if (er_active() && regularizer == RegularizerType::RelativeEntropy) {
+                    evaluate_operator(current_node, reference, unperturbed_policy, false);
+                    anchor = &unperturbed_policy;
+                }
+
+                // Re-index the anchor by action id so the child can read it as its parent distribution.
                 std::vector<double> policy_by_action(na, 0.);
                 for (std::size_t i = 0; i < current_node.valid_actions.size(); i++) {
-                    policy_by_action[current_node.valid_actions[i]] = policy[i];
+                    policy_by_action[current_node.valid_actions[i]] = (*anchor)[i];
                 }
 
                 auto next_key = build_key(next_state);
                 path.emplace_back(current_key, action, next_key, reward, done, reference);
 
                 if (done) {
+                    // A terminal successor is a node of the layered graph like any other, and the ER
+                    // child channel needs its pooled count. The base algorithm never traverses it, so
+                    // it is only materialized when that channel is active.
+                    if (c3 > 0.) {
+                        ensure_node(next_state);
+                    }
                     break;
                 }
 
@@ -543,6 +664,8 @@ namespace poweruct {
                 edge.reward_sum += it->reward;
                 if (!it->terminal) {
                     edge.successors[it->target] += 1;
+                } else if (c3 > 0.) {
+                    edge.terminal_successors[it->target] += 1;
                 }
 
                 double expected_future = 0.;
@@ -556,7 +679,9 @@ namespace poweruct {
 
                 source_node.visits += 1;
                 std::vector<double> policy;
-                source_node.value = evaluate_operator(source_node, it->reference, policy);
+                // Unperturbed: V(s) = Omega*(Q_Omega(s,.)), so the stored value is the one the base
+                // algorithm would have produced and the fixed point is unchanged by ER.
+                source_node.value = evaluate_operator(source_node, it->reference, policy, false);
                 source_node.evaluated = true;
             }
         }

@@ -15,8 +15,10 @@ The current experimental suite includes five environments and the following algo
 
 - Environments: `frozen_lake`, `four_rooms`, `passenger_grid`, `factored_river_swim`,
   and `sysadmin_ring`.
-- Algorithms: `max_uct`, `power_uct`, `ments`, `gs_power_uct`, `gs_power_uct_f`,
-  and the effective-resistance variant `gs_power_uct_er`.
+- Algorithms: `max_uct`, `power_uct`, `ments`, `gs_power_uct`, `gs_power_uct_f`, the
+  graph-regularized family `gs_ments`, `gs_rents`, `gs_tents` (each with a `_f`
+  variant), and the effective-resistance variants `gs_power_uct_er`, `gs_ments_er`,
+  `gs_rents_er`, `gs_tents_er`.
 
 All experiments executed through `dummy` use discount factor `1.0` and replan at
 every environment step. At each step, the planner receives the current rollout
@@ -39,6 +41,7 @@ advances the corresponding tree or graph state.
 |   |   |-- rollout_container.h
 |   |   |-- graph_search.h       # graph key and graph-search mode definitions
 |   |   |-- mc_graph.h           # gs_power_uct[_f] and gs_power_uct_er
+|   |   |-- mc_graph_e3w.h       # gs_{ments,rents,tents}[_f] and their _er variants
 |   |   `-- envs/
 |   `-- src/
 |       |-- discrete_environment.cpp
@@ -131,6 +134,46 @@ advances the corresponding tree or graph state.
   Cross-depth merging can close cycles, where that recursion has no fixed point;
   passing ER coefficients together with `GraphSearchMode::Full` therefore throws in
   `MCGraphSearchTree`'s constructor rather than silently producing a number.
+
+`gs_ments`, `gs_rents`, `gs_tents` (and `_f` variants)
+
+- The convex-regularized family (E3W) on the transposition graph, implemented in
+  `c++/include/mc_graph_e3w.h`. Command-line parameters: `tau epsilon`.
+- The three differ only in the regularizer whose Legendre-Fenchel conjugate defines
+  the node value and the sampling policy: maximum entropy (log-sum-exp / softmax),
+  relative entropy (log-sum-exp anchored on the parent's policy), and Tsallis entropy
+  (spmax / sparsemax).
+- Actions are sampled from `(1 - lambda) * grad Omega*(Q/tau) + lambda/|A|` with
+  `lambda = epsilon * |A| / log(N(s) + 1)`; the recommendation is `argmax Q`.
+- `_f` merges states across depths, where the operator is made non-expansive by the
+  mellowmax bias correction so a zero-reward cycle cannot inflate values.
+
+`gs_ments_er`, `gs_rents_er`, `gs_tents_er`
+
+- GS-E3W-ER: the same three regularizers with the effective-resistance bonus.
+  Command-line parameters: `tau epsilon c2 c3`.
+- The bonus is `B_ER` as above, with `(c2, c3)`, and it enters in exactly one place:
+
+  ```
+      Q_ER(s,h,a) = Q(s,h,a) + B_ER(s,h,a)
+      pi_ER(a|s,h) = (1 - lambda) * grad Omega*(Q_ER/tau)_a + lambda/|A|
+  ```
+
+  Actions are sampled from `pi_ER`. Everything that is *stored* stays unperturbed: the
+  backup evaluates `Omega*` on the plain `Q`, the RENTS anchor handed to a child is the
+  plain policy, and the recommendation remains `argmax Q`. The algorithm therefore
+  targets the same regularized fixed point as its base and only redirects sampling.
+- These use the paper's mixture schedule `lambda = epsilon * |A| / log(2 + N(s))`,
+  whose denominator is bounded away from zero. Consequently **`gs_ments_er` with
+  `c2 = c3 = 0` is the paper's own GS-E3W**, and is the apples-to-apples baseline for
+  an ER ablation; plain `gs_ments` keeps the older `log(N + 1)` schedule so previously
+  collected results stay comparable.
+- Depth-augmented graph only, for the same reason as `gs_power_uct_er`; there are no
+  `_er_f` variants and the constructor rejects the combination.
+- Under MENTS the perturbation multiplies softmax weights by `exp(B_ER/tau)`. Under
+  TENTS sparsemax is shift-invariant, so only the *differential* bonus across actions
+  acts — which on a graph is precisely the signal wanted, since transposed children
+  carry small bonuses and fresh branches large ones.
 
 ## Environments
 
@@ -276,7 +319,12 @@ mpirun -np <NP> ./c++/build/dummy N_EXPERIMENTS ments ENV TAU EPSILON
 mpirun -np <NP> ./c++/build/dummy N_EXPERIMENTS gs_power_uct ENV C P
 mpirun -np <NP> ./c++/build/dummy N_EXPERIMENTS gs_power_uct_f ENV C P
 mpirun -np <NP> ./c++/build/dummy N_EXPERIMENTS gs_power_uct_er ENV C P C2 C3
+mpirun -np <NP> ./c++/build/dummy N_EXPERIMENTS gs_ments ENV TAU EPSILON
+mpirun -np <NP> ./c++/build/dummy N_EXPERIMENTS gs_ments_er ENV TAU EPSILON C2 C3
 ```
+
+`gs_ments` above stands for any of `gs_ments`, `gs_rents`, `gs_tents` (plus `_f`), and
+`gs_ments_er` for any of `gs_ments_er`, `gs_rents_er`, `gs_tents_er`.
 
 For `passenger_grid`, add `TIME_LIMIT` immediately after the environment name:
 
@@ -294,6 +342,7 @@ mpirun -np 4 ./c++/build/dummy 100 gs_power_uct passenger_grid 70 0.5 0.0
 mpirun -np 4 ./c++/build/dummy 100 gs_power_uct_f factored_river_swim 0.5 2.5
 mpirun -np 4 ./c++/build/dummy 100 gs_power_uct_er four_rooms 0.5 0.0 0.5 0.5
 mpirun -np 4 ./c++/build/dummy 100 gs_power_uct_er passenger_grid 70 0.5 0.0 0.5 0.5
+mpirun -np 4 ./c++/build/dummy 100 gs_tents_er four_rooms 0.25 0.5 0.5 0.5
 ```
 
 Each run ends with a summary block of the following form:
@@ -373,12 +422,17 @@ Default settings in `run_tune.sh`:
 - Environments: `frozen_lake`, `four_rooms`, `passenger_grid`,
   `factored_river_swim`, and `sysadmin_ring`.
 - Algorithms: `max_uct`, `power_uct`, `gs_power_uct`, `gs_power_uct_f`,
-  `gs_power_uct_er`, and `ments`.
+  `gs_power_uct_er`, `gs_ments_er`, `gs_rents_er`, `gs_tents_er`, and `ments`.
 - For `gs_power_uct_er` the `(c, p)` grid is deliberately narrow (`er_c_values`,
   `er_p_values`) because the base exploration parameters are already covered by the
   `gs_power_uct` sweep; what is swept is the coefficient grid `er_coefficient_pairs`,
-  tied as `C2 = C3` over `{0.1, 0.5, 1, 2}`. Add pairs such as `"0.5 0.0"` or
+  tied as `C2 = C3` over `{0, 0.1, 0.5, 1, 2}`. Add pairs such as `"0.5 0.0"` or
   `"0.0 0.5"` there to measure the edge and child channels separately.
+- The same coefficient grid is applied to `gs_ments_er` / `gs_rents_er` / `gs_tents_er`
+  over the narrowed `e3w_er_taus`. Its `"0.0 0.0"` row is the unperturbed GS-E3W, so
+  each ER row has its own baseline inside the same sweep.
+- The non-ER graph variants `gs_ments` / `gs_rents` / `gs_tents` are not swept; add
+  them if you need tuned parameters for them.
 - `passenger_grid` uses `TIME_LIMIT=70` through `build_env_args()`.
 
 After inspecting `tune_result.txt`, select the best parameters for each

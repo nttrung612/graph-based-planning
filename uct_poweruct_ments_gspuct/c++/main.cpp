@@ -56,6 +56,11 @@ bool is_graph_e3w_algorithm(const string &type) {
            type == "gs_tents" || type == "gs_tents_f";
 }
 
+// Like GS-Power-UCT-ER, the E3W-ER family is depth-augmented only.
+bool is_graph_e3w_er_algorithm(const string &type) {
+    return type == "gs_ments_er" || type == "gs_rents_er" || type == "gs_tents_er";
+}
+
 // GS-Power-UCT-ER exists in the depth-augmented variant only: the recursive resistance behind
 // the bonus is a topological recursion over a layered DAG, so there is no '_f' counterpart.
 bool is_graph_power_uct_er_algorithm(const string &type) {
@@ -71,8 +76,8 @@ uint32_t get_algorithm_required_argc(const string &type) {
         is_graph_e3w_algorithm(type)) {
         return 6;
     }
-    if (is_graph_power_uct_er_algorithm(type)) {
-        // C and P as for gs_power_uct, plus the two ER coefficients C2 and C3.
+    if (is_graph_power_uct_er_algorithm(type) || is_graph_e3w_er_algorithm(type)) {
+        // The base algorithm's two parameters, plus the two ER coefficients C2 and C3.
         return 8;
     }
 
@@ -110,6 +115,9 @@ vector<string> get_algorithm_parameter_names(const string &type) {
     }
     if (type == "ments" || is_graph_e3w_algorithm(type)) {
         return {"tau", "epsilon"};
+    }
+    if (is_graph_e3w_er_algorithm(type)) {
+        return {"tau", "epsilon", "c2", "c3"};
     }
 
     throw runtime_error(string("Invalid algorithm type: ") + type);
@@ -210,17 +218,32 @@ shared_ptr<AbstractSearchTree<S>> create_search_tree(shared_ptr<Environment<S>> 
                                                  search_env->getInitialObservation(),
                                                  discount_factor, c, p, GraphSearchMode::Depth, c2, c3);
     }
-    if (is_graph_e3w_algorithm(type)) {
+    if (is_graph_e3w_algorithm(type) || is_graph_e3w_er_algorithm(type)) {
         auto tau = stod(argv[0]);
         auto epsilon = stod(argv[1]);
 
         RegularizerType regularizer;
-        if (type == "gs_ments" || type == "gs_ments_f") {
+        if (type == "gs_ments" || type == "gs_ments_f" || type == "gs_ments_er") {
             regularizer = RegularizerType::MaxEntropy;
-        } else if (type == "gs_rents" || type == "gs_rents_f") {
+        } else if (type == "gs_rents" || type == "gs_rents_f" || type == "gs_rents_er") {
             regularizer = RegularizerType::RelativeEntropy;
         } else {
             regularizer = RegularizerType::TsallisEntropy;
+        }
+
+        if (is_graph_e3w_er_algorithm(type)) {
+            auto c2 = stod(argv[2]);
+            auto c3 = stod(argv[3]);
+
+            // lambda_log_offset = 2 is eq. (13)'s schedule, epsilon*K/log(2 + N(s)). The
+            // unperturbed '_er' run (C2 = C3 = 0) is therefore the paper's own GS-E3W and the
+            // apples-to-apples baseline for an ER ablation; plain gs_ments/gs_rents/gs_tents keep
+            // the tree-level log(N + 1) schedule this suite has always used.
+            return make_shared<MCGraphE3WSearchTree<S>>(search_env, search_env->getInitialState(),
+                                                        search_env->getInitialObservation(),
+                                                        discount_factor, tau, epsilon, regularizer,
+                                                        GraphSearchMode::Depth, true, 1.0, 0.0,
+                                                        c2, c3, 2.0);
         }
 
         // '_f' merges a state across depths, which can close cycles; the bias-corrected
@@ -378,6 +401,8 @@ int main(int argc, char *argv[]) {
         cout << "\t\tN_EXPERIMENTS gs_ments ENV TAU EPSILON      (also gs_ments_f)" << endl;
         cout << "\t\tN_EXPERIMENTS gs_rents ENV TAU EPSILON      (also gs_rents_f)" << endl;
         cout << "\t\tN_EXPERIMENTS gs_tents ENV TAU EPSILON      (also gs_tents_f)" << endl;
+        cout << "\t\tN_EXPERIMENTS gs_ments_er ENV TAU EPSILON C2 C3   (also gs_rents_er, gs_tents_er;" << endl;
+        cout << "\t\t                                                   depth-augmented graph only)" << endl;
         cout << "\t\tENV=factored_river_swim uses fixed compile-time parameters with no extra env arguments" << endl;
         cout << "\t\tENV=four_rooms uses fixed compile-time parameters with no extra env arguments" << endl;
         cout << "\t\tENV=sysadmin_ring uses fixed compile-time parameters with no extra env arguments" << endl;

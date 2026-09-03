@@ -31,14 +31,22 @@ ments_epsilons=(0.5)
 # separately, add pairs such as ("0.5" "0.0") or ("0.0" "0.5") to er_coefficient_pairs.
 er_c_values=(0.5)
 er_p_values=(0.0 2.5)
-er_coefficient_pairs=("0.1 0.1" "0.5 0.5" "1.0 1.0" "2.0 2.0")
+er_coefficient_pairs=("0.0 0.0" "0.1 0.1" "0.5 0.5" "1.0 1.0" "2.0 2.0")
+
+# GS-E3W-ER. The "0.0 0.0" pair above is the paper's own GS-E3W (same lambda schedule, no bonus),
+# so it doubles as the apples-to-apples baseline row for the ER ablation.
+e3w_er_algorithms=(gs_ments_er gs_rents_er gs_tents_er)
+e3w_er_taus=(0.01 0.25)
+e3w_er_epsilons=(0.5)
 
 reset_result_file "$RESULT_FILE"
 
 cases_per_env=$((${#max_uct_alphas[@]} +
                  3 * ${#shared_alphas[@]} * ${#shared_p_values[@]} +
                  ${#ments_taus[@]} * ${#ments_epsilons[@]} +
-                 ${#er_c_values[@]} * ${#er_p_values[@]} * ${#er_coefficient_pairs[@]}))
+                 ${#er_c_values[@]} * ${#er_p_values[@]} * ${#er_coefficient_pairs[@]} +
+                 ${#e3w_er_algorithms[@]} * ${#e3w_er_taus[@]} * ${#e3w_er_epsilons[@]} *
+                     ${#er_coefficient_pairs[@]}))
 total_cases=$((${#environments[@]} * cases_per_env))
 completed_cases=0
 
@@ -78,6 +86,20 @@ for env_name in "${environments[@]}"; do
                 echo "[$completed_cases/$total_cases] $env_name gs_power_uct_er c=$c_value p=$p_value c2=$c2_value c3=$c3_value"
                 run_case "$RESULT_FILE" "$N_EXPERIMENTS" gs_power_uct_er "${env_args[@]}" \
                     "$c_value" "$p_value" "$c2_value" "$c3_value"
+            done
+        done
+    done
+
+    for algorithm in "${e3w_er_algorithms[@]}"; do
+        for tau in "${e3w_er_taus[@]}"; do
+            for epsilon in "${e3w_er_epsilons[@]}"; do
+                for coefficient_pair in "${er_coefficient_pairs[@]}"; do
+                    read -r c2_value c3_value <<< "$coefficient_pair"
+                    completed_cases=$((completed_cases + 1))
+                    echo "[$completed_cases/$total_cases] $env_name $algorithm tau=$tau epsilon=$epsilon c2=$c2_value c3=$c3_value"
+                    run_case "$RESULT_FILE" "$N_EXPERIMENTS" "$algorithm" "${env_args[@]}" \
+                        "$tau" "$epsilon" "$c2_value" "$c3_value"
+                done
             done
         done
     done
