@@ -9,13 +9,14 @@ The main source code is located in `c++/` and builds two executables:
 
 - `dummy`: an MPI-based batch runner for repeated experiments and rollout-budget sweeps.
 - `testmcgraph`: a single-episode diagnostic runner for the graph-search agents
-  `gs_power_uct` and `gs_power_uct_f`.
+  `gs_power_uct`, `gs_power_uct_f`, and `gs_power_uct_er`.
 
-The current experimental suite includes five environments and five algorithms:
+The current experimental suite includes five environments and the following algorithms:
 
 - Environments: `frozen_lake`, `four_rooms`, `passenger_grid`, `factored_river_swim`,
   and `sysadmin_ring`.
-- Algorithms: `max_uct`, `power_uct`, `ments`, `gs_power_uct`, and `gs_power_uct_f`.
+- Algorithms: `max_uct`, `power_uct`, `ments`, `gs_power_uct`, `gs_power_uct_f`,
+  and the effective-resistance variant `gs_power_uct_er`.
 
 All experiments executed through `dummy` use discount factor `1.0` and replan at
 every environment step. At each step, the planner receives the current rollout
@@ -37,7 +38,7 @@ advances the corresponding tree or graph state.
 |   |   |-- tree_search_nodes.h
 |   |   |-- rollout_container.h
 |   |   |-- graph_search.h       # graph key and graph-search mode definitions
-|   |   |-- mc_graph.h           # gs_power_uct and gs_power_uct_f
+|   |   |-- mc_graph.h           # gs_power_uct[_f] and gs_power_uct_er
 |   |   `-- envs/
 |   `-- src/
 |       |-- discrete_environment.cpp
@@ -98,6 +99,38 @@ advances the corresponding tree or graph state.
   merges identical physical states across depths.
 - The purpose of this variant is to evaluate whether cross-depth graph sharing
   improves planning performance relative to depth-specific graph nodes.
+
+`gs_power_uct_er`
+
+- GS-Power-UCT-ER: `gs_power_uct` plus the effective-resistance exploration bonus,
+  implemented by the same MCGraph code in `c++/include/mc_graph.h`.
+- Command-line parameters: `c p c2 c3`. With `c2 = c3 = 0` the algorithm reduces
+  exactly to `gs_power_uct`.
+- Action selection adds the one-step truncation of the recursive resistance to the
+  usual score:
+
+  ```
+                       C2                    T(s,h,a,s')        1
+      B_ER(s,h,a) = ---------- + C3 * sum_s' ------------ * ------------
+                     T(s,h,a)                  T(s,h,a)      T(s',h+1)
+  ```
+
+  where `T(s,h,a,s')` counts realized transitions along the edge and `T(s',h+1)` is
+  the successor's visit count pooled over *all* of its parents. The first term is
+  the edge channel (local reward/transition uncertainty); the second is the child
+  channel, which is damped by the sharing factor `T(s,h,a,s')/T(s',h+1)` exactly
+  where transpositions have already contributed evidence.
+- The bonus is confined to action selection. Backups, stored estimates and the
+  recommended action (`argmax Q`) are unperturbed, so the algorithm targets the same
+  fixed point as `gs_power_uct` and only changes which actions get sampled.
+- Suggested coefficients: `C2 = C3`, of a magnitude comparable to `c`, swept over
+  `{0, 0.1, 0.5, 1, 2}`.
+- **Depth-augmented graph only — there is no `_f` counterpart.** The resistance the
+  bonus truncates is defined by a topological recursion over a layered DAG, which
+  `GraphSearchMode::Depth` guarantees because every edge advances `time` by one.
+  Cross-depth merging can close cycles, where that recursion has no fixed point;
+  passing ER coefficients together with `GraphSearchMode::Full` therefore throws in
+  `MCGraphSearchTree`'s constructor rather than silently producing a number.
 
 ## Environments
 
@@ -242,6 +275,7 @@ mpirun -np <NP> ./c++/build/dummy N_EXPERIMENTS power_uct ENV ALPHA P
 mpirun -np <NP> ./c++/build/dummy N_EXPERIMENTS ments ENV TAU EPSILON
 mpirun -np <NP> ./c++/build/dummy N_EXPERIMENTS gs_power_uct ENV C P
 mpirun -np <NP> ./c++/build/dummy N_EXPERIMENTS gs_power_uct_f ENV C P
+mpirun -np <NP> ./c++/build/dummy N_EXPERIMENTS gs_power_uct_er ENV C P C2 C3
 ```
 
 For `passenger_grid`, add `TIME_LIMIT` immediately after the environment name:
@@ -258,6 +292,8 @@ mpirun -np 4 ./c++/build/dummy 100 power_uct four_rooms 1.0 3.0
 mpirun -np 4 ./c++/build/dummy 100 ments sysadmin_ring 0.25 0.5
 mpirun -np 4 ./c++/build/dummy 100 gs_power_uct passenger_grid 70 0.5 0.0
 mpirun -np 4 ./c++/build/dummy 100 gs_power_uct_f factored_river_swim 0.5 2.5
+mpirun -np 4 ./c++/build/dummy 100 gs_power_uct_er four_rooms 0.5 0.0 0.5 0.5
+mpirun -np 4 ./c++/build/dummy 100 gs_power_uct_er passenger_grid 70 0.5 0.0 0.5 0.5
 ```
 
 Each run ends with a summary block of the following form:
@@ -275,19 +311,22 @@ rollouts=16, mean_reward=..., std_reward=..., 2std=...
 
 ## MCGraph Debugging
 
-`testmcgraph` does not use MPI and is limited to the two graph-search agents.
+`testmcgraph` does not use MPI and is limited to the MCGraph agents. The two ER
+coefficients are supplied exactly for the `_er` algorithms.
 
 General syntax:
 
 ```bash
 ./c++/build/testmcgraph gs_power_uct ENV N_ROLLOUTS C P [SEED]
 ./c++/build/testmcgraph gs_power_uct_f ENV N_ROLLOUTS C P [SEED]
+./c++/build/testmcgraph gs_power_uct_er ENV N_ROLLOUTS C P C2 C3 [SEED]
 ```
 
 For `passenger_grid`, add `TIME_LIMIT`:
 
 ```bash
 ./c++/build/testmcgraph gs_power_uct passenger_grid TIME_LIMIT N_ROLLOUTS C P [SEED]
+./c++/build/testmcgraph gs_power_uct_er passenger_grid TIME_LIMIT N_ROLLOUTS C P C2 C3 [SEED]
 ```
 
 Example commands:
@@ -296,6 +335,7 @@ Example commands:
 ./c++/build/testmcgraph gs_power_uct frozen_lake 64 0.5 0.0 0
 ./c++/build/testmcgraph gs_power_uct_f four_rooms 128 0.5 4.0 1
 ./c++/build/testmcgraph gs_power_uct passenger_grid 70 64 0.5 0.0 0
+./c++/build/testmcgraph gs_power_uct_er four_rooms 64 0.5 0.0 0.5 0.5 0
 ```
 
 ## Parameter Tuning
@@ -332,8 +372,13 @@ Default settings in `run_tune.sh`:
 - `N_EXPERIMENTS=300`.
 - Environments: `frozen_lake`, `four_rooms`, `passenger_grid`,
   `factored_river_swim`, and `sysadmin_ring`.
-- Algorithms: `max_uct`, `power_uct`, `gs_power_uct`, `gs_power_uct_f`, and
-  `ments`.
+- Algorithms: `max_uct`, `power_uct`, `gs_power_uct`, `gs_power_uct_f`,
+  `gs_power_uct_er`, and `ments`.
+- For `gs_power_uct_er` the `(c, p)` grid is deliberately narrow (`er_c_values`,
+  `er_p_values`) because the base exploration parameters are already covered by the
+  `gs_power_uct` sweep; what is swept is the coefficient grid `er_coefficient_pairs`,
+  tied as `C2 = C3` over `{0.1, 0.5, 1, 2}`. Add pairs such as `"0.5 0.0"` or
+  `"0.0 0.5"` there to measure the edge and child channels separately.
 - `passenger_grid` uses `TIME_LIMIT=70` through `build_env_args()`.
 
 After inspecting `tune_result.txt`, select the best parameters for each
@@ -352,9 +397,13 @@ bash run_final.sh
 
 Default settings in `run_final.sh`:
 
-- `N_EXPERIMENTS=500`.
-- The script evaluates all 5 environments and all 5 algorithms.
-- Each case is evaluated over the rollout budgets `16..1024` defined in
+- `N_EXPERIMENTS=1000`.
+- The script evaluates all 5 environments and every algorithm listed in its
+  `algorithms` array. `gs_power_uct_er` is listed but commented out: its entries in
+  `run_final_config.sh` are placeholders (the tuned `gs_power_uct` `(C, P)` with
+  `C2 = C3 = 0.5`) and should be replaced from `tune_result.txt` before it is
+  enabled.
+- Each case is evaluated over the rollout budgets `16..2048` defined in
   `main.cpp`.
 - Each invocation resets `run_result.txt`.
 

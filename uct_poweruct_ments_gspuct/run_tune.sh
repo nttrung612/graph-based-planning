@@ -25,9 +25,21 @@ shared_p_values=(0.0 1.0 2.0 2.5 3.0 4.0)
 ments_taus=(0.01 0.25 0.5 0.75 0.99)
 ments_epsilons=(0.5)
 
+# GS-Power-UCT-ER. The (c, p) grid is deliberately narrow: the base exploration parameters are
+# already covered by the gs_power_uct sweep above, and the ER coefficients are what needs tuning.
+# C2 = C3 is the paper's default (edge and child channel equally weighted); to test the channels
+# separately, add pairs such as ("0.5" "0.0") or ("0.0" "0.5") to er_coefficient_pairs.
+er_c_values=(0.5)
+er_p_values=(0.0 2.5)
+er_coefficient_pairs=("0.1 0.1" "0.5 0.5" "1.0 1.0" "2.0 2.0")
+
 reset_result_file "$RESULT_FILE"
 
-total_cases=55
+cases_per_env=$((${#max_uct_alphas[@]} +
+                 3 * ${#shared_alphas[@]} * ${#shared_p_values[@]} +
+                 ${#ments_taus[@]} * ${#ments_epsilons[@]} +
+                 ${#er_c_values[@]} * ${#er_p_values[@]} * ${#er_coefficient_pairs[@]}))
+total_cases=$((${#environments[@]} * cases_per_env))
 completed_cases=0
 
 for env_name in "${environments[@]}"; do
@@ -55,6 +67,18 @@ for env_name in "${environments[@]}"; do
             completed_cases=$((completed_cases + 1))
             echo "[$completed_cases/$total_cases] $env_name gs_power_uct_f c=$alpha p=$p_value"
             run_case "$RESULT_FILE" "$N_EXPERIMENTS" gs_power_uct_f "${env_args[@]}" "$alpha" "$p_value"
+        done
+    done
+
+    for c_value in "${er_c_values[@]}"; do
+        for p_value in "${er_p_values[@]}"; do
+            for coefficient_pair in "${er_coefficient_pairs[@]}"; do
+                read -r c2_value c3_value <<< "$coefficient_pair"
+                completed_cases=$((completed_cases + 1))
+                echo "[$completed_cases/$total_cases] $env_name gs_power_uct_er c=$c_value p=$p_value c2=$c2_value c3=$c3_value"
+                run_case "$RESULT_FILE" "$N_EXPERIMENTS" gs_power_uct_er "${env_args[@]}" \
+                    "$c_value" "$p_value" "$c2_value" "$c3_value"
+            done
         done
     done
 

@@ -108,15 +108,29 @@ namespace {
     }
 
     GraphSearchMode parse_graph_mode(const string &mode_name) {
-        if (mode_name == "gs_power_uct") {
+        if (mode_name == "gs_power_uct" || mode_name == "gs_power_uct_er") {
             return GraphSearchMode::Depth;
         }
         if (mode_name == "gs_power_uct_f") {
             return GraphSearchMode::Full;
         }
 
-        throw runtime_error("Mode must be gs_power_uct or gs_power_uct_f");
+        throw runtime_error("Mode must be gs_power_uct, gs_power_uct_f or gs_power_uct_er");
     }
+
+    // No '_er_f': the recursive resistance needs the layered depth-augmented graph.
+    bool is_er_algorithm(const string &mode_name) {
+        return mode_name == "gs_power_uct_er";
+    }
+
+    struct GraphRunArgs {
+        uint32_t n_rollouts = 0;
+        double c = 0.;
+        double p = 0.;
+        double c2 = 0.;
+        double c3 = 0.;
+        uint32_t seed = 0;
+    };
 
     uint32_t parse_uint32(const char *raw, const string &argument_name) {
         size_t processed = 0;
@@ -137,6 +151,28 @@ namespace {
             throw runtime_error("Invalid floating point value for " + argument_name + ": " + string(raw));
         }
         return parsed;
+    }
+
+    /**
+     * Layout: ALGO ENV [TIME_LIMIT] N_ROLLOUTS C P [C2 C3] [SEED], where the ER coefficients are
+     * present exactly for the '_er' algorithms, so the arity is unambiguous.
+     */
+    GraphRunArgs parse_graph_run_args(int argc, char *argv[], int first_index, bool er) {
+        int expected = first_index + 3 + (er ? 2 : 0);
+        if (argc != expected && argc != expected + 1) {
+            throw runtime_error("Wrong number of arguments for this algorithm/environment pair");
+        }
+
+        GraphRunArgs args;
+        args.n_rollouts = parse_uint32(argv[first_index], "N_ROLLOUTS");
+        args.c = parse_double(argv[first_index + 1], "C");
+        args.p = parse_double(argv[first_index + 2], "P");
+        if (er) {
+            args.c2 = parse_double(argv[first_index + 3], "C2");
+            args.c3 = parse_double(argv[first_index + 4], "C3");
+        }
+        args.seed = argc == expected + 1 ? parse_uint32(argv[argc - 1], "SEED") : 0;
+        return args;
     }
 
     uint32_t apply_frozen_lake_action(uint32_t state_id, uint32_t action) {
@@ -380,24 +416,21 @@ namespace {
 
     void print_usage(const char *program_name) {
         cout << "Usage:\n";
-        cout << "  " << program_name << " gs_power_uct frozen_lake N_ROLLOUTS C P [SEED]\n";
-        cout << "  " << program_name << " gs_power_uct_f frozen_lake N_ROLLOUTS C P [SEED]\n";
-        cout << "  " << program_name << " gs_power_uct factored_river_swim N_ROLLOUTS C P [SEED]\n";
-        cout << "  " << program_name << " gs_power_uct_f factored_river_swim N_ROLLOUTS C P [SEED]\n";
-        cout << "  " << program_name << " gs_power_uct four_rooms N_ROLLOUTS C P [SEED]\n";
-        cout << "  " << program_name << " gs_power_uct_f four_rooms N_ROLLOUTS C P [SEED]\n";
-        cout << "  " << program_name << " gs_power_uct sysadmin_ring N_ROLLOUTS C P [SEED]\n";
-        cout << "  " << program_name << " gs_power_uct_f sysadmin_ring N_ROLLOUTS C P [SEED]\n";
-        cout << "  " << program_name << " gs_power_uct passenger_grid TIME_LIMIT N_ROLLOUTS C P [SEED]\n";
-        cout << "  " << program_name << " gs_power_uct_f passenger_grid TIME_LIMIT N_ROLLOUTS C P [SEED]\n";
+        cout << "  " << program_name << " ALGO ENV N_ROLLOUTS C P [SEED]\n";
+        cout << "  " << program_name << " gs_power_uct_er ENV N_ROLLOUTS C P C2 C3 [SEED]\n";
+        cout << "  " << program_name << " ALGO passenger_grid TIME_LIMIT N_ROLLOUTS C P [SEED]\n";
+        cout << "  " << program_name << " gs_power_uct_er passenger_grid TIME_LIMIT N_ROLLOUTS C P C2 C3 [SEED]\n";
+        cout << "ALGO: gs_power_uct, gs_power_uct_f, gs_power_uct_er (depth-augmented graph only)\n";
+        cout << "ENV: frozen_lake, factored_river_swim, four_rooms, sysadmin_ring, passenger_grid\n";
         cout << "Accepted environment aliases: frozenlake, factoredriverswim, fourrooms, passengergrid, sysadminring\n";
     }
 
     template<typename S>
     shared_ptr<MCGraphSearchTree<S>> create_mc_graph_tree(shared_ptr<Environment<S>> env_search, GraphSearchMode mode,
-                                                          double c, double p) {
+                                                          const GraphRunArgs &args) {
         return make_shared<MCGraphSearchTree<S>>(env_search, env_search->getInitialState(),
-                                                 env_search->getInitialObservation(), 1., c, p, mode);
+                                                 env_search->getInitialObservation(), 1., args.c, args.p, mode,
+                                                 args.c2, args.c3);
     }
 
     string format_action_stats(const vector<GraphActionStats> &action_stats, const string &environment_name) {
@@ -418,10 +451,12 @@ namespace {
     }
 
     template<typename S>
-    double run_single_episode(const string &mode_name, const string &environment_name, uint32_t n_rollouts,
-                              uint32_t seed, shared_ptr<Environment<S>> env,
-                              shared_ptr<Environment<S>> env_search, GraphSearchMode mode, double c, double p,
-                              bool plan_once, bool reset_before_tree) {
+    double run_single_episode(const string &mode_name, const string &environment_name, const GraphRunArgs &args,
+                              shared_ptr<Environment<S>> env, shared_ptr<Environment<S>> env_search,
+                              GraphSearchMode mode, bool plan_once, bool reset_before_tree) {
+        uint32_t n_rollouts = args.n_rollouts;
+        uint32_t seed = args.seed;
+
         env->seed(seed);
         env_search->seed(seed);
         if (reset_before_tree) {
@@ -429,7 +464,7 @@ namespace {
             env->reset();
         }
 
-        auto search_tree = create_mc_graph_tree<S>(env_search, mode, c, p);
+        auto search_tree = create_mc_graph_tree<S>(env_search, mode, args);
         search_tree->seed(seed);
 
         if (plan_once) {
@@ -445,8 +480,10 @@ namespace {
              << ", environment=" << environment_name
              << ", search_budget=" << n_rollouts
              << ", planning_mode=" << (plan_once ? "plan_once" : "replan")
-             << ", c=" << c
-             << ", p=" << p
+             << ", c=" << args.c
+             << ", p=" << args.p
+             << ", c2=" << args.c2
+             << ", c3=" << args.c3
              << ", seed=" << seed
              << endl;
         cout << "initial_state=" << describe_state(current_state) << endl;
@@ -501,105 +538,66 @@ int main(int argc, char *argv[]) {
         string mode_name(argv[1]);
         string environment_name = canonical_env_name(argv[2]);
         auto mode = parse_graph_mode(mode_name);
+        bool er = is_er_algorithm(mode_name);
 
         if (environment_name == "frozen_lake") {
-            if (argc != 6 && argc != 7) {
-                print_usage(argv[0]);
-                return -1;
-            }
-
-            uint32_t n_rollouts = parse_uint32(argv[3], "N_ROLLOUTS");
-            double c = parse_double(argv[4], "C");
-            double p = parse_double(argv[5], "P");
-            uint32_t seed = argc == 7 ? parse_uint32(argv[6], "SEED") : 0;
+            auto args = parse_graph_run_args(argc, argv, 3, er);
 
             auto env = make_shared<FrozenLake>(true, false);
             auto env_search = make_shared<FrozenLake>(true, false);
-            run_single_episode<DiscreteEnvironmentState>(mode_name, environment_name, n_rollouts, seed,
+            run_single_episode<DiscreteEnvironmentState>(mode_name, environment_name, args,
                                                          static_pointer_cast<Environment<DiscreteEnvironmentState>>(env),
                                                          static_pointer_cast<Environment<DiscreteEnvironmentState>>(env_search),
-                                                         mode, c, p, false, false);
+                                                         mode, false, false);
             return 0;
         }
 
         if (environment_name == "factored_river_swim") {
-            if (argc != 6 && argc != 7) {
-                print_usage(argv[0]);
-                return -1;
-            }
-
-            uint32_t n_rollouts = parse_uint32(argv[3], "N_ROLLOUTS");
-            double c = parse_double(argv[4], "C");
-            double p = parse_double(argv[5], "P");
-            uint32_t seed = argc == 7 ? parse_uint32(argv[6], "SEED") : 0;
+            auto args = parse_graph_run_args(argc, argv, 3, er);
 
             auto env = make_shared<FactoredRiverSwim>();
             auto env_search = make_shared<FactoredRiverSwim>();
-            run_single_episode<FactoredRiverSwimState>(mode_name, environment_name, n_rollouts, seed,
+            run_single_episode<FactoredRiverSwimState>(mode_name, environment_name, args,
                                                        static_pointer_cast<Environment<FactoredRiverSwimState>>(env),
                                                        static_pointer_cast<Environment<FactoredRiverSwimState>>(env_search),
-                                                       mode, c, p, false, false);
+                                                       mode, false, false);
             return 0;
         }
 
         if (environment_name == "four_rooms") {
-            if (argc != 6 && argc != 7) {
-                print_usage(argv[0]);
-                return -1;
-            }
-
-            uint32_t n_rollouts = parse_uint32(argv[3], "N_ROLLOUTS");
-            double c = parse_double(argv[4], "C");
-            double p = parse_double(argv[5], "P");
-            uint32_t seed = argc == 7 ? parse_uint32(argv[6], "SEED") : 0;
+            auto args = parse_graph_run_args(argc, argv, 3, er);
 
             auto env = make_shared<FourRooms>();
             auto env_search = make_shared<FourRooms>();
-            run_single_episode<FourRoomsState>(mode_name, environment_name, n_rollouts, seed,
+            run_single_episode<FourRoomsState>(mode_name, environment_name, args,
                                                static_pointer_cast<Environment<FourRoomsState>>(env),
                                                static_pointer_cast<Environment<FourRoomsState>>(env_search),
-                                               mode, c, p, false, true);
+                                               mode, false, true);
             return 0;
         }
 
         if (environment_name == "sysadmin_ring") {
-            if (argc != 6 && argc != 7) {
-                print_usage(argv[0]);
-                return -1;
-            }
-
-            uint32_t n_rollouts = parse_uint32(argv[3], "N_ROLLOUTS");
-            double c = parse_double(argv[4], "C");
-            double p = parse_double(argv[5], "P");
-            uint32_t seed = argc == 7 ? parse_uint32(argv[6], "SEED") : 0;
+            auto args = parse_graph_run_args(argc, argv, 3, er);
 
             auto env = make_shared<SysAdminRing>();
             auto env_search = make_shared<SysAdminRing>();
-            run_single_episode<SysAdminRingState>(mode_name, environment_name, n_rollouts, seed,
+            run_single_episode<SysAdminRingState>(mode_name, environment_name, args,
                                                   static_pointer_cast<Environment<SysAdminRingState>>(env),
                                                   static_pointer_cast<Environment<SysAdminRingState>>(env_search),
-                                                  mode, c, p, false, false);
+                                                  mode, false, false);
             return 0;
         }
 
         if (environment_name == "passenger_grid") {
-            if (argc != 7 && argc != 8) {
-                print_usage(argv[0]);
-                return -1;
-            }
-
             uint32_t time_limit = parse_uint32(argv[3], "TIME_LIMIT");
-            uint32_t n_rollouts = parse_uint32(argv[4], "N_ROLLOUTS");
-            double c = parse_double(argv[5], "C");
-            double p = parse_double(argv[6], "P");
-            uint32_t seed = argc == 8 ? parse_uint32(argv[7], "SEED") : 0;
+            auto args = parse_graph_run_args(argc, argv, 4, er);
 
             auto env = make_shared<PassengerGrid>(time_limit, true);
             auto env_search = make_shared<PassengerGrid>(time_limit, true);
-            run_single_episode<PassengerGridState>(mode_name, environment_name, n_rollouts, seed,
+            run_single_episode<PassengerGridState>(mode_name, environment_name, args,
                                                    static_pointer_cast<Environment<PassengerGridState>>(env),
                                                    static_pointer_cast<Environment<PassengerGridState>>(env_search),
-                                                   mode, c, p, false, false);
+                                                   mode, false, false);
             return 0;
         }
 

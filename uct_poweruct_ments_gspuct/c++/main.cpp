@@ -56,6 +56,12 @@ bool is_graph_e3w_algorithm(const string &type) {
            type == "gs_tents" || type == "gs_tents_f";
 }
 
+// GS-Power-UCT-ER exists in the depth-augmented variant only: the recursive resistance behind
+// the bonus is a topological recursion over a layered DAG, so there is no '_f' counterpart.
+bool is_graph_power_uct_er_algorithm(const string &type) {
+    return type == "gs_power_uct_er";
+}
+
 uint32_t get_algorithm_required_argc(const string &type) {
     if (type == "max_uct") {
         return 5;
@@ -64,6 +70,10 @@ uint32_t get_algorithm_required_argc(const string &type) {
         type == "gs_power_uct" || type == "gs_power_uct_f" ||
         is_graph_e3w_algorithm(type)) {
         return 6;
+    }
+    if (is_graph_power_uct_er_algorithm(type)) {
+        // C and P as for gs_power_uct, plus the two ER coefficients C2 and C3.
+        return 8;
     }
 
     throw runtime_error(string("Invalid algorithm type: ") + type);
@@ -94,6 +104,9 @@ vector<string> get_algorithm_parameter_names(const string &type) {
     }
     if (type == "gs_power_uct" || type == "gs_power_uct_f") {
         return {"c", "p"};
+    }
+    if (is_graph_power_uct_er_algorithm(type)) {
+        return {"c", "p", "c2", "c3"};
     }
     if (type == "ments" || is_graph_e3w_algorithm(type)) {
         return {"tau", "epsilon"};
@@ -186,6 +199,16 @@ shared_ptr<AbstractSearchTree<S>> create_search_tree(shared_ptr<Environment<S>> 
         return make_shared<MCGraphSearchTree<S>>(search_env, search_env->getInitialState(),
                                                 search_env->getInitialObservation(),
                                                 discount_factor, c, p, GraphSearchMode::Full);
+    }
+    if (is_graph_power_uct_er_algorithm(type)) {
+        auto c = stod(argv[0]);
+        auto p = stod(argv[1]);
+        auto c2 = stod(argv[2]);
+        auto c3 = stod(argv[3]);
+
+        return make_shared<MCGraphSearchTree<S>>(search_env, search_env->getInitialState(),
+                                                 search_env->getInitialObservation(),
+                                                 discount_factor, c, p, GraphSearchMode::Depth, c2, c3);
     }
     if (is_graph_e3w_algorithm(type)) {
         auto tau = stod(argv[0]);
@@ -350,6 +373,7 @@ int main(int argc, char *argv[]) {
         cout << "\t\tN_EXPERIMENTS power_uct ENV ALPHA P" << endl;
         cout << "\t\tN_EXPERIMENTS gs_power_uct ENV C P" << endl;
         cout << "\t\tN_EXPERIMENTS gs_power_uct_f ENV C P" << endl;
+        cout << "\t\tN_EXPERIMENTS gs_power_uct_er ENV C P C2 C3   (depth-augmented graph only)" << endl;
         cout << "\t\tN_EXPERIMENTS ments ENV TAU EPSILON" << endl;
         cout << "\t\tN_EXPERIMENTS gs_ments ENV TAU EPSILON      (also gs_ments_f)" << endl;
         cout << "\t\tN_EXPERIMENTS gs_rents ENV TAU EPSILON      (also gs_rents_f)" << endl;
