@@ -7,8 +7,8 @@ source "$SCRIPT_DIR/run_batch_common.sh"
 
 ensure_dummy_binary
 
-RESULT_FILE="$SCRIPT_DIR/tune_gs_ments_er_result.txt"
-CASE_DIR="$SCRIPT_DIR/tune_gs_ments_er_cases"
+RESULT_FILE="$SCRIPT_DIR/tune_gs_tents_er_result.txt"
+CASE_DIR="$SCRIPT_DIR/tune_gs_tents_er_cases"
 N_EXPERIMENTS=300
 
 mkdir -p "$CASE_DIR"
@@ -33,7 +33,7 @@ total_cases=$((${#environments[@]} * cases_per_env))
 completed_cases=0
 ordered_case_files=()
 
-# Rebuilt after every case so tune_gs_ments_er_result.txt always reflects everything
+# Rebuilt after every case so tune_gs_tents_er_result.txt always reflects everything
 # finished so far, even if the run is interrupted midway.
 rebuild_aggregate() {
     : > "$RESULT_FILE"
@@ -61,13 +61,13 @@ for env_name in "${environments[@]}"; do
                 # run_batch_common.sh); a truncated-but-empty file means a prior attempt was
                 # interrupted before finishing, so -s correctly forces a re-run of that case.
                 if [[ -s "$case_file" ]]; then
-                    echo "[$completed_cases/$total_cases] $env_name gs_ments_er tau=$tau epsilon=$epsilon c2=$c2_value c3=$c3_value (already done, skipping)"
+                    echo "[$completed_cases/$total_cases] $env_name gs_tents_er tau=$tau epsilon=$epsilon c2=$c2_value c3=$c3_value (already done, skipping)"
                     continue
                 fi
 
-                echo "[$completed_cases/$total_cases] $env_name gs_ments_er tau=$tau epsilon=$epsilon c2=$c2_value c3=$c3_value"
+                echo "[$completed_cases/$total_cases] $env_name gs_tents_er tau=$tau epsilon=$epsilon c2=$c2_value c3=$c3_value"
                 reset_result_file "$case_file"
-                run_case "$case_file" "$N_EXPERIMENTS" gs_ments_er "${env_args[@]}" \
+                run_case "$case_file" "$N_EXPERIMENTS" gs_tents_er "${env_args[@]}" \
                     "$tau" "$epsilon" "$c2_value" "$c3_value"
                 rebuild_aggregate
             done
