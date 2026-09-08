@@ -25,11 +25,31 @@ environments=(
 # tau narrowed to {0.01, 0.25}, epsilon fixed at 0.5, (C2, C3) tied over {0, 0.1, 0.5, 1, 2}.
 # "0.0 0.0" is the unperturbed GS-E3W baseline row.
 taus=(0.01 0.25)
-epsilons=(0.5)
+default_epsilons=(0.5)
+# sysadmin_ring has K=21 actions (SYSADMIN_RING_NUM_COMPUTERS+1). The E3W-ER explore
+# schedule is lambda = epsilon*K/log(N(s)+2), clipped to max_explore_prob=1.0. At
+# epsilon=0.5 that gives lambda >= 1 for every N(s) up to ~36000 (see mc_graph_e3w.h
+# sample_action), i.e. for the whole tested rollout-budget range (16..2048) -- so
+# sample_action always takes the pure-uniform-random branch and the c2/c3-perturbed
+# policy is never consulted. That is confirmed by tune_gs_ments_er_result.txt: every
+# (C2, C3) row for sysadmin_ring is bit-identical. Smaller epsilon values let lambda
+# drop below 1 within the tested budget, so the ER coefficients actually get exercised.
+sysadmin_ring_epsilons=(0.05 0.1 0.5)
 coefficient_pairs=("0.0 0.0" "0.1 0.1" "0.5 0.5" "1.0 1.0" "2.0 2.0")
 
-cases_per_env=$((${#taus[@]} * ${#epsilons[@]} * ${#coefficient_pairs[@]}))
-total_cases=$((${#environments[@]} * cases_per_env))
+epsilons_for_env() {
+    if [[ "$1" == "sysadmin_ring" ]]; then
+        printf '%s\n' "${sysadmin_ring_epsilons[@]}"
+    else
+        printf '%s\n' "${default_epsilons[@]}"
+    fi
+}
+
+total_cases=0
+for env_name in "${environments[@]}"; do
+    n_eps=$(epsilons_for_env "$env_name" | wc -l)
+    total_cases=$((total_cases + ${#taus[@]} * n_eps * ${#coefficient_pairs[@]}))
+done
 completed_cases=0
 ordered_case_files=()
 
@@ -47,6 +67,7 @@ rebuild_aggregate() {
 for env_name in "${environments[@]}"; do
     build_env_args "$env_name"
     env_args=("${ENV_ARGS[@]}")
+    mapfile -t epsilons < <(epsilons_for_env "$env_name")
 
     for tau in "${taus[@]}"; do
         for epsilon in "${epsilons[@]}"; do
