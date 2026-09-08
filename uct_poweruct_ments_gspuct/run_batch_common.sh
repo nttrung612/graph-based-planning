@@ -4,7 +4,7 @@ set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DUMMY_BINARY="$REPO_ROOT/c++/build/dummy"
-MPI_CMD=(mpirun -np 88 "$DUMMY_BINARY")
+MPI_CMD=(mpirun -np 44 "$DUMMY_BINARY")
 SUMMARY_START='^===== Run Summary =====$'
 SUMMARY_END='^=======================$'
 ENV_ARGS=()
