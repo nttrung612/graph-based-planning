@@ -21,14 +21,15 @@ environments=(
 )
 
 algorithms=(
-    max_uct
-    power_uct
-    ments
+    # max_uct
+    # power_uct
+    # ments
     gs_power_uct
     gs_power_uct_f
-    # Enable once the ER coefficients in run_final_config.sh come from tune_result.txt
-    # instead of the placeholder defaults.
-    # gs_power_uct_er
+    gs_power_uct_er
+    gs_ments_er
+    gs_rents_er
+    gs_tents_er
 )
 
 reset_result_file "$RESULT_FILE"
