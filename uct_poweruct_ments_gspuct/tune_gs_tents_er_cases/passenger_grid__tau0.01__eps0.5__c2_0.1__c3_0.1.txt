@@ -1,0 +1,20 @@
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: passenger_grid
+time_limit: 70
+tau: 0.01
+epsilon: 0.5
+c2: 0.1
+c3: 0.1
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.92, std_reward=1.53671, 2std=3.07342
+simulations=32, mean_reward=1.88667, std_reward=2.00513, 2std=4.01027
+simulations=64, mean_reward=4.30333, std_reward=2.46677, 2std=4.93353
+simulations=128, mean_reward=6.09, std_reward=1.96846, 2std=3.93691
+simulations=256, mean_reward=6.80333, std_reward=1.0496, 2std=2.0992
+simulations=512, mean_reward=6.82333, std_reward=1.08137, 2std=2.16273
+simulations=1024, mean_reward=6.82333, std_reward=1.08137, 2std=2.16273
+simulations=2048, mean_reward=6.86, std_reward=0.981637, 2std=1.96327
+=======================
+

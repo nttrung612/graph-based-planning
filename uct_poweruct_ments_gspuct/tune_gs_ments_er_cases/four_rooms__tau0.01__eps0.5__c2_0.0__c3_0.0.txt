@@ -1,0 +1,21 @@
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_ments_er
+environment: four_rooms
+n: 5
+grid_size: 11
+time_limit: 50
+tau: 0.01
+epsilon: 0.5
+c2: 0.0
+c3: 0.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.2284, std_reward=0.334366, 2std=0.668732
+simulations=32, mean_reward=0.360773, std_reward=0.352901, 2std=0.705803
+simulations=64, mean_reward=0.469087, std_reward=0.317299, 2std=0.634597
+simulations=128, mean_reward=0.535227, std_reward=0.283701, 2std=0.567402
+simulations=256, mean_reward=0.558567, std_reward=0.272, 2std=0.543999
+simulations=512, mean_reward=0.568613, std_reward=0.257244, 2std=0.514487
+simulations=1024, mean_reward=0.578687, std_reward=0.255738, 2std=0.511475
+simulations=2048, mean_reward=0.578147, std_reward=0.252083, 2std=0.504166
+=======================

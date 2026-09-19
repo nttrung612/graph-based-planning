@@ -1,0 +1,20 @@
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_power_uct_er
+environment: passenger_grid
+time_limit: 70
+c: 0.5
+p: 0.0
+c2: 0.1
+c3: 0.1
+mean_performance_by_simulations:
+simulations=16, mean_reward=2.31333, std_reward=2.51852, 2std=5.03705
+simulations=32, mean_reward=3.00333, std_reward=2.79093, 2std=5.58186
+simulations=64, mean_reward=4.1, std_reward=3.01668, 2std=6.03335
+simulations=128, mean_reward=4.34333, std_reward=2.97123, 2std=5.94246
+simulations=256, mean_reward=5.14333, std_reward=2.76676, 2std=5.53352
+simulations=512, mean_reward=5.31, std_reward=2.74573, 2std=5.49146
+simulations=1024, mean_reward=5.94667, std_reward=2.29377, 2std=4.58753
+simulations=2048, mean_reward=5.98, std_reward=2.27086, 2std=4.54171
+=======================
+

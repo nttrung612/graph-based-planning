@@ -1,0 +1,30 @@
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: four_rooms
+n: 5
+grid_size: 11
+time_limit: 50
+tau: 0.01
+epsilon: 0.5
+c2: 0.5
+c3: 0.5
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.221133, std_reward=0.330649, 2std=0.661297
+simulations=32, mean_reward=0.35622, std_reward=0.341166, 2std=0.682332
+simulations=64, mean_reward=0.4775, std_reward=0.31626, 2std=0.63252
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+simulations=128, mean_reward=0.52666, std_reward=0.291307, 2std=0.582613
+simulations=256, mean_reward=0.54822, std_reward=0.274459, 2std=0.548919
+simulations=512, mean_reward=0.577033, std_reward=0.257364, 2std=0.514727
+simulations=1024, mean_reward=0.574233, std_reward=0.263827, 2std=0.527655
+simulations=2048, mean_reward=0.58748, std_reward=0.249122, 2std=0.498243
+=======================
+

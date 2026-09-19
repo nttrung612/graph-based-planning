@@ -1,0 +1,21 @@
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.25
+epsilon: 0.1
+c2: 0.5
+c3: 0.5
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.58983, std_reward=1.39262, 2std=2.78524
+simulations=32, mean_reward=8.5765, std_reward=1.35064, 2std=2.70127
+simulations=64, mean_reward=8.36233, std_reward=1.35351, 2std=2.70702
+simulations=128, mean_reward=8.379, std_reward=1.31129, 2std=2.62259
+simulations=256, mean_reward=8.59767, std_reward=1.43452, 2std=2.86903
+simulations=512, mean_reward=8.99733, std_reward=1.67843, 2std=3.35685
+simulations=1024, mean_reward=9.2465, std_reward=1.97889, 2std=3.95778
+simulations=2048, mean_reward=10.3285, std_reward=2.5938, 2std=5.1876
+=======================
+

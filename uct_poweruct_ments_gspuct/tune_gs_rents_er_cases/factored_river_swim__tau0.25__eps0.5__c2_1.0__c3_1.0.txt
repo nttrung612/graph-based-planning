@@ -1,0 +1,22 @@
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: factored_river_swim
+num_rivers: 3
+nlocations: 5
+time_limit: 35
+tau: 0.25
+epsilon: 0.5
+c2: 1.0
+c3: 1.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=1.35678, std_reward=0.691693, 2std=1.38339
+simulations=32, mean_reward=1.6065, std_reward=0.496876, 2std=0.993751
+simulations=64, mean_reward=1.66128, std_reward=0.275285, 2std=0.55057
+simulations=128, mean_reward=1.71728, std_reward=0.17889, 2std=0.35778
+simulations=256, mean_reward=1.73339, std_reward=0.0286413, 2std=0.0572826
+simulations=512, mean_reward=1.74789, std_reward=0.00940375, 2std=0.0188075
+simulations=1024, mean_reward=1.74989, std_reward=0.0019245, 2std=0.003849
+simulations=2048, mean_reward=1.98883, std_reward=0.390681, 2std=0.781361
+=======================
+

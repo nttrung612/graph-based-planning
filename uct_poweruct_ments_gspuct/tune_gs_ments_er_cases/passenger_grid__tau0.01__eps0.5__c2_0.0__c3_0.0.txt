@@ -1,0 +1,19 @@
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_ments_er
+environment: passenger_grid
+time_limit: 70
+tau: 0.01
+epsilon: 0.5
+c2: 0.0
+c3: 0.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=1.08667, std_reward=1.43271, 2std=2.86542
+simulations=32, mean_reward=1.98667, std_reward=1.94227, 2std=3.88453
+simulations=64, mean_reward=4.22333, std_reward=2.33774, 2std=4.67547
+simulations=128, mean_reward=6.22333, std_reward=1.88821, 2std=3.77642
+simulations=256, mean_reward=6.75, std_reward=1.25409, 2std=2.50818
+simulations=512, mean_reward=6.8, std_reward=1.15083, 2std=2.30166
+simulations=1024, mean_reward=6.88333, std_reward=0.897631, 2std=1.79526
+simulations=2048, mean_reward=6.88667, std_reward=0.873517, 2std=1.74703
+=======================

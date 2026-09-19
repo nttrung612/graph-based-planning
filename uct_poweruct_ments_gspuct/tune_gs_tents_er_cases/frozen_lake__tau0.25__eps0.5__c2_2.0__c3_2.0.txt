@@ -1,0 +1,19 @@
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: frozen_lake
+tau: 0.25
+epsilon: 0.5
+c2: 2.0
+c3: 2.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=0, std_reward=0, 2std=0
+simulations=32, mean_reward=0.02, std_reward=0.140234, 2std=0.280468
+simulations=64, mean_reward=0.243333, std_reward=0.429812, 2std=0.859623
+simulations=128, mean_reward=0.526667, std_reward=0.500123, 2std=1.00025
+simulations=256, mean_reward=0.676667, std_reward=0.46853, 2std=0.937061
+simulations=512, mean_reward=0.756667, std_reward=0.429812, 2std=0.859623
+simulations=1024, mean_reward=0.826667, std_reward=0.379168, 2std=0.758335
+simulations=2048, mean_reward=0.836667, std_reward=0.370287, 2std=0.740574
+=======================
+

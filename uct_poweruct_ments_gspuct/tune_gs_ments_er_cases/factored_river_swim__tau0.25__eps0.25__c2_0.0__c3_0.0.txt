@@ -1,0 +1,31 @@
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_ments_er
+environment: factored_river_swim
+num_rivers: 3
+nlocations: 5
+time_limit: 35
+tau: 0.25
+epsilon: 0.25
+c2: 0.0
+c3: 0.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=1.37478, std_reward=0.649766, 2std=1.29953
+simulations=32, mean_reward=1.67639, std_reward=0.581488, 2std=1.16298
+simulations=64, mean_reward=1.70661, std_reward=0.311864, 2std=0.623728
+simulations=128, mean_reward=1.76306, std_reward=0.33191, 2std=0.66382
+simulations=256, mean_reward=1.74156, std_reward=0.0358445, 2std=0.0716889
+simulations=512, mean_reward=1.74828, std_reward=0.00861005, 2std=0.0172201
+simulations=1024, mean_reward=1.74994, std_reward=0.00096225, 2std=0.0019245
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+simulations=2048, mean_reward=1.75, std_reward=6.67247e-16, 2std=1.33449e-15
+=======================
+

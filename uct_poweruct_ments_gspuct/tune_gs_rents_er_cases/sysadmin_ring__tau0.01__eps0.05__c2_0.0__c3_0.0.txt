@@ -1,0 +1,21 @@
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.01
+epsilon: 0.05
+c2: 0.0
+c3: 0.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.57917, std_reward=1.42417, 2std=2.84835
+simulations=32, mean_reward=8.858, std_reward=1.31465, 2std=2.62929
+simulations=64, mean_reward=8.76767, std_reward=1.40606, 2std=2.81211
+simulations=128, mean_reward=8.95467, std_reward=1.41709, 2std=2.83418
+simulations=256, mean_reward=9.35117, std_reward=1.69373, 2std=3.38746
+simulations=512, mean_reward=9.80733, std_reward=1.706, 2std=3.41201
+simulations=1024, mean_reward=10.0493, std_reward=1.89943, 2std=3.79886
+simulations=2048, mean_reward=10.9412, std_reward=2.19063, 2std=4.38125
+=======================
+

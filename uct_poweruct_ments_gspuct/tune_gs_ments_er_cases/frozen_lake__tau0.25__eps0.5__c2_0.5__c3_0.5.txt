@@ -1,0 +1,18 @@
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_ments_er
+environment: frozen_lake
+tau: 0.25
+epsilon: 0.5
+c2: 0.5
+c3: 0.5
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.0133333, std_reward=0.114889, 2std=0.229779
+simulations=32, mean_reward=0.00666667, std_reward=0.081513, 2std=0.163026
+simulations=64, mean_reward=0.0933333, std_reward=0.291385, 2std=0.58277
+simulations=128, mean_reward=0.243333, std_reward=0.429812, 2std=0.859623
+simulations=256, mean_reward=0.48, std_reward=0.500435, 2std=1.00087
+simulations=512, mean_reward=0.69, std_reward=0.463266, 2std=0.926532
+simulations=1024, mean_reward=0.79, std_reward=0.407989, 2std=0.815978
+simulations=2048, mean_reward=0.8, std_reward=0.400668, 2std=0.801337
+=======================

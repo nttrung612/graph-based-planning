@@ -1,0 +1,1517 @@
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: frozen_lake
+tau: 0.01
+epsilon: 0.5
+c2: 0.0
+c3: 0.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.00666667, std_reward=0.081513, 2std=0.163026
+simulations=32, mean_reward=0.0433333, std_reward=0.203947, 2std=0.407893
+simulations=64, mean_reward=0.286667, std_reward=0.45296, 2std=0.90592
+simulations=128, mean_reward=0.586667, std_reward=0.493254, 2std=0.986509
+simulations=256, mean_reward=0.79, std_reward=0.407989, 2std=0.815978
+simulations=512, mean_reward=0.866667, std_reward=0.340503, 2std=0.681005
+simulations=1024, mean_reward=0.923333, std_reward=0.266506, 2std=0.533013
+simulations=2048, mean_reward=0.916667, std_reward=0.276847, 2std=0.553694
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: frozen_lake
+tau: 0.01
+epsilon: 0.5
+c2: 0.1
+c3: 0.1
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.00333333, std_reward=0.057735, 2std=0.11547
+simulations=32, mean_reward=0.0233333, std_reward=0.151212, 2std=0.302424
+simulations=64, mean_reward=0.326667, std_reward=0.469778, 2std=0.939556
+simulations=128, mean_reward=0.63, std_reward=0.483611, 2std=0.967222
+simulations=256, mean_reward=0.79, std_reward=0.407989, 2std=0.815978
+simulations=512, mean_reward=0.876667, std_reward=0.329369, 2std=0.658738
+simulations=1024, mean_reward=0.886667, std_reward=0.317529, 2std=0.635059
+simulations=2048, mean_reward=0.916667, std_reward=0.276847, 2std=0.553694
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: frozen_lake
+tau: 0.01
+epsilon: 0.5
+c2: 0.5
+c3: 0.5
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.00666667, std_reward=0.081513, 2std=0.163026
+simulations=32, mean_reward=0.04, std_reward=0.196287, 2std=0.392573
+simulations=64, mean_reward=0.27, std_reward=0.444701, 2std=0.889402
+simulations=128, mean_reward=0.603333, std_reward=0.490023, 2std=0.980046
+simulations=256, mean_reward=0.793333, std_reward=0.405591, 2std=0.811182
+simulations=512, mean_reward=0.88, std_reward=0.325504, 2std=0.651009
+simulations=1024, mean_reward=0.916667, std_reward=0.276847, 2std=0.553694
+simulations=2048, mean_reward=0.88, std_reward=0.325504, 2std=0.651009
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: frozen_lake
+tau: 0.01
+epsilon: 0.5
+c2: 1.0
+c3: 1.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.00666667, std_reward=0.081513, 2std=0.163026
+simulations=32, mean_reward=0.0433333, std_reward=0.203947, 2std=0.407893
+simulations=64, mean_reward=0.263333, std_reward=0.441178, 2std=0.882355
+simulations=128, mean_reward=0.59, std_reward=0.492655, 2std=0.98531
+simulations=256, mean_reward=0.816667, std_reward=0.387586, 2std=0.775172
+simulations=512, mean_reward=0.866667, std_reward=0.340503, 2std=0.681005
+simulations=1024, mean_reward=0.873333, std_reward=0.333155, 2std=0.66631
+simulations=2048, mean_reward=0.92, std_reward=0.271746, 2std=0.543493
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: frozen_lake
+tau: 0.01
+epsilon: 0.5
+c2: 2.0
+c3: 2.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.00333333, std_reward=0.057735, 2std=0.11547
+simulations=32, mean_reward=0.0433333, std_reward=0.203947, 2std=0.407893
+simulations=64, mean_reward=0.246667, std_reward=0.431791, 2std=0.863583
+simulations=128, mean_reward=0.62, std_reward=0.486197, 2std=0.972395
+simulations=256, mean_reward=0.8, std_reward=0.400668, 2std=0.801337
+simulations=512, mean_reward=0.863333, std_reward=0.344069, 2std=0.688138
+simulations=1024, mean_reward=0.893333, std_reward=0.309205, 2std=0.61841
+simulations=2048, mean_reward=0.9, std_reward=0.300501, 2std=0.601003
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: frozen_lake
+tau: 0.25
+epsilon: 0.5
+c2: 0.0
+c3: 0.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.00333333, std_reward=0.057735, 2std=0.11547
+simulations=32, mean_reward=0.02, std_reward=0.140234, 2std=0.280468
+simulations=64, mean_reward=0.226667, std_reward=0.419375, 2std=0.838749
+simulations=128, mean_reward=0.48, std_reward=0.500435, 2std=1.00087
+simulations=256, mean_reward=0.713333, std_reward=0.45296, 2std=0.90592
+simulations=512, mean_reward=0.816667, std_reward=0.387586, 2std=0.775172
+simulations=1024, mean_reward=0.846667, std_reward=0.360911, 2std=0.721821
+simulations=2048, mean_reward=0.876667, std_reward=0.329369, 2std=0.658738
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: frozen_lake
+tau: 0.25
+epsilon: 0.5
+c2: 0.1
+c3: 0.1
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.00333333, std_reward=0.057735, 2std=0.11547
+simulations=32, mean_reward=0.0166667, std_reward=0.128233, 2std=0.256466
+simulations=64, mean_reward=0.206667, std_reward=0.405591, 2std=0.811182
+simulations=128, mean_reward=0.53, std_reward=0.499933, 2std=0.999866
+simulations=256, mean_reward=0.696667, std_reward=0.460466, 2std=0.920932
+simulations=512, mean_reward=0.773333, std_reward=0.419375, 2std=0.838749
+simulations=1024, mean_reward=0.85, std_reward=0.357668, 2std=0.715336
+simulations=2048, mean_reward=0.876667, std_reward=0.329369, 2std=0.658738
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: frozen_lake
+tau: 0.25
+epsilon: 0.5
+c2: 0.5
+c3: 0.5
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.0166667, std_reward=0.128233, 2std=0.256466
+simulations=32, mean_reward=0.04, std_reward=0.196287, 2std=0.392573
+simulations=64, mean_reward=0.256667, std_reward=0.437524, 2std=0.875047
+simulations=128, mean_reward=0.51, std_reward=0.500735, 2std=1.00147
+simulations=256, mean_reward=0.716667, std_reward=0.45137, 2std=0.90274
+simulations=512, mean_reward=0.793333, std_reward=0.405591, 2std=0.811182
+simulations=1024, mean_reward=0.836667, std_reward=0.370287, 2std=0.740574
+simulations=2048, mean_reward=0.873333, std_reward=0.333155, 2std=0.66631
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: frozen_lake
+tau: 0.25
+epsilon: 0.5
+c2: 1.0
+c3: 1.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.00666667, std_reward=0.081513, 2std=0.163026
+simulations=32, mean_reward=0.0433333, std_reward=0.203947, 2std=0.407893
+simulations=64, mean_reward=0.22, std_reward=0.414938, 2std=0.829877
+simulations=128, mean_reward=0.456667, std_reward=0.498951, 2std=0.997902
+simulations=256, mean_reward=0.706667, std_reward=0.456051, 2std=0.912101
+simulations=512, mean_reward=0.796667, std_reward=0.403151, 2std=0.806302
+simulations=1024, mean_reward=0.84, std_reward=0.367219, 2std=0.734437
+simulations=2048, mean_reward=0.816667, std_reward=0.387586, 2std=0.775172
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: frozen_lake
+tau: 0.25
+epsilon: 0.5
+c2: 2.0
+c3: 2.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=0, std_reward=0, 2std=0
+simulations=32, mean_reward=0.02, std_reward=0.140234, 2std=0.280468
+simulations=64, mean_reward=0.243333, std_reward=0.429812, 2std=0.859623
+simulations=128, mean_reward=0.526667, std_reward=0.500123, 2std=1.00025
+simulations=256, mean_reward=0.676667, std_reward=0.46853, 2std=0.937061
+simulations=512, mean_reward=0.756667, std_reward=0.429812, 2std=0.859623
+simulations=1024, mean_reward=0.826667, std_reward=0.379168, 2std=0.758335
+simulations=2048, mean_reward=0.836667, std_reward=0.370287, 2std=0.740574
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: four_rooms
+n: 5
+grid_size: 11
+time_limit: 50
+tau: 0.01
+epsilon: 0.5
+c2: 0.0
+c3: 0.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.236467, std_reward=0.33272, 2std=0.66544
+simulations=32, mean_reward=0.349927, std_reward=0.345611, 2std=0.691223
+simulations=64, mean_reward=0.47024, std_reward=0.326093, 2std=0.652187
+simulations=128, mean_reward=0.525407, std_reward=0.299061, 2std=0.598122
+simulations=256, mean_reward=0.555407, std_reward=0.282848, 2std=0.565695
+simulations=512, mean_reward=0.566827, std_reward=0.267632, 2std=0.535264
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+simulations=1024, mean_reward=0.584887, std_reward=0.24563, 2std=0.491259
+simulations=2048, mean_reward=0.57974, std_reward=0.252939, 2std=0.505879
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: four_rooms
+n: 5
+grid_size: 11
+time_limit: 50
+tau: 0.01
+epsilon: 0.5
+c2: 0.1
+c3: 0.1
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.23406, std_reward=0.329015, 2std=0.65803
+simulations=32, mean_reward=0.369047, std_reward=0.339793, 2std=0.679586
+simulations=64, mean_reward=0.47082, std_reward=0.31479, 2std=0.629579
+simulations=128, mean_reward=0.516487, std_reward=0.293096, 2std=0.586192
+simulations=256, mean_reward=0.564313, std_reward=0.270679, 2std=0.541359
+simulations=512, mean_reward=0.5728, std_reward=0.262947, 2std=0.525894
+simulations=1024, mean_reward=0.579447, std_reward=0.251454, 2std=0.502909
+simulations=2048, mean_reward=0.589287, std_reward=0.249598, 2std=0.499196
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: four_rooms
+n: 5
+grid_size: 11
+time_limit: 50
+tau: 0.01
+epsilon: 0.5
+c2: 0.5
+c3: 0.5
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.221133, std_reward=0.330649, 2std=0.661297
+simulations=32, mean_reward=0.35622, std_reward=0.341166, 2std=0.682332
+simulations=64, mean_reward=0.4775, std_reward=0.31626, 2std=0.63252
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+simulations=128, mean_reward=0.52666, std_reward=0.291307, 2std=0.582613
+simulations=256, mean_reward=0.54822, std_reward=0.274459, 2std=0.548919
+simulations=512, mean_reward=0.577033, std_reward=0.257364, 2std=0.514727
+simulations=1024, mean_reward=0.574233, std_reward=0.263827, 2std=0.527655
+simulations=2048, mean_reward=0.58748, std_reward=0.249122, 2std=0.498243
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: four_rooms
+n: 5
+grid_size: 11
+time_limit: 50
+tau: 0.01
+epsilon: 0.5
+c2: 1.0
+c3: 1.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.23834, std_reward=0.341899, 2std=0.683798
+simulations=32, mean_reward=0.35778, std_reward=0.347961, 2std=0.695922
+simulations=64, mean_reward=0.4737, std_reward=0.314915, 2std=0.629829
+simulations=128, mean_reward=0.52284, std_reward=0.299643, 2std=0.599286
+simulations=256, mean_reward=0.542987, std_reward=0.27957, 2std=0.55914
+simulations=512, mean_reward=0.567753, std_reward=0.26333, 2std=0.526659
+simulations=1024, mean_reward=0.579773, std_reward=0.253727, 2std=0.507455
+simulations=2048, mean_reward=0.5753, std_reward=0.253013, 2std=0.506025
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: four_rooms
+n: 5
+grid_size: 11
+time_limit: 50
+tau: 0.01
+epsilon: 0.5
+c2: 2.0
+c3: 2.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.2397, std_reward=0.337698, 2std=0.675396
+simulations=32, mean_reward=0.359033, std_reward=0.340806, 2std=0.681612
+simulations=64, mean_reward=0.462827, std_reward=0.313718, 2std=0.627436
+simulations=128, mean_reward=0.524047, std_reward=0.290568, 2std=0.581136
+simulations=256, mean_reward=0.550833, std_reward=0.275974, 2std=0.551948
+simulations=512, mean_reward=0.570293, std_reward=0.258138, 2std=0.516276
+simulations=1024, mean_reward=0.58322, std_reward=0.254926, 2std=0.509852
+simulations=2048, mean_reward=0.581193, std_reward=0.25177, 2std=0.50354
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: four_rooms
+n: 5
+grid_size: 11
+time_limit: 50
+tau: 0.25
+epsilon: 0.5
+c2: 0.0
+c3: 0.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.2349, std_reward=0.32903, 2std=0.65806
+simulations=32, mean_reward=0.35102, std_reward=0.34083, 2std=0.681661
+simulations=64, mean_reward=0.446007, std_reward=0.328966, 2std=0.657931
+simulations=128, mean_reward=0.52018, std_reward=0.292055, 2std=0.58411
+simulations=256, mean_reward=0.550727, std_reward=0.273167, 2std=0.546334
+simulations=512, mean_reward=0.55572, std_reward=0.271569, 2std=0.543138
+simulations=1024, mean_reward=0.574093, std_reward=0.258402, 2std=0.516804
+simulations=2048, mean_reward=0.572027, std_reward=0.259146, 2std=0.518293
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: four_rooms
+n: 5
+grid_size: 11
+time_limit: 50
+tau: 0.25
+epsilon: 0.5
+c2: 0.1
+c3: 0.1
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.217347, std_reward=0.327752, 2std=0.655504
+simulations=32, mean_reward=0.371207, std_reward=0.337431, 2std=0.674861
+simulations=64, mean_reward=0.446187, std_reward=0.324869, 2std=0.649737
+simulations=128, mean_reward=0.53268, std_reward=0.285376, 2std=0.570752
+simulations=256, mean_reward=0.563587, std_reward=0.274514, 2std=0.549027
+simulations=512, mean_reward=0.56038, std_reward=0.264071, 2std=0.528142
+simulations=1024, mean_reward=0.582893, std_reward=0.248918, 2std=0.497835
+simulations=2048, mean_reward=0.578413, std_reward=0.254446, 2std=0.508893
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: four_rooms
+n: 5
+grid_size: 11
+time_limit: 50
+tau: 0.25
+epsilon: 0.5
+c2: 0.5
+c3: 0.5
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.23124, std_reward=0.329597, 2std=0.659194
+simulations=32, mean_reward=0.353167, std_reward=0.352073, 2std=0.704146
+simulations=64, mean_reward=0.462867, std_reward=0.328644, 2std=0.657289
+simulations=128, mean_reward=0.53034, std_reward=0.296257, 2std=0.592515
+simulations=256, mean_reward=0.55064, std_reward=0.274939, 2std=0.549879
+simulations=512, mean_reward=0.575353, std_reward=0.256413, 2std=0.512827
+simulations=1024, mean_reward=0.582747, std_reward=0.251318, 2std=0.502637
+simulations=2048, mean_reward=0.585213, std_reward=0.243744, 2std=0.487488
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: four_rooms
+n: 5
+grid_size: 11
+time_limit: 50
+tau: 0.25
+epsilon: 0.5
+c2: 1.0
+c3: 1.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.236767, std_reward=0.333814, 2std=0.667629
+simulations=32, mean_reward=0.351393, std_reward=0.344462, 2std=0.688924
+simulations=64, mean_reward=0.462447, std_reward=0.328247, 2std=0.656494
+simulations=128, mean_reward=0.53032, std_reward=0.292511, 2std=0.585022
+simulations=256, mean_reward=0.55298, std_reward=0.273139, 2std=0.546277
+simulations=512, mean_reward=0.567573, std_reward=0.264493, 2std=0.528987
+simulations=1024, mean_reward=0.58206, std_reward=0.25124, 2std=0.50248
+simulations=2048, mean_reward=0.581633, std_reward=0.247863, 2std=0.495725
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: four_rooms
+n: 5
+grid_size: 11
+time_limit: 50
+tau: 0.25
+epsilon: 0.5
+c2: 2.0
+c3: 2.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.248387, std_reward=0.343702, 2std=0.687405
+simulations=32, mean_reward=0.35522, std_reward=0.338491, 2std=0.676982
+simulations=64, mean_reward=0.447767, std_reward=0.319817, 2std=0.639633
+simulations=128, mean_reward=0.52784, std_reward=0.287609, 2std=0.575219
+simulations=256, mean_reward=0.556427, std_reward=0.272204, 2std=0.544408
+simulations=512, mean_reward=0.5587, std_reward=0.262993, 2std=0.525986
+simulations=1024, mean_reward=0.5705, std_reward=0.258415, 2std=0.516829
+simulations=2048, mean_reward=0.58254, std_reward=0.24687, 2std=0.49374
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: passenger_grid
+time_limit: 70
+tau: 0.01
+epsilon: 0.5
+c2: 0.0
+c3: 0.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.743333, std_reward=1.17276, 2std=2.34553
+simulations=32, mean_reward=1.84, std_reward=1.84002, 2std=3.68005
+simulations=64, mean_reward=4.09, std_reward=2.37079, 2std=4.74158
+simulations=128, mean_reward=5.97667, std_reward=2.14744, 2std=4.29488
+simulations=256, mean_reward=6.61667, std_reward=1.51792, 2std=3.03583
+simulations=512, mean_reward=6.82, std_reward=1.05418, 2std=2.10837
+simulations=1024, mean_reward=6.80667, std_reward=1.07695, 2std=2.1539
+simulations=2048, mean_reward=6.86, std_reward=0.981637, 2std=1.96327
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: passenger_grid
+time_limit: 70
+tau: 0.01
+epsilon: 0.5
+c2: 0.1
+c3: 0.1
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.92, std_reward=1.53671, 2std=3.07342
+simulations=32, mean_reward=1.88667, std_reward=2.00513, 2std=4.01027
+simulations=64, mean_reward=4.30333, std_reward=2.46677, 2std=4.93353
+simulations=128, mean_reward=6.09, std_reward=1.96846, 2std=3.93691
+simulations=256, mean_reward=6.80333, std_reward=1.0496, 2std=2.0992
+simulations=512, mean_reward=6.82333, std_reward=1.08137, 2std=2.16273
+simulations=1024, mean_reward=6.82333, std_reward=1.08137, 2std=2.16273
+simulations=2048, mean_reward=6.86, std_reward=0.981637, 2std=1.96327
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: passenger_grid
+time_limit: 70
+tau: 0.01
+epsilon: 0.5
+c2: 0.5
+c3: 0.5
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.75, std_reward=1.12771, 2std=2.25543
+simulations=32, mean_reward=1.91667, std_reward=1.89606, 2std=3.79212
+simulations=64, mean_reward=4.38667, std_reward=2.50694, 2std=5.01389
+simulations=128, mean_reward=6.15667, std_reward=2.00137, 2std=4.00274
+simulations=256, mean_reward=6.65, std_reward=1.4333, 2std=2.8666
+simulations=512, mean_reward=6.83333, std_reward=1.03074, 2std=2.06149
+simulations=1024, mean_reward=6.90667, std_reward=0.804225, 2std=1.60845
+simulations=2048, mean_reward=6.85667, std_reward=0.95174, 2std=1.90348
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: passenger_grid
+time_limit: 70
+tau: 0.01
+epsilon: 0.5
+c2: 1.0
+c3: 1.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.67, std_reward=1.09778, 2std=2.19556
+simulations=32, mean_reward=1.89667, std_reward=2.0624, 2std=4.1248
+simulations=64, mean_reward=4.19667, std_reward=2.50311, 2std=5.00621
+simulations=128, mean_reward=6.03, std_reward=2.05504, 2std=4.11007
+simulations=256, mean_reward=6.76, std_reward=1.21132, 2std=2.42264
+simulations=512, mean_reward=6.90333, std_reward=0.76765, 2std=1.5353
+simulations=1024, mean_reward=6.77667, std_reward=1.21589, 2std=2.43178
+simulations=2048, mean_reward=6.87, std_reward=0.925177, 2std=1.85035
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: passenger_grid
+time_limit: 70
+tau: 0.01
+epsilon: 0.5
+c2: 2.0
+c3: 2.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.71, std_reward=1.24542, 2std=2.49084
+simulations=32, mean_reward=2.08333, std_reward=2.01907, 2std=4.03814
+simulations=64, mean_reward=4.29333, std_reward=2.53813, 2std=5.07626
+simulations=128, mean_reward=6.07333, std_reward=1.95979, 2std=3.91957
+simulations=256, mean_reward=6.83333, std_reward=1.03074, 2std=2.06149
+simulations=512, mean_reward=6.85667, std_reward=0.95174, 2std=1.90348
+simulations=1024, mean_reward=6.90333, std_reward=0.76765, 2std=1.5353
+simulations=2048, mean_reward=6.89, std_reward=0.800021, 2std=1.60004
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: passenger_grid
+time_limit: 70
+tau: 0.25
+epsilon: 0.5
+c2: 0.0
+c3: 0.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.836667, std_reward=1.24974, 2std=2.49949
+simulations=32, mean_reward=2.1, std_reward=1.92935, 2std=3.85871
+simulations=64, mean_reward=4.35, std_reward=2.58258, 2std=5.16517
+simulations=128, mean_reward=5.95667, std_reward=2.03682, 2std=4.07363
+simulations=256, mean_reward=6.80667, std_reward=1.07695, 2std=2.1539
+simulations=512, mean_reward=6.85667, std_reward=0.95174, 2std=1.90348
+simulations=1024, mean_reward=6.84667, std_reward=1.00658, 2std=2.01316
+simulations=2048, mean_reward=6.88, std_reward=0.864924, 2std=1.72985
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: passenger_grid
+time_limit: 70
+tau: 0.25
+epsilon: 0.5
+c2: 0.1
+c3: 0.1
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.736667, std_reward=1.1911, 2std=2.3822
+simulations=32, mean_reward=2.31, std_reward=2.28721, 2std=4.57442
+simulations=64, mean_reward=4.28, std_reward=2.49044, 2std=4.98087
+simulations=128, mean_reward=6.35, std_reward=1.67836, 2std=3.35672
+simulations=256, mean_reward=6.74667, std_reward=1.23053, 2std=2.46106
+simulations=512, mean_reward=6.82333, std_reward=1.08137, 2std=2.16273
+simulations=1024, mean_reward=6.83667, std_reward=1.05848, 2std=2.11697
+simulations=2048, mean_reward=6.81333, std_reward=1.12964, 2std=2.25927
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: passenger_grid
+time_limit: 70
+tau: 0.25
+epsilon: 0.5
+c2: 0.5
+c3: 0.5
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.73, std_reward=1.15826, 2std=2.31652
+simulations=32, mean_reward=2.11333, std_reward=2.12183, 2std=4.24366
+simulations=64, mean_reward=4.28667, std_reward=2.43535, 2std=4.8707
+simulations=128, mean_reward=6.16333, std_reward=1.73398, 2std=3.46795
+simulations=256, mean_reward=6.93667, std_reward=0.56603, 2std=1.13206
+simulations=512, mean_reward=6.90333, std_reward=0.76765, 2std=1.5353
+simulations=1024, mean_reward=6.82333, std_reward=1.08137, 2std=2.16273
+simulations=2048, mean_reward=6.86667, std_reward=0.89343, 2std=1.78686
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: passenger_grid
+time_limit: 70
+tau: 0.25
+epsilon: 0.5
+c2: 1.0
+c3: 1.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.993333, std_reward=1.48119, 2std=2.96239
+simulations=32, mean_reward=1.79667, std_reward=1.78305, 2std=3.56609
+simulations=64, mean_reward=4.32667, std_reward=2.49949, 2std=4.99898
+simulations=128, mean_reward=6.08667, std_reward=1.9524, 2std=3.9048
+simulations=256, mean_reward=6.77333, std_reward=1.06728, 2std=2.13456
+simulations=512, mean_reward=6.91667, std_reward=0.733609, 2std=1.46722
+simulations=1024, mean_reward=6.78667, std_reward=1.17149, 2std=2.34299
+simulations=2048, mean_reward=6.85667, std_reward=0.95174, 2std=1.90348
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: passenger_grid
+time_limit: 70
+tau: 0.25
+epsilon: 0.5
+c2: 2.0
+c3: 2.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.763333, std_reward=1.12467, 2std=2.24933
+simulations=32, mean_reward=2, std_reward=2.07227, 2std=4.14455
+simulations=64, mean_reward=4.28, std_reward=2.47427, 2std=4.94854
+simulations=128, mean_reward=5.97667, std_reward=1.99232, 2std=3.98465
+simulations=256, mean_reward=6.87333, std_reward=0.795444, 2std=1.59089
+simulations=512, mean_reward=6.91667, std_reward=0.733609, 2std=1.46722
+simulations=1024, mean_reward=6.86, std_reward=0.981637, 2std=1.96327
+simulations=2048, mean_reward=6.96333, std_reward=0.464804, 2std=0.929607
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: factored_river_swim
+num_rivers: 3
+nlocations: 5
+time_limit: 35
+tau: 0.01
+epsilon: 0.5
+c2: 0.0
+c3: 0.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=1.27511, std_reward=0.205406, 2std=0.410812
+simulations=32, mean_reward=1.45633, std_reward=0.227762, 2std=0.455523
+simulations=64, mean_reward=1.63172, std_reward=0.323323, 2std=0.646645
+simulations=128, mean_reward=1.9115, std_reward=0.467876, 2std=0.935751
+simulations=256, mean_reward=2.09017, std_reward=0.595354, 2std=1.19071
+simulations=512, mean_reward=2.58783, std_reward=0.736265, 2std=1.47253
+simulations=1024, mean_reward=3.1735, std_reward=0.831444, 2std=1.66289
+simulations=2048, mean_reward=3.59644, std_reward=0.918834, 2std=1.83767
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: factored_river_swim
+num_rivers: 3
+nlocations: 5
+time_limit: 35
+tau: 0.01
+epsilon: 0.5
+c2: 0.1
+c3: 0.1
+mean_performance_by_simulations:
+simulations=16, mean_reward=1.27511, std_reward=0.205406, 2std=0.410812
+simulations=32, mean_reward=1.45044, std_reward=0.221871, 2std=0.443743
+simulations=64, mean_reward=1.63044, std_reward=0.349477, 2std=0.698953
+simulations=128, mean_reward=1.93011, std_reward=0.48327, 2std=0.966539
+simulations=256, mean_reward=2.19339, std_reward=0.590383, 2std=1.18077
+simulations=512, mean_reward=2.65, std_reward=0.759625, 2std=1.51925
+simulations=1024, mean_reward=3.20839, std_reward=0.878089, 2std=1.75618
+simulations=2048, mean_reward=3.63272, std_reward=0.908821, 2std=1.81764
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: factored_river_swim
+num_rivers: 3
+nlocations: 5
+time_limit: 35
+tau: 0.01
+epsilon: 0.5
+c2: 0.5
+c3: 0.5
+mean_performance_by_simulations:
+simulations=16, mean_reward=1.27511, std_reward=0.205406, 2std=0.410812
+simulations=32, mean_reward=1.44167, std_reward=0.182638, 2std=0.365276
+simulations=64, mean_reward=1.64544, std_reward=0.351529, 2std=0.703058
+simulations=128, mean_reward=1.91411, std_reward=0.505627, 2std=1.01125
+simulations=256, mean_reward=2.134, std_reward=0.572424, 2std=1.14485
+simulations=512, mean_reward=2.70417, std_reward=0.789132, 2std=1.57826
+simulations=1024, mean_reward=3.17717, std_reward=0.873812, 2std=1.74762
+Shutting down the worker
+Shutting down the worker
+simulations=2048, mean_reward=3.62239, std_reward=0.954217, 2std=1.90843
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: factored_river_swim
+num_rivers: 3
+nlocations: 5
+time_limit: 35
+tau: 0.01
+epsilon: 0.5
+c2: 1.0
+c3: 1.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=1.27511, std_reward=0.205406, 2std=0.410812
+simulations=32, mean_reward=1.42283, std_reward=0.143851, 2std=0.287701
+simulations=64, mean_reward=1.65194, std_reward=0.374623, 2std=0.749247
+simulations=128, mean_reward=1.86861, std_reward=0.437484, 2std=0.874969
+simulations=256, mean_reward=2.20611, std_reward=0.623128, 2std=1.24626
+simulations=512, mean_reward=2.62461, std_reward=0.743667, 2std=1.48733
+simulations=1024, mean_reward=3.21939, std_reward=0.848845, 2std=1.69769
+simulations=2048, mean_reward=3.66756, std_reward=0.971715, 2std=1.94343
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: factored_river_swim
+num_rivers: 3
+nlocations: 5
+time_limit: 35
+tau: 0.01
+epsilon: 0.5
+c2: 2.0
+c3: 2.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=1.27511, std_reward=0.205406, 2std=0.410812
+simulations=32, mean_reward=1.44722, std_reward=0.189529, 2std=0.379058
+simulations=64, mean_reward=1.61089, std_reward=0.335345, 2std=0.67069
+simulations=128, mean_reward=1.91017, std_reward=0.500816, 2std=1.00163
+simulations=256, mean_reward=2.16544, std_reward=0.567039, 2std=1.13408
+simulations=512, mean_reward=2.66206, std_reward=0.713355, 2std=1.42671
+simulations=1024, mean_reward=3.173, std_reward=0.874279, 2std=1.74856
+simulations=2048, mean_reward=3.70611, std_reward=1.0493, 2std=2.0986
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: factored_river_swim
+num_rivers: 3
+nlocations: 5
+time_limit: 35
+tau: 0.25
+epsilon: 0.5
+c2: 0.0
+c3: 0.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=1.21039, std_reward=0.321172, 2std=0.642345
+simulations=32, mean_reward=1.32939, std_reward=0.349523, 2std=0.699047
+simulations=64, mean_reward=1.68511, std_reward=0.549984, 2std=1.09997
+simulations=128, mean_reward=2.07922, std_reward=0.633751, 2std=1.2675
+simulations=256, mean_reward=2.33506, std_reward=0.642528, 2std=1.28506
+simulations=512, mean_reward=2.78111, std_reward=0.835361, 2std=1.67072
+simulations=1024, mean_reward=3.20289, std_reward=0.855146, 2std=1.71029
+simulations=2048, mean_reward=3.56478, std_reward=0.883208, 2std=1.76642
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: factored_river_swim
+num_rivers: 3
+nlocations: 5
+time_limit: 35
+tau: 0.25
+epsilon: 0.5
+c2: 0.1
+c3: 0.1
+mean_performance_by_simulations:
+simulations=16, mean_reward=1.21039, std_reward=0.321172, 2std=0.642345
+simulations=32, mean_reward=1.33389, std_reward=0.348637, 2std=0.697273
+simulations=64, mean_reward=1.70433, std_reward=0.574399, 2std=1.1488
+simulations=128, mean_reward=2.06089, std_reward=0.638375, 2std=1.27675
+simulations=256, mean_reward=2.38128, std_reward=0.718493, 2std=1.43699
+simulations=512, mean_reward=2.85239, std_reward=0.848728, 2std=1.69746
+simulations=1024, mean_reward=3.224, std_reward=0.858507, 2std=1.71701
+simulations=2048, mean_reward=3.53094, std_reward=0.924965, 2std=1.84993
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: factored_river_swim
+num_rivers: 3
+nlocations: 5
+time_limit: 35
+tau: 0.25
+epsilon: 0.5
+c2: 0.5
+c3: 0.5
+mean_performance_by_simulations:
+simulations=16, mean_reward=1.21039, std_reward=0.321172, 2std=0.642345
+simulations=32, mean_reward=1.34972, std_reward=0.343949, 2std=0.687897
+simulations=64, mean_reward=1.72444, std_reward=0.548205, 2std=1.09641
+simulations=128, mean_reward=2.06878, std_reward=0.624977, 2std=1.24995
+simulations=256, mean_reward=2.39544, std_reward=0.681425, 2std=1.36285
+simulations=512, mean_reward=2.8175, std_reward=0.860731, 2std=1.72146
+simulations=1024, mean_reward=3.20472, std_reward=0.960019, 2std=1.92004
+simulations=2048, mean_reward=3.55406, std_reward=0.855564, 2std=1.71113
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: factored_river_swim
+num_rivers: 3
+nlocations: 5
+time_limit: 35
+tau: 0.25
+epsilon: 0.5
+c2: 1.0
+c3: 1.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=1.21039, std_reward=0.321172, 2std=0.642345
+simulations=32, mean_reward=1.36289, std_reward=0.357843, 2std=0.715686
+simulations=64, mean_reward=1.70206, std_reward=0.571715, 2std=1.14343
+simulations=128, mean_reward=2.14183, std_reward=0.614385, 2std=1.22877
+simulations=256, mean_reward=2.412, std_reward=0.706806, 2std=1.41361
+simulations=512, mean_reward=2.892, std_reward=0.841446, 2std=1.68289
+simulations=1024, mean_reward=3.25433, std_reward=0.867623, 2std=1.73525
+simulations=2048, mean_reward=3.56872, std_reward=0.913604, 2std=1.82721
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: factored_river_swim
+num_rivers: 3
+nlocations: 5
+time_limit: 35
+tau: 0.25
+epsilon: 0.5
+c2: 2.0
+c3: 2.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=1.21039, std_reward=0.321172, 2std=0.642345
+simulations=32, mean_reward=1.32233, std_reward=0.334659, 2std=0.669318
+simulations=64, mean_reward=1.68356, std_reward=0.548567, 2std=1.09713
+simulations=128, mean_reward=2.0725, std_reward=0.63872, 2std=1.27744
+simulations=256, mean_reward=2.3785, std_reward=0.723597, 2std=1.44719
+simulations=512, mean_reward=2.88822, std_reward=0.797326, 2std=1.59465
+simulations=1024, mean_reward=3.2265, std_reward=0.867207, 2std=1.73441
+simulations=2048, mean_reward=3.58033, std_reward=0.917812, 2std=1.83562
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.01
+epsilon: 0.05
+c2: 0.0
+c3: 0.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.58617, std_reward=1.43291, 2std=2.86582
+simulations=32, mean_reward=8.71217, std_reward=1.36813, 2std=2.73626
+simulations=64, mean_reward=8.881, std_reward=1.43937, 2std=2.87875
+simulations=128, mean_reward=9.0665, std_reward=1.57643, 2std=3.15286
+simulations=256, mean_reward=9.43533, std_reward=1.60208, 2std=3.20416
+simulations=512, mean_reward=10.3177, std_reward=2.14986, 2std=4.29973
+simulations=1024, mean_reward=11.7303, std_reward=2.49711, 2std=4.99423
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+simulations=2048, mean_reward=13.6915, std_reward=2.74957, 2std=5.49913
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.01
+epsilon: 0.05
+c2: 0.1
+c3: 0.1
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.56967, std_reward=1.31473, 2std=2.62947
+simulations=32, mean_reward=8.67333, std_reward=1.25162, 2std=2.50325
+simulations=64, mean_reward=8.90133, std_reward=1.46788, 2std=2.93577
+simulations=128, mean_reward=9.03133, std_reward=1.60141, 2std=3.20282
+simulations=256, mean_reward=9.49267, std_reward=1.79759, 2std=3.59518
+simulations=512, mean_reward=10.211, std_reward=2.02271, 2std=4.04543
+simulations=1024, mean_reward=11.708, std_reward=2.36695, 2std=4.7339
+simulations=2048, mean_reward=13.849, std_reward=2.72706, 2std=5.45413
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.01
+epsilon: 0.05
+c2: 0.5
+c3: 0.5
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.59533, std_reward=1.27489, 2std=2.54978
+simulations=32, mean_reward=8.78183, std_reward=1.42445, 2std=2.8489
+simulations=64, mean_reward=8.73083, std_reward=1.41939, 2std=2.83877
+simulations=128, mean_reward=9.0155, std_reward=1.49492, 2std=2.98984
+simulations=256, mean_reward=9.47217, std_reward=1.67485, 2std=3.3497
+simulations=512, mean_reward=10.2678, std_reward=2.05167, 2std=4.10333
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+simulations=1024, mean_reward=11.8397, std_reward=2.67317, 2std=5.34635
+simulations=2048, mean_reward=14.1632, std_reward=2.93701, 2std=5.87403
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.01
+epsilon: 0.05
+c2: 1.0
+c3: 1.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.64883, std_reward=1.38261, 2std=2.76522
+simulations=32, mean_reward=8.757, std_reward=1.61628, 2std=3.23257
+simulations=64, mean_reward=8.76867, std_reward=1.37998, 2std=2.75995
+simulations=128, mean_reward=8.78167, std_reward=1.60029, 2std=3.20057
+simulations=256, mean_reward=9.08317, std_reward=1.56301, 2std=3.12601
+simulations=512, mean_reward=9.49833, std_reward=1.87309, 2std=3.74618
+simulations=1024, mean_reward=10.8303, std_reward=2.61877, 2std=5.23755
+simulations=2048, mean_reward=13.1318, std_reward=3.2201, 2std=6.44021
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.01
+epsilon: 0.05
+c2: 2.0
+c3: 2.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.45317, std_reward=1.38341, 2std=2.76682
+simulations=32, mean_reward=8.72017, std_reward=1.4007, 2std=2.8014
+simulations=64, mean_reward=8.623, std_reward=1.43218, 2std=2.86436
+simulations=128, mean_reward=8.55933, std_reward=1.3794, 2std=2.7588
+simulations=256, mean_reward=8.68533, std_reward=1.49233, 2std=2.98466
+simulations=512, mean_reward=8.50317, std_reward=1.42816, 2std=2.85631
+simulations=1024, mean_reward=8.916, std_reward=1.85277, 2std=3.70555
+simulations=2048, mean_reward=10.0343, std_reward=2.56922, 2std=5.13845
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.01
+epsilon: 0.1
+c2: 0.0
+c3: 0.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.53683, std_reward=1.4579, 2std=2.9158
+simulations=32, mean_reward=8.65, std_reward=1.24623, 2std=2.49246
+simulations=64, mean_reward=8.50433, std_reward=1.39666, 2std=2.79333
+simulations=128, mean_reward=8.45317, std_reward=1.31168, 2std=2.62337
+simulations=256, mean_reward=8.54733, std_reward=1.47462, 2std=2.94924
+simulations=512, mean_reward=8.6245, std_reward=1.64629, 2std=3.29258
+simulations=1024, mean_reward=9.0805, std_reward=1.8859, 2std=3.7718
+simulations=2048, mean_reward=9.84133, std_reward=2.15842, 2std=4.31684
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.01
+epsilon: 0.1
+c2: 0.1
+c3: 0.1
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.59383, std_reward=1.43855, 2std=2.87711
+simulations=32, mean_reward=8.56667, std_reward=1.40023, 2std=2.80047
+simulations=64, mean_reward=8.515, std_reward=1.35231, 2std=2.70462
+simulations=128, mean_reward=8.45783, std_reward=1.335, 2std=2.67001
+simulations=256, mean_reward=8.56333, std_reward=1.50459, 2std=3.00918
+simulations=512, mean_reward=8.88067, std_reward=1.76161, 2std=3.52323
+simulations=1024, mean_reward=9.07717, std_reward=1.9137, 2std=3.8274
+simulations=2048, mean_reward=10.055, std_reward=2.24305, 2std=4.4861
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.01
+epsilon: 0.1
+c2: 0.5
+c3: 0.5
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.63417, std_reward=1.42728, 2std=2.85455
+simulations=32, mean_reward=8.68833, std_reward=1.50228, 2std=3.00457
+simulations=64, mean_reward=8.37417, std_reward=1.39207, 2std=2.78415
+simulations=128, mean_reward=8.39833, std_reward=1.34123, 2std=2.68246
+simulations=256, mean_reward=8.57983, std_reward=1.41406, 2std=2.82812
+simulations=512, mean_reward=8.59767, std_reward=1.7427, 2std=3.4854
+simulations=1024, mean_reward=8.68033, std_reward=1.8648, 2std=3.7296
+simulations=2048, mean_reward=10.1247, std_reward=2.4956, 2std=4.99119
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.01
+epsilon: 0.1
+c2: 1.0
+c3: 1.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.57483, std_reward=1.39996, 2std=2.79992
+simulations=32, mean_reward=8.546, std_reward=1.3708, 2std=2.7416
+simulations=64, mean_reward=8.45183, std_reward=1.31104, 2std=2.62209
+simulations=128, mean_reward=8.3565, std_reward=1.43766, 2std=2.87531
+simulations=256, mean_reward=8.37067, std_reward=1.45613, 2std=2.91227
+simulations=512, mean_reward=8.40583, std_reward=1.66621, 2std=3.33242
+simulations=1024, mean_reward=8.38767, std_reward=1.88883, 2std=3.77766
+simulations=2048, mean_reward=9.5885, std_reward=2.57226, 2std=5.14452
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.01
+epsilon: 0.1
+c2: 2.0
+c3: 2.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.61333, std_reward=1.40114, 2std=2.80227
+simulations=32, mean_reward=8.45183, std_reward=1.44169, 2std=2.88339
+simulations=64, mean_reward=8.46633, std_reward=1.25406, 2std=2.50811
+simulations=128, mean_reward=8.08217, std_reward=1.28571, 2std=2.57142
+simulations=256, mean_reward=8.021, std_reward=1.32398, 2std=2.64797
+simulations=512, mean_reward=7.90617, std_reward=1.49204, 2std=2.98409
+simulations=1024, mean_reward=7.4285, std_reward=1.59397, 2std=3.18793
+simulations=2048, mean_reward=7.9455, std_reward=2.03737, 2std=4.07475
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.01
+epsilon: 0.5
+c2: 0.0
+c3: 0.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.4995, std_reward=1.36345, 2std=2.72691
+simulations=32, mean_reward=8.556, std_reward=1.39121, 2std=2.78242
+simulations=64, mean_reward=8.54833, std_reward=1.29396, 2std=2.58793
+simulations=128, mean_reward=8.24517, std_reward=1.34652, 2std=2.69304
+simulations=256, mean_reward=7.83067, std_reward=1.17204, 2std=2.34409
+simulations=512, mean_reward=7.201, std_reward=1.29497, 2std=2.58995
+simulations=1024, mean_reward=6.9405, std_reward=1.16062, 2std=2.32124
+simulations=2048, mean_reward=7.0465, std_reward=1.29001, 2std=2.58002
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.01
+epsilon: 0.5
+c2: 0.1
+c3: 0.1
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.4995, std_reward=1.36345, 2std=2.72691
+simulations=32, mean_reward=8.556, std_reward=1.39121, 2std=2.78242
+simulations=64, mean_reward=8.54833, std_reward=1.29396, 2std=2.58793
+simulations=128, mean_reward=8.24517, std_reward=1.34652, 2std=2.69304
+simulations=256, mean_reward=7.83067, std_reward=1.17204, 2std=2.34409
+simulations=512, mean_reward=7.201, std_reward=1.29497, 2std=2.58995
+simulations=1024, mean_reward=6.9405, std_reward=1.16062, 2std=2.32124
+simulations=2048, mean_reward=7.0465, std_reward=1.29001, 2std=2.58002
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.01
+epsilon: 0.5
+c2: 0.5
+c3: 0.5
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.4995, std_reward=1.36345, 2std=2.72691
+simulations=32, mean_reward=8.556, std_reward=1.39121, 2std=2.78242
+simulations=64, mean_reward=8.54833, std_reward=1.29396, 2std=2.58793
+simulations=128, mean_reward=8.24517, std_reward=1.34652, 2std=2.69304
+simulations=256, mean_reward=7.83067, std_reward=1.17204, 2std=2.34409
+simulations=512, mean_reward=7.201, std_reward=1.29497, 2std=2.58995
+simulations=1024, mean_reward=6.9405, std_reward=1.16062, 2std=2.32124
+simulations=2048, mean_reward=7.0465, std_reward=1.29001, 2std=2.58002
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.01
+epsilon: 0.5
+c2: 1.0
+c3: 1.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.4995, std_reward=1.36345, 2std=2.72691
+simulations=32, mean_reward=8.556, std_reward=1.39121, 2std=2.78242
+simulations=64, mean_reward=8.54833, std_reward=1.29396, 2std=2.58793
+simulations=128, mean_reward=8.24517, std_reward=1.34652, 2std=2.69304
+simulations=256, mean_reward=7.83067, std_reward=1.17204, 2std=2.34409
+simulations=512, mean_reward=7.201, std_reward=1.29497, 2std=2.58995
+simulations=1024, mean_reward=6.9405, std_reward=1.16062, 2std=2.32124
+simulations=2048, mean_reward=7.0465, std_reward=1.29001, 2std=2.58002
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.01
+epsilon: 0.5
+c2: 2.0
+c3: 2.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.4995, std_reward=1.36345, 2std=2.72691
+simulations=32, mean_reward=8.556, std_reward=1.39121, 2std=2.78242
+simulations=64, mean_reward=8.54833, std_reward=1.29396, 2std=2.58793
+simulations=128, mean_reward=8.24517, std_reward=1.34652, 2std=2.69304
+simulations=256, mean_reward=7.83067, std_reward=1.17204, 2std=2.34409
+simulations=512, mean_reward=7.201, std_reward=1.29497, 2std=2.58995
+simulations=1024, mean_reward=6.9405, std_reward=1.16062, 2std=2.32124
+simulations=2048, mean_reward=7.0465, std_reward=1.29001, 2std=2.58002
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.25
+epsilon: 0.05
+c2: 0.0
+c3: 0.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.588, std_reward=1.35041, 2std=2.70083
+simulations=32, mean_reward=8.61583, std_reward=1.20009, 2std=2.40017
+simulations=64, mean_reward=8.9775, std_reward=1.40903, 2std=2.81805
+simulations=128, mean_reward=9.092, std_reward=1.53426, 2std=3.06853
+simulations=256, mean_reward=9.4825, std_reward=1.79473, 2std=3.58946
+simulations=512, mean_reward=10.109, std_reward=1.84352, 2std=3.68704
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+simulations=1024, mean_reward=11.5142, std_reward=2.43988, 2std=4.87975
+simulations=2048, mean_reward=13.4985, std_reward=2.7722, 2std=5.5444
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.25
+epsilon: 0.05
+c2: 0.1
+c3: 0.1
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.61483, std_reward=1.41637, 2std=2.83273
+simulations=32, mean_reward=8.742, std_reward=1.25236, 2std=2.50471
+simulations=64, mean_reward=8.85283, std_reward=1.55198, 2std=3.10396
+simulations=128, mean_reward=9.11417, std_reward=1.55889, 2std=3.11777
+simulations=256, mean_reward=9.4865, std_reward=1.76078, 2std=3.52156
+simulations=512, mean_reward=10.0657, std_reward=2.02689, 2std=4.05378
+simulations=1024, mean_reward=11.7698, std_reward=2.51835, 2std=5.03671
+simulations=2048, mean_reward=13.8485, std_reward=2.74946, 2std=5.49893
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.25
+epsilon: 0.05
+c2: 0.5
+c3: 0.5
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.64767, std_reward=1.31569, 2std=2.63137
+simulations=32, mean_reward=8.668, std_reward=1.37422, 2std=2.74845
+simulations=64, mean_reward=8.75167, std_reward=1.41442, 2std=2.82884
+simulations=128, mean_reward=9.00217, std_reward=1.52744, 2std=3.05488
+simulations=256, mean_reward=9.55883, std_reward=1.76916, 2std=3.53832
+simulations=512, mean_reward=10.2587, std_reward=2.18295, 2std=4.36589
+simulations=1024, mean_reward=11.8232, std_reward=2.6068, 2std=5.21359
+simulations=2048, mean_reward=13.7113, std_reward=3.21516, 2std=6.43033
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.25
+epsilon: 0.05
+c2: 1.0
+c3: 1.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.58083, std_reward=1.22803, 2std=2.45607
+simulations=32, mean_reward=8.70133, std_reward=1.46933, 2std=2.93866
+simulations=64, mean_reward=8.7085, std_reward=1.4349, 2std=2.8698
+simulations=128, mean_reward=8.68567, std_reward=1.29706, 2std=2.59411
+simulations=256, mean_reward=8.97617, std_reward=1.57502, 2std=3.15004
+simulations=512, mean_reward=9.78767, std_reward=2.04874, 2std=4.09747
+simulations=1024, mean_reward=10.874, std_reward=2.45784, 2std=4.91569
+simulations=2048, mean_reward=12.8862, std_reward=3.09733, 2std=6.19465
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.25
+epsilon: 0.05
+c2: 2.0
+c3: 2.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.62067, std_reward=1.34487, 2std=2.68975
+simulations=32, mean_reward=8.675, std_reward=1.35319, 2std=2.70637
+simulations=64, mean_reward=8.67967, std_reward=1.40331, 2std=2.80662
+simulations=128, mean_reward=8.6555, std_reward=1.5185, 2std=3.03699
+simulations=256, mean_reward=8.63, std_reward=1.42207, 2std=2.84415
+simulations=512, mean_reward=8.733, std_reward=1.69879, 2std=3.39759
+simulations=1024, mean_reward=9.20833, std_reward=1.9796, 2std=3.9592
+simulations=2048, mean_reward=10.2902, std_reward=2.42453, 2std=4.84906
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.25
+epsilon: 0.1
+c2: 0.0
+c3: 0.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.458, std_reward=1.36821, 2std=2.73642
+simulations=32, mean_reward=8.698, std_reward=1.41853, 2std=2.83707
+simulations=64, mean_reward=8.6, std_reward=1.30709, 2std=2.61418
+simulations=128, mean_reward=8.4265, std_reward=1.47365, 2std=2.9473
+simulations=256, mean_reward=8.55933, std_reward=1.46627, 2std=2.93254
+simulations=512, mean_reward=8.7645, std_reward=1.83551, 2std=3.67103
+simulations=1024, mean_reward=9.07583, std_reward=2.0077, 2std=4.0154
+simulations=2048, mean_reward=10.1552, std_reward=2.38764, 2std=4.77528
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.25
+epsilon: 0.1
+c2: 0.1
+c3: 0.1
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.58017, std_reward=1.35804, 2std=2.71608
+simulations=32, mean_reward=8.50683, std_reward=1.26992, 2std=2.53985
+simulations=64, mean_reward=8.576, std_reward=1.39171, 2std=2.78341
+simulations=128, mean_reward=8.30733, std_reward=1.32708, 2std=2.65415
+simulations=256, mean_reward=8.5455, std_reward=1.34225, 2std=2.68451
+simulations=512, mean_reward=8.78583, std_reward=1.64943, 2std=3.29886
+simulations=1024, mean_reward=9.05467, std_reward=1.94198, 2std=3.88397
+simulations=2048, mean_reward=10.0935, std_reward=2.29566, 2std=4.59132
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.25
+epsilon: 0.1
+c2: 0.5
+c3: 0.5
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.58983, std_reward=1.39262, 2std=2.78524
+simulations=32, mean_reward=8.5765, std_reward=1.35064, 2std=2.70127
+simulations=64, mean_reward=8.36233, std_reward=1.35351, 2std=2.70702
+simulations=128, mean_reward=8.379, std_reward=1.31129, 2std=2.62259
+simulations=256, mean_reward=8.59767, std_reward=1.43452, 2std=2.86903
+simulations=512, mean_reward=8.99733, std_reward=1.67843, 2std=3.35685
+simulations=1024, mean_reward=9.2465, std_reward=1.97889, 2std=3.95778
+simulations=2048, mean_reward=10.3285, std_reward=2.5938, 2std=5.1876
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.25
+epsilon: 0.1
+c2: 1.0
+c3: 1.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.46383, std_reward=1.32923, 2std=2.65846
+simulations=32, mean_reward=8.57133, std_reward=1.37582, 2std=2.75163
+simulations=64, mean_reward=8.576, std_reward=1.50408, 2std=3.00815
+simulations=128, mean_reward=8.33667, std_reward=1.30541, 2std=2.61083
+simulations=256, mean_reward=8.34433, std_reward=1.38144, 2std=2.76288
+simulations=512, mean_reward=8.53033, std_reward=1.72154, 2std=3.44309
+simulations=1024, mean_reward=8.636, std_reward=1.9786, 2std=3.95721
+simulations=2048, mean_reward=9.682, std_reward=2.45904, 2std=4.91809
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.25
+epsilon: 0.1
+c2: 2.0
+c3: 2.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.55233, std_reward=1.33964, 2std=2.67927
+simulations=32, mean_reward=8.56217, std_reward=1.40558, 2std=2.81115
+simulations=64, mean_reward=8.46583, std_reward=1.4264, 2std=2.8528
+simulations=128, mean_reward=8.08483, std_reward=1.25046, 2std=2.50093
+simulations=256, mean_reward=8.06283, std_reward=1.3485, 2std=2.697
+simulations=512, mean_reward=7.98217, std_reward=1.43315, 2std=2.8663
+simulations=1024, mean_reward=7.64067, std_reward=1.65314, 2std=3.30627
+simulations=2048, mean_reward=8.0785, std_reward=1.89281, 2std=3.78562
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.25
+epsilon: 0.5
+c2: 0.0
+c3: 0.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.4935, std_reward=1.36819, 2std=2.73638
+simulations=32, mean_reward=8.56333, std_reward=1.39879, 2std=2.79758
+simulations=64, mean_reward=8.56667, std_reward=1.28488, 2std=2.56977
+simulations=128, mean_reward=8.24917, std_reward=1.3437, 2std=2.6874
+simulations=256, mean_reward=7.86917, std_reward=1.21772, 2std=2.43543
+simulations=512, mean_reward=7.3055, std_reward=1.28146, 2std=2.56293
+simulations=1024, mean_reward=6.95483, std_reward=1.12911, 2std=2.25822
+simulations=2048, mean_reward=7.26483, std_reward=1.34518, 2std=2.69037
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.25
+epsilon: 0.5
+c2: 0.1
+c3: 0.1
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.4935, std_reward=1.36819, 2std=2.73638
+simulations=32, mean_reward=8.56333, std_reward=1.39879, 2std=2.79758
+simulations=64, mean_reward=8.56667, std_reward=1.28488, 2std=2.56977
+simulations=128, mean_reward=8.24917, std_reward=1.3437, 2std=2.6874
+simulations=256, mean_reward=7.86917, std_reward=1.21772, 2std=2.43543
+simulations=512, mean_reward=7.3055, std_reward=1.28146, 2std=2.56293
+simulations=1024, mean_reward=6.95483, std_reward=1.12911, 2std=2.25822
+simulations=2048, mean_reward=7.26483, std_reward=1.34518, 2std=2.69037
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.25
+epsilon: 0.5
+c2: 0.5
+c3: 0.5
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.4935, std_reward=1.36819, 2std=2.73638
+simulations=32, mean_reward=8.56333, std_reward=1.39879, 2std=2.79758
+simulations=64, mean_reward=8.56667, std_reward=1.28488, 2std=2.56977
+simulations=128, mean_reward=8.24917, std_reward=1.3437, 2std=2.6874
+simulations=256, mean_reward=7.86917, std_reward=1.21772, 2std=2.43543
+simulations=512, mean_reward=7.3055, std_reward=1.28146, 2std=2.56293
+simulations=1024, mean_reward=6.95483, std_reward=1.12911, 2std=2.25822
+simulations=2048, mean_reward=7.26483, std_reward=1.34518, 2std=2.69037
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.25
+epsilon: 0.5
+c2: 1.0
+c3: 1.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.4935, std_reward=1.36819, 2std=2.73638
+simulations=32, mean_reward=8.56333, std_reward=1.39879, 2std=2.79758
+simulations=64, mean_reward=8.56667, std_reward=1.28488, 2std=2.56977
+simulations=128, mean_reward=8.24917, std_reward=1.3437, 2std=2.6874
+simulations=256, mean_reward=7.86917, std_reward=1.21772, 2std=2.43543
+simulations=512, mean_reward=7.3055, std_reward=1.28146, 2std=2.56293
+simulations=1024, mean_reward=6.95483, std_reward=1.12911, 2std=2.25822
+simulations=2048, mean_reward=7.26483, std_reward=1.34518, 2std=2.69037
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.25
+epsilon: 0.5
+c2: 2.0
+c3: 2.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.4935, std_reward=1.36819, 2std=2.73638
+simulations=32, mean_reward=8.56333, std_reward=1.39879, 2std=2.79758
+simulations=64, mean_reward=8.56667, std_reward=1.28488, 2std=2.56977
+simulations=128, mean_reward=8.24917, std_reward=1.3437, 2std=2.6874
+simulations=256, mean_reward=7.86917, std_reward=1.21772, 2std=2.43543
+simulations=512, mean_reward=7.3055, std_reward=1.28146, 2std=2.56293
+simulations=1024, mean_reward=6.95483, std_reward=1.12911, 2std=2.25822
+simulations=2048, mean_reward=7.26483, std_reward=1.34518, 2std=2.69037
+=======================
+

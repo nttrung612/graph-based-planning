@@ -1,0 +1,22 @@
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_ments_er
+environment: factored_river_swim
+num_rivers: 3
+nlocations: 5
+time_limit: 35
+tau: 0.25
+epsilon: 0.05
+c2: 2.0
+c3: 2.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=1.30517, std_reward=0.653038, 2std=1.30608
+simulations=32, mean_reward=1.84106, std_reward=0.753084, 2std=1.50617
+simulations=64, mean_reward=1.81272, std_reward=0.507651, 2std=1.0153
+simulations=128, mean_reward=1.75211, std_reward=0.181372, 2std=0.362745
+simulations=256, mean_reward=1.74733, std_reward=0.0120509, 2std=0.0241019
+simulations=512, mean_reward=1.74972, std_reward=0.00396434, 2std=0.00792867
+simulations=1024, mean_reward=1.75, std_reward=6.67247e-16, 2std=1.33449e-15
+simulations=2048, mean_reward=1.75, std_reward=6.67247e-16, 2std=1.33449e-15
+=======================
+

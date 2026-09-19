@@ -1,0 +1,22 @@
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: four_rooms
+n: 5
+grid_size: 11
+time_limit: 50
+tau: 0.25
+epsilon: 0.5
+c2: 1.0
+c3: 1.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.228887, std_reward=0.335697, 2std=0.671395
+simulations=32, mean_reward=0.343653, std_reward=0.341163, 2std=0.682326
+simulations=64, mean_reward=0.45314, std_reward=0.326632, 2std=0.653264
+simulations=128, mean_reward=0.524987, std_reward=0.292874, 2std=0.585747
+simulations=256, mean_reward=0.554027, std_reward=0.274498, 2std=0.548995
+simulations=512, mean_reward=0.579153, std_reward=0.259246, 2std=0.518493
+simulations=1024, mean_reward=0.578187, std_reward=0.251334, 2std=0.502668
+simulations=2048, mean_reward=0.581287, std_reward=0.245873, 2std=0.491747
+=======================
+

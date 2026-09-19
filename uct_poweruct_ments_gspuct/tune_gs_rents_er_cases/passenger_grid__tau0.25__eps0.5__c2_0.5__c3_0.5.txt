@@ -1,0 +1,20 @@
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: passenger_grid
+time_limit: 70
+tau: 0.25
+epsilon: 0.5
+c2: 0.5
+c3: 0.5
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.973333, std_reward=1.33863, 2std=2.67726
+simulations=32, mean_reward=1.81667, std_reward=1.7281, 2std=3.45621
+simulations=64, mean_reward=2.97667, std_reward=2.081, 2std=4.162
+simulations=128, mean_reward=3.66, std_reward=2.21829, 2std=4.43658
+simulations=256, mean_reward=4.13333, std_reward=2.47169, 2std=4.94338
+simulations=512, mean_reward=4.75667, std_reward=2.26891, 2std=4.53782
+simulations=1024, mean_reward=5.82667, std_reward=1.89436, 2std=3.78871
+simulations=2048, mean_reward=6.55333, std_reward=1.31641, 2std=2.63282
+=======================
+

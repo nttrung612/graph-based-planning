@@ -35,11 +35,25 @@ default_epsilons=(0.5)
 # (C2, C3) row for sysadmin_ring is bit-identical. Smaller epsilon values let lambda
 # drop below 1 within the tested budget, so the ER coefficients actually get exercised.
 sysadmin_ring_epsilons=(0.05 0.1 0.5)
+# factored_river_swim has K=8 actions (2^FACTORED_RIVER_SWIM_NUM_RIVERS, num_rivers=3) and
+# horizon 35, so even though epsilon=0.5 does not saturate lambda>=1 for ALL N(s) the way it
+# does on sysadmin_ring, most of the search tree still sits below the ~54-visit threshold
+# (lambda = 0.5*8/log(N(s)+1) < 1 needs N(s) > ~53) given the budget is spread across 8
+# branches over 35 steps of depth. Confirmed by tune_gs_tents_er_result.txt: at
+# simulations=16 every (C2, C3) row for factored_river_swim is bit-identical (root itself is
+# still forced uniform), and the gap only opens up slightly at simulations=2048. This is very
+# likely why gs_ments_er/gs_rents_er/gs_tents_er (~13-18 total reward) trail gs_power_uct_er
+# (~32, unaffected by this mixture since it has no uniform-random branch) by so much on this
+# environment. Re-running epsilon=0.5 is skipped (already cached); only the new, smaller
+# values below actually run.
+factored_river_swim_epsilons=(0.05 0.1 0.25)
 coefficient_pairs=("0.0 0.0" "0.1 0.1" "0.5 0.5" "1.0 1.0" "2.0 2.0")
 
 epsilons_for_env() {
     if [[ "$1" == "sysadmin_ring" ]]; then
         printf '%s\n' "${sysadmin_ring_epsilons[@]}"
+    elif [[ "$1" == "factored_river_swim" ]]; then
+        printf '%s\n' "${factored_river_swim_epsilons[@]}"
     else
         printf '%s\n' "${default_epsilons[@]}"
     fi

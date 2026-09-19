@@ -1,0 +1,22 @@
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_power_uct_er
+environment: factored_river_swim
+num_rivers: 3
+nlocations: 5
+time_limit: 35
+c: 0.5
+p: 0.0
+c2: 0.5
+c3: 0.5
+mean_performance_by_simulations:
+simulations=16, mean_reward=1.90983, std_reward=0.670361, 2std=1.34072
+simulations=32, mean_reward=2.24261, std_reward=0.688223, 2std=1.37645
+simulations=64, mean_reward=2.72533, std_reward=0.872858, 2std=1.74572
+simulations=128, mean_reward=3.67733, std_reward=1.00324, 2std=2.00647
+simulations=256, mean_reward=4.67672, std_reward=1.5273, 2std=3.0546
+simulations=512, mean_reward=5.21528, std_reward=1.72565, 2std=3.45131
+simulations=1024, mean_reward=5.67889, std_reward=1.74919, 2std=3.49838
+simulations=2048, mean_reward=5.80317, std_reward=1.74742, 2std=3.49484
+=======================
+

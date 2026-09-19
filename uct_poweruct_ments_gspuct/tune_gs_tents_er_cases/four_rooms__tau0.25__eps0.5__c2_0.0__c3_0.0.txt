@@ -1,0 +1,22 @@
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_tents_er
+environment: four_rooms
+n: 5
+grid_size: 11
+time_limit: 50
+tau: 0.25
+epsilon: 0.5
+c2: 0.0
+c3: 0.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.2349, std_reward=0.32903, 2std=0.65806
+simulations=32, mean_reward=0.35102, std_reward=0.34083, 2std=0.681661
+simulations=64, mean_reward=0.446007, std_reward=0.328966, 2std=0.657931
+simulations=128, mean_reward=0.52018, std_reward=0.292055, 2std=0.58411
+simulations=256, mean_reward=0.550727, std_reward=0.273167, 2std=0.546334
+simulations=512, mean_reward=0.55572, std_reward=0.271569, 2std=0.543138
+simulations=1024, mean_reward=0.574093, std_reward=0.258402, 2std=0.516804
+simulations=2048, mean_reward=0.572027, std_reward=0.259146, 2std=0.518293
+=======================
+

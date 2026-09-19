@@ -1,0 +1,1521 @@
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: frozen_lake
+tau: 0.01
+epsilon: 0.5
+c2: 0.0
+c3: 0.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.01, std_reward=0.099665, 2std=0.19933
+simulations=32, mean_reward=0.0133333, std_reward=0.114889, 2std=0.229779
+simulations=64, mean_reward=0.133333, std_reward=0.340503, 2std=0.681005
+simulations=128, mean_reward=0.5, std_reward=0.500835, 2std=1.00167
+simulations=256, mean_reward=0.77, std_reward=0.421536, 2std=0.843071
+simulations=512, mean_reward=0.886667, std_reward=0.317529, 2std=0.635059
+simulations=1024, mean_reward=0.883333, std_reward=0.321559, 2std=0.643118
+simulations=2048, mean_reward=0.876667, std_reward=0.329369, 2std=0.658738
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: frozen_lake
+tau: 0.01
+epsilon: 0.5
+c2: 0.1
+c3: 0.1
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.00333333, std_reward=0.057735, 2std=0.11547
+simulations=32, mean_reward=0.0266667, std_reward=0.161376, 2std=0.322753
+simulations=64, mean_reward=0.166667, std_reward=0.373301, 2std=0.746601
+simulations=128, mean_reward=0.48, std_reward=0.500435, 2std=1.00087
+simulations=256, mean_reward=0.776667, std_reward=0.417176, 2std=0.834352
+simulations=512, mean_reward=0.87, std_reward=0.336865, 2std=0.673731
+simulations=1024, mean_reward=0.893333, std_reward=0.309205, 2std=0.61841
+simulations=2048, mean_reward=0.896667, std_reward=0.304902, 2std=0.609805
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: frozen_lake
+tau: 0.01
+epsilon: 0.5
+c2: 0.5
+c3: 0.5
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.01, std_reward=0.099665, 2std=0.19933
+simulations=32, mean_reward=0.0266667, std_reward=0.161376, 2std=0.322753
+simulations=64, mean_reward=0.13, std_reward=0.336865, 2std=0.673731
+simulations=128, mean_reward=0.476667, std_reward=0.50029, 2std=1.00058
+simulations=256, mean_reward=0.746667, std_reward=0.435647, 2std=0.871294
+simulations=512, mean_reward=0.85, std_reward=0.357668, 2std=0.715336
+simulations=1024, mean_reward=0.92, std_reward=0.271746, 2std=0.543493
+simulations=2048, mean_reward=0.88, std_reward=0.325504, 2std=0.651009
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: frozen_lake
+tau: 0.01
+epsilon: 0.5
+c2: 1.0
+c3: 1.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.00333333, std_reward=0.057735, 2std=0.11547
+simulations=32, mean_reward=0.00666667, std_reward=0.081513, 2std=0.163026
+simulations=64, mean_reward=0.17, std_reward=0.37626, 2std=0.752521
+simulations=128, mean_reward=0.496667, std_reward=0.500824, 2std=1.00165
+simulations=256, mean_reward=0.743333, std_reward=0.437524, 2std=0.875047
+simulations=512, mean_reward=0.866667, std_reward=0.340503, 2std=0.681005
+simulations=1024, mean_reward=0.9, std_reward=0.300501, 2std=0.601003
+simulations=2048, mean_reward=0.873333, std_reward=0.333155, 2std=0.66631
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: frozen_lake
+tau: 0.01
+epsilon: 0.5
+c2: 2.0
+c3: 2.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.00333333, std_reward=0.057735, 2std=0.11547
+simulations=32, mean_reward=0.0133333, std_reward=0.114889, 2std=0.229779
+simulations=64, mean_reward=0.156667, std_reward=0.364094, 2std=0.728187
+simulations=128, mean_reward=0.486667, std_reward=0.500657, 2std=1.00131
+simulations=256, mean_reward=0.713333, std_reward=0.45296, 2std=0.90592
+simulations=512, mean_reward=0.83, std_reward=0.37626, 2std=0.752521
+simulations=1024, mean_reward=0.866667, std_reward=0.340503, 2std=0.681005
+simulations=2048, mean_reward=0.92, std_reward=0.271746, 2std=0.543493
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: frozen_lake
+tau: 0.25
+epsilon: 0.5
+c2: 0.0
+c3: 0.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.00666667, std_reward=0.081513, 2std=0.163026
+simulations=32, mean_reward=0.0166667, std_reward=0.128233, 2std=0.256466
+simulations=64, mean_reward=0.06, std_reward=0.237884, 2std=0.475767
+simulations=128, mean_reward=0.363333, std_reward=0.481763, 2std=0.963527
+simulations=256, mean_reward=0.623333, std_reward=0.48536, 2std=0.97072
+simulations=512, mean_reward=0.826667, std_reward=0.379168, 2std=0.758335
+simulations=1024, mean_reward=0.826667, std_reward=0.379168, 2std=0.758335
+simulations=2048, mean_reward=0.856667, std_reward=0.350998, 2std=0.701996
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: frozen_lake
+tau: 0.25
+epsilon: 0.5
+c2: 0.1
+c3: 0.1
+mean_performance_by_simulations:
+simulations=16, mean_reward=0, std_reward=0, 2std=0
+simulations=32, mean_reward=0.0133333, std_reward=0.114889, 2std=0.229779
+simulations=64, mean_reward=0.0933333, std_reward=0.291385, 2std=0.58277
+simulations=128, mean_reward=0.33, std_reward=0.470998, 2std=0.941997
+simulations=256, mean_reward=0.58, std_reward=0.494383, 2std=0.988766
+simulations=512, mean_reward=0.806667, std_reward=0.395572, 2std=0.791144
+simulations=1024, mean_reward=0.853333, std_reward=0.354364, 2std=0.708729
+simulations=2048, mean_reward=0.813333, std_reward=0.390295, 2std=0.780589
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: frozen_lake
+tau: 0.25
+epsilon: 0.5
+c2: 0.5
+c3: 0.5
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.00333333, std_reward=0.057735, 2std=0.11547
+simulations=32, mean_reward=0.03, std_reward=0.170872, 2std=0.341744
+simulations=64, mean_reward=0.116667, std_reward=0.321559, 2std=0.643118
+simulations=128, mean_reward=0.38, std_reward=0.486197, 2std=0.972395
+simulations=256, mean_reward=0.63, std_reward=0.483611, 2std=0.967222
+simulations=512, mean_reward=0.81, std_reward=0.392956, 2std=0.785913
+simulations=1024, mean_reward=0.856667, std_reward=0.350998, 2std=0.701996
+simulations=2048, mean_reward=0.89, std_reward=0.313413, 2std=0.626825
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: frozen_lake
+tau: 0.25
+epsilon: 0.5
+c2: 1.0
+c3: 1.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.00333333, std_reward=0.057735, 2std=0.11547
+simulations=32, mean_reward=0.02, std_reward=0.140234, 2std=0.280468
+simulations=64, mean_reward=0.113333, std_reward=0.317529, 2std=0.635059
+simulations=128, mean_reward=0.366667, std_reward=0.4827, 2std=0.965399
+simulations=256, mean_reward=0.65, std_reward=0.477767, 2std=0.955533
+simulations=512, mean_reward=0.776667, std_reward=0.417176, 2std=0.834352
+simulations=1024, mean_reward=0.846667, std_reward=0.360911, 2std=0.721821
+simulations=2048, mean_reward=0.836667, std_reward=0.370287, 2std=0.740574
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: frozen_lake
+tau: 0.25
+epsilon: 0.5
+c2: 2.0
+c3: 2.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=0, std_reward=0, 2std=0
+simulations=32, mean_reward=0.0233333, std_reward=0.151212, 2std=0.302424
+simulations=64, mean_reward=0.0933333, std_reward=0.291385, 2std=0.58277
+simulations=128, mean_reward=0.296667, std_reward=0.457552, 2std=0.915103
+simulations=256, mean_reward=0.64, std_reward=0.480802, 2std=0.961604
+simulations=512, mean_reward=0.78, std_reward=0.414938, 2std=0.829877
+simulations=1024, mean_reward=0.876667, std_reward=0.329369, 2std=0.658738
+simulations=2048, mean_reward=0.816667, std_reward=0.387586, 2std=0.775172
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: four_rooms
+n: 5
+grid_size: 11
+time_limit: 50
+tau: 0.01
+epsilon: 0.5
+c2: 0.0
+c3: 0.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.214333, std_reward=0.328066, 2std=0.656132
+simulations=32, mean_reward=0.316373, std_reward=0.337164, 2std=0.674327
+simulations=64, mean_reward=0.43822, std_reward=0.322898, 2std=0.645796
+simulations=128, mean_reward=0.510373, std_reward=0.302645, 2std=0.605289
+simulations=256, mean_reward=0.558207, std_reward=0.266566, 2std=0.533133
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+simulations=512, mean_reward=0.568993, std_reward=0.265109, 2std=0.530219
+simulations=1024, mean_reward=0.584573, std_reward=0.245214, 2std=0.490428
+simulations=2048, mean_reward=0.573353, std_reward=0.253469, 2std=0.506937
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: four_rooms
+n: 5
+grid_size: 11
+time_limit: 50
+tau: 0.01
+epsilon: 0.5
+c2: 0.1
+c3: 0.1
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.208307, std_reward=0.322165, 2std=0.644331
+simulations=32, mean_reward=0.324113, std_reward=0.351332, 2std=0.702663
+simulations=64, mean_reward=0.437353, std_reward=0.326932, 2std=0.653864
+simulations=128, mean_reward=0.50192, std_reward=0.294905, 2std=0.58981
+simulations=256, mean_reward=0.551893, std_reward=0.27385, 2std=0.5477
+simulations=512, mean_reward=0.569553, std_reward=0.261089, 2std=0.522179
+simulations=1024, mean_reward=0.573353, std_reward=0.25322, 2std=0.506441
+simulations=2048, mean_reward=0.57396, std_reward=0.24988, 2std=0.49976
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: four_rooms
+n: 5
+grid_size: 11
+time_limit: 50
+tau: 0.01
+epsilon: 0.5
+c2: 0.5
+c3: 0.5
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.20786, std_reward=0.318957, 2std=0.637913
+simulations=32, mean_reward=0.331907, std_reward=0.342746, 2std=0.685491
+simulations=64, mean_reward=0.4596, std_reward=0.319639, 2std=0.639278
+simulations=128, mean_reward=0.51692, std_reward=0.297771, 2std=0.595541
+simulations=256, mean_reward=0.546147, std_reward=0.272591, 2std=0.545182
+simulations=512, mean_reward=0.563347, std_reward=0.262078, 2std=0.524157
+simulations=1024, mean_reward=0.576547, std_reward=0.256686, 2std=0.513372
+simulations=2048, mean_reward=0.572807, std_reward=0.253051, 2std=0.506101
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: four_rooms
+n: 5
+grid_size: 11
+time_limit: 50
+tau: 0.01
+epsilon: 0.5
+c2: 1.0
+c3: 1.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.218667, std_reward=0.337428, 2std=0.674855
+simulations=32, mean_reward=0.312387, std_reward=0.333531, 2std=0.667063
+simulations=64, mean_reward=0.447493, std_reward=0.32316, 2std=0.64632
+simulations=128, mean_reward=0.521673, std_reward=0.294773, 2std=0.589546
+simulations=256, mean_reward=0.553113, std_reward=0.274236, 2std=0.548473
+simulations=512, mean_reward=0.570127, std_reward=0.260542, 2std=0.521083
+simulations=1024, mean_reward=0.56744, std_reward=0.26201, 2std=0.524019
+simulations=2048, mean_reward=0.57542, std_reward=0.257707, 2std=0.515413
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: four_rooms
+n: 5
+grid_size: 11
+time_limit: 50
+tau: 0.01
+epsilon: 0.5
+c2: 2.0
+c3: 2.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.205807, std_reward=0.327058, 2std=0.654116
+simulations=32, mean_reward=0.307973, std_reward=0.340076, 2std=0.680152
+simulations=64, mean_reward=0.433313, std_reward=0.330368, 2std=0.660735
+simulations=128, mean_reward=0.502887, std_reward=0.299461, 2std=0.598922
+simulations=256, mean_reward=0.55144, std_reward=0.276293, 2std=0.552585
+simulations=512, mean_reward=0.562267, std_reward=0.263558, 2std=0.527115
+simulations=1024, mean_reward=0.569267, std_reward=0.2545, 2std=0.509
+simulations=2048, mean_reward=0.57318, std_reward=0.25284, 2std=0.505679
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: four_rooms
+n: 5
+grid_size: 11
+time_limit: 50
+tau: 0.25
+epsilon: 0.5
+c2: 0.0
+c3: 0.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.24406, std_reward=0.340007, 2std=0.680014
+simulations=32, mean_reward=0.349167, std_reward=0.342496, 2std=0.684992
+simulations=64, mean_reward=0.45446, std_reward=0.328305, 2std=0.65661
+simulations=128, mean_reward=0.519173, std_reward=0.29859, 2std=0.597179
+simulations=256, mean_reward=0.54912, std_reward=0.283553, 2std=0.567106
+simulations=512, mean_reward=0.570733, std_reward=0.262185, 2std=0.52437
+simulations=1024, mean_reward=0.57486, std_reward=0.252624, 2std=0.505247
+simulations=2048, mean_reward=0.57004, std_reward=0.261454, 2std=0.522908
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: four_rooms
+n: 5
+grid_size: 11
+time_limit: 50
+tau: 0.25
+epsilon: 0.5
+c2: 0.1
+c3: 0.1
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.250327, std_reward=0.343698, 2std=0.687395
+simulations=32, mean_reward=0.35068, std_reward=0.342194, 2std=0.684388
+simulations=64, mean_reward=0.469233, std_reward=0.31396, 2std=0.627919
+simulations=128, mean_reward=0.5206, std_reward=0.303028, 2std=0.606056
+simulations=256, mean_reward=0.55796, std_reward=0.267277, 2std=0.534553
+simulations=512, mean_reward=0.559673, std_reward=0.268035, 2std=0.536069
+simulations=1024, mean_reward=0.577347, std_reward=0.249028, 2std=0.498056
+simulations=2048, mean_reward=0.584133, std_reward=0.240444, 2std=0.480887
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: four_rooms
+n: 5
+grid_size: 11
+time_limit: 50
+tau: 0.25
+epsilon: 0.5
+c2: 0.5
+c3: 0.5
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.22814, std_reward=0.326443, 2std=0.652885
+simulations=32, mean_reward=0.350733, std_reward=0.342015, 2std=0.68403
+simulations=64, mean_reward=0.44548, std_reward=0.329217, 2std=0.658434
+simulations=128, mean_reward=0.531113, std_reward=0.285277, 2std=0.570553
+simulations=256, mean_reward=0.548993, std_reward=0.282332, 2std=0.564663
+simulations=512, mean_reward=0.571913, std_reward=0.251667, 2std=0.503335
+simulations=1024, mean_reward=0.573807, std_reward=0.252036, 2std=0.504071
+simulations=2048, mean_reward=0.572287, std_reward=0.259632, 2std=0.519263
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: four_rooms
+n: 5
+grid_size: 11
+time_limit: 50
+tau: 0.25
+epsilon: 0.5
+c2: 1.0
+c3: 1.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.228887, std_reward=0.335697, 2std=0.671395
+simulations=32, mean_reward=0.343653, std_reward=0.341163, 2std=0.682326
+simulations=64, mean_reward=0.45314, std_reward=0.326632, 2std=0.653264
+simulations=128, mean_reward=0.524987, std_reward=0.292874, 2std=0.585747
+simulations=256, mean_reward=0.554027, std_reward=0.274498, 2std=0.548995
+simulations=512, mean_reward=0.579153, std_reward=0.259246, 2std=0.518493
+simulations=1024, mean_reward=0.578187, std_reward=0.251334, 2std=0.502668
+simulations=2048, mean_reward=0.581287, std_reward=0.245873, 2std=0.491747
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: four_rooms
+n: 5
+grid_size: 11
+time_limit: 50
+tau: 0.25
+epsilon: 0.5
+c2: 2.0
+c3: 2.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.227827, std_reward=0.320596, 2std=0.641192
+simulations=32, mean_reward=0.362147, std_reward=0.345982, 2std=0.691963
+simulations=64, mean_reward=0.453933, std_reward=0.329864, 2std=0.659728
+simulations=128, mean_reward=0.535513, std_reward=0.288344, 2std=0.576689
+simulations=256, mean_reward=0.556507, std_reward=0.277067, 2std=0.554134
+simulations=512, mean_reward=0.578033, std_reward=0.250227, 2std=0.500454
+simulations=1024, mean_reward=0.57386, std_reward=0.251077, 2std=0.502154
+simulations=2048, mean_reward=0.5817, std_reward=0.246545, 2std=0.49309
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: passenger_grid
+time_limit: 70
+tau: 0.01
+epsilon: 0.5
+c2: 0.0
+c3: 0.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.8, std_reward=1.13326, 2std=2.26652
+simulations=32, mean_reward=1.69667, std_reward=1.67551, 2std=3.35103
+simulations=64, mean_reward=2.49333, std_reward=1.81869, 2std=3.63739
+simulations=128, mean_reward=3.53667, std_reward=2.25513, 2std=4.51026
+simulations=256, mean_reward=4.46667, std_reward=2.35245, 2std=4.70489
+simulations=512, mean_reward=5.60667, std_reward=2.01133, 2std=4.02266
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+simulations=1024, mean_reward=6.36333, std_reward=1.54897, 2std=3.09795
+simulations=2048, mean_reward=6.58, std_reward=1.38926, 2std=2.77851
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: passenger_grid
+time_limit: 70
+tau: 0.01
+epsilon: 0.5
+c2: 0.1
+c3: 0.1
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.786667, std_reward=1.22999, 2std=2.45997
+simulations=32, mean_reward=1.67667, std_reward=1.56641, 2std=3.13282
+simulations=64, mean_reward=2.81333, std_reward=2.11504, 2std=4.23008
+simulations=128, mean_reward=3.53, std_reward=2.22387, 2std=4.44773
+simulations=256, mean_reward=4.41, std_reward=2.34526, 2std=4.69052
+simulations=512, mean_reward=5.57333, std_reward=2.03102, 2std=4.06204
+simulations=1024, mean_reward=6.38333, std_reward=1.6078, 2std=3.21559
+simulations=2048, mean_reward=6.68, std_reward=1.20933, 2std=2.41866
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: passenger_grid
+time_limit: 70
+tau: 0.01
+epsilon: 0.5
+c2: 0.5
+c3: 0.5
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.823333, std_reward=1.42556, 2std=2.85113
+simulations=32, mean_reward=1.72333, std_reward=1.70386, 2std=3.40772
+simulations=64, mean_reward=2.68, std_reward=2.04243, 2std=4.08485
+simulations=128, mean_reward=3.35, std_reward=2.25487, 2std=4.50974
+simulations=256, mean_reward=4.41667, std_reward=2.33407, 2std=4.66814
+simulations=512, mean_reward=5.48, std_reward=2.05027, 2std=4.10054
+simulations=1024, mean_reward=6.24667, std_reward=1.61074, 2std=3.22147
+simulations=2048, mean_reward=6.64667, std_reward=1.27038, 2std=2.54076
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: passenger_grid
+time_limit: 70
+tau: 0.01
+epsilon: 0.5
+c2: 1.0
+c3: 1.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.756667, std_reward=1.05253, 2std=2.10506
+simulations=32, mean_reward=1.47333, std_reward=1.50004, 2std=3.00008
+simulations=64, mean_reward=2.86333, std_reward=2.11176, 2std=4.22352
+simulations=128, mean_reward=3.38, std_reward=2.20722, 2std=4.41445
+simulations=256, mean_reward=4.11, std_reward=2.27048, 2std=4.54096
+simulations=512, mean_reward=5.18, std_reward=2.13607, 2std=4.27215
+simulations=1024, mean_reward=6.13667, std_reward=1.75163, 2std=3.50326
+simulations=2048, mean_reward=6.56667, std_reward=1.40433, 2std=2.80865
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: passenger_grid
+time_limit: 70
+tau: 0.01
+epsilon: 0.5
+c2: 2.0
+c3: 2.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.923333, std_reward=1.28698, 2std=2.57395
+simulations=32, mean_reward=1.74333, std_reward=1.64107, 2std=3.28213
+simulations=64, mean_reward=2.69333, std_reward=1.93696, 2std=3.87391
+simulations=128, mean_reward=3.32333, std_reward=2.14339, 2std=4.28677
+simulations=256, mean_reward=4.51667, std_reward=2.39908, 2std=4.79816
+simulations=512, mean_reward=4.97667, std_reward=2.16913, 2std=4.33827
+simulations=1024, mean_reward=6.11, std_reward=1.76871, 2std=3.53742
+simulations=2048, mean_reward=6.39667, std_reward=1.59619, 2std=3.19238
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: passenger_grid
+time_limit: 70
+tau: 0.25
+epsilon: 0.5
+c2: 0.0
+c3: 0.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.786667, std_reward=1.21356, 2std=2.42712
+simulations=32, mean_reward=1.90333, std_reward=1.57764, 2std=3.15528
+simulations=64, mean_reward=2.95, std_reward=2.10768, 2std=4.21536
+simulations=128, mean_reward=3.59333, std_reward=2.21758, 2std=4.43517
+simulations=256, mean_reward=4.19, std_reward=2.33067, 2std=4.66133
+simulations=512, mean_reward=5.02, std_reward=2.19446, 2std=4.38892
+simulations=1024, mean_reward=5.6, std_reward=2.09634, 2std=4.19268
+simulations=2048, mean_reward=6.34333, std_reward=1.55354, 2std=3.10709
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: passenger_grid
+time_limit: 70
+tau: 0.25
+epsilon: 0.5
+c2: 0.1
+c3: 0.1
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.83, std_reward=1.09778, 2std=2.19556
+simulations=32, mean_reward=1.84, std_reward=1.69824, 2std=3.39648
+simulations=64, mean_reward=3.06333, std_reward=2.16215, 2std=4.32431
+simulations=128, mean_reward=3.41667, std_reward=2.23601, 2std=4.47201
+simulations=256, mean_reward=4.29, std_reward=2.35891, 2std=4.71782
+simulations=512, mean_reward=4.99667, std_reward=2.28196, 2std=4.56392
+simulations=1024, mean_reward=5.57667, std_reward=2.00771, 2std=4.01542
+simulations=2048, mean_reward=6.42667, std_reward=1.50071, 2std=3.00142
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: passenger_grid
+time_limit: 70
+tau: 0.25
+epsilon: 0.5
+c2: 0.5
+c3: 0.5
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.973333, std_reward=1.33863, 2std=2.67726
+simulations=32, mean_reward=1.81667, std_reward=1.7281, 2std=3.45621
+simulations=64, mean_reward=2.97667, std_reward=2.081, 2std=4.162
+simulations=128, mean_reward=3.66, std_reward=2.21829, 2std=4.43658
+simulations=256, mean_reward=4.13333, std_reward=2.47169, 2std=4.94338
+simulations=512, mean_reward=4.75667, std_reward=2.26891, 2std=4.53782
+simulations=1024, mean_reward=5.82667, std_reward=1.89436, 2std=3.78871
+simulations=2048, mean_reward=6.55333, std_reward=1.31641, 2std=2.63282
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: passenger_grid
+time_limit: 70
+tau: 0.25
+epsilon: 0.5
+c2: 1.0
+c3: 1.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.933333, std_reward=1.32971, 2std=2.65941
+simulations=32, mean_reward=1.82, std_reward=1.64213, 2std=3.28426
+simulations=64, mean_reward=3.00667, std_reward=2.07871, 2std=4.15742
+simulations=128, mean_reward=3.54667, std_reward=2.15483, 2std=4.30966
+simulations=256, mean_reward=4.11, std_reward=2.40774, 2std=4.81549
+simulations=512, mean_reward=4.91667, std_reward=2.27603, 2std=4.55206
+simulations=1024, mean_reward=5.47333, std_reward=2.09537, 2std=4.19075
+simulations=2048, mean_reward=6.23667, std_reward=1.72353, 2std=3.44706
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: passenger_grid
+time_limit: 70
+tau: 0.25
+epsilon: 0.5
+c2: 2.0
+c3: 2.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.94, std_reward=1.18367, 2std=2.36734
+simulations=32, mean_reward=1.96333, std_reward=1.86554, 2std=3.73109
+simulations=64, mean_reward=2.97, std_reward=2.10806, 2std=4.21612
+simulations=128, mean_reward=3.68, std_reward=2.16639, 2std=4.33278
+simulations=256, mean_reward=4.35667, std_reward=2.39484, 2std=4.78967
+simulations=512, mean_reward=4.92333, std_reward=2.13995, 2std=4.2799
+simulations=1024, mean_reward=5.67, std_reward=2.02355, 2std=4.0471
+simulations=2048, mean_reward=6.22, std_reward=1.71505, 2std=3.4301
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: factored_river_swim
+num_rivers: 3
+nlocations: 5
+time_limit: 35
+tau: 0.01
+epsilon: 0.5
+Rank 16 sending 7 results
+c2: 0.0
+c3: 0.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=1.12894, std_reward=0.413157, 2std=0.826314
+simulations=32, mean_reward=1.27928, std_reward=0.3458, 2std=0.6916
+simulations=64, mean_reward=1.47311, std_reward=0.314027, 2std=0.628054
+simulations=128, mean_reward=1.58517, std_reward=0.120522, 2std=0.241045
+simulations=256, mean_reward=1.66583, std_reward=0.0842163, 2std=0.168433
+simulations=512, mean_reward=1.71278, std_reward=0.0333844, 2std=0.0667688
+simulations=1024, mean_reward=1.73978, std_reward=0.0187184, 2std=0.0374368
+simulations=2048, mean_reward=1.74644, std_reward=0.0107481, 2std=0.0214961
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: factored_river_swim
+num_rivers: 3
+nlocations: 5
+time_limit: 35
+tau: 0.01
+epsilon: 0.5
+c2: 0.1
+c3: 0.1
+mean_performance_by_simulations:
+simulations=16, mean_reward=1.12894, std_reward=0.413157, 2std=0.826314
+simulations=32, mean_reward=1.27544, std_reward=0.339969, 2std=0.679937
+simulations=64, mean_reward=1.46911, std_reward=0.293775, 2std=0.587551
+simulations=128, mean_reward=1.61033, std_reward=0.23043, 2std=0.46086
+simulations=256, mean_reward=1.67711, std_reward=0.155161, 2std=0.310322
+simulations=512, mean_reward=1.71594, std_reward=0.0338921, 2std=0.0677843
+simulations=1024, mean_reward=1.73756, std_reward=0.0185088, 2std=0.0370175
+simulations=2048, mean_reward=1.74539, std_reward=0.0132872, 2std=0.0265743
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: factored_river_swim
+num_rivers: 3
+nlocations: 5
+time_limit: 35
+tau: 0.01
+epsilon: 0.5
+c2: 0.5
+c3: 0.5
+mean_performance_by_simulations:
+simulations=16, mean_reward=1.12894, std_reward=0.413157, 2std=0.826314
+simulations=32, mean_reward=1.27967, std_reward=0.356473, 2std=0.712946
+simulations=64, mean_reward=1.47056, std_reward=0.3097, 2std=0.619399
+simulations=128, mean_reward=1.58367, std_reward=0.178415, 2std=0.35683
+simulations=256, mean_reward=1.65928, std_reward=0.0644708, 2std=0.128942
+simulations=512, mean_reward=1.71239, std_reward=0.0370959, 2std=0.0741917
+simulations=1024, mean_reward=1.73756, std_reward=0.0196293, 2std=0.0392586
+simulations=2048, mean_reward=1.74694, std_reward=0.0164398, 2std=0.0328797
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: factored_river_swim
+num_rivers: 3
+nlocations: 5
+time_limit: 35
+tau: 0.01
+epsilon: 0.5
+c2: 1.0
+c3: 1.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=1.12894, std_reward=0.413157, 2std=0.826314
+simulations=32, mean_reward=1.2755, std_reward=0.331204, 2std=0.662408
+simulations=64, mean_reward=1.45728, std_reward=0.315395, 2std=0.63079
+simulations=128, mean_reward=1.6, std_reward=0.244033, 2std=0.488066
+simulations=256, mean_reward=1.65406, std_reward=0.0588604, 2std=0.117721
+simulations=512, mean_reward=1.7085, std_reward=0.0349253, 2std=0.0698507
+simulations=1024, mean_reward=1.73867, std_reward=0.0185722, 2std=0.0371444
+simulations=2048, mean_reward=1.74822, std_reward=0.0558255, 2std=0.111651
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: factored_river_swim
+num_rivers: 3
+nlocations: 5
+time_limit: 35
+tau: 0.01
+epsilon: 0.5
+c2: 2.0
+c3: 2.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=1.12894, std_reward=0.413157, 2std=0.826314
+simulations=32, mean_reward=1.25961, std_reward=0.296046, 2std=0.592092
+simulations=64, mean_reward=1.43494, std_reward=0.247203, 2std=0.494406
+simulations=128, mean_reward=1.59217, std_reward=0.219389, 2std=0.438778
+simulations=256, mean_reward=1.66444, std_reward=0.23523, 2std=0.47046
+simulations=512, mean_reward=1.70467, std_reward=0.0380996, 2std=0.0761992
+simulations=1024, mean_reward=1.7325, std_reward=0.0230974, 2std=0.0461949
+simulations=2048, mean_reward=1.74656, std_reward=0.022298, 2std=0.044596
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: factored_river_swim
+num_rivers: 3
+nlocations: 5
+time_limit: 35
+tau: 0.25
+epsilon: 0.5
+c2: 0.0
+c3: 0.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=1.35678, std_reward=0.691693, 2std=1.38339
+simulations=32, mean_reward=1.607, std_reward=0.490147, 2std=0.980295
+simulations=64, mean_reward=1.64778, std_reward=0.248164, 2std=0.496329
+simulations=128, mean_reward=1.72344, std_reward=0.211594, 2std=0.423187
+simulations=256, mean_reward=1.73461, std_reward=0.0529441, 2std=0.105888
+simulations=512, mean_reward=1.74778, std_reward=0.00917777, 2std=0.0183555
+simulations=1024, mean_reward=1.74972, std_reward=0.00346408, 2std=0.00692817
+simulations=2048, mean_reward=1.95011, std_reward=0.363496, 2std=0.726992
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: factored_river_swim
+num_rivers: 3
+nlocations: 5
+time_limit: 35
+tau: 0.25
+epsilon: 0.5
+c2: 0.1
+c3: 0.1
+mean_performance_by_simulations:
+simulations=16, mean_reward=1.35678, std_reward=0.691693, 2std=1.38339
+simulations=32, mean_reward=1.60939, std_reward=0.489177, 2std=0.978353
+simulations=64, mean_reward=1.64128, std_reward=0.259141, 2std=0.518283
+simulations=128, mean_reward=1.72278, std_reward=0.186096, 2std=0.372192
+simulations=256, mean_reward=1.73311, std_reward=0.0306311, 2std=0.0612622
+simulations=512, mean_reward=1.74794, std_reward=0.00896112, 2std=0.0179222
+simulations=1024, mean_reward=1.75, std_reward=6.67247e-16, 2std=1.33449e-15
+simulations=2048, mean_reward=1.97167, std_reward=0.37098, 2std=0.741961
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: factored_river_swim
+num_rivers: 3
+nlocations: 5
+time_limit: 35
+tau: 0.25
+epsilon: 0.5
+c2: 0.5
+c3: 0.5
+mean_performance_by_simulations:
+simulations=16, mean_reward=1.35678, std_reward=0.691693, 2std=1.38339
+simulations=32, mean_reward=1.6015, std_reward=0.482065, 2std=0.964129
+simulations=64, mean_reward=1.66467, std_reward=0.271421, 2std=0.542842
+simulations=128, mean_reward=1.71511, std_reward=0.183289, 2std=0.366577
+simulations=256, mean_reward=1.73306, std_reward=0.0294398, 2std=0.0588796
+simulations=512, mean_reward=1.74667, std_reward=0.013631, 2std=0.027262
+simulations=1024, mean_reward=1.74989, std_reward=0.0019245, 2std=0.003849
+simulations=2048, mean_reward=1.9505, std_reward=0.372252, 2std=0.744505
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: factored_river_swim
+num_rivers: 3
+nlocations: 5
+time_limit: 35
+tau: 0.25
+epsilon: 0.5
+c2: 1.0
+c3: 1.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=1.35678, std_reward=0.691693, 2std=1.38339
+simulations=32, mean_reward=1.6065, std_reward=0.496876, 2std=0.993751
+simulations=64, mean_reward=1.66128, std_reward=0.275285, 2std=0.55057
+simulations=128, mean_reward=1.71728, std_reward=0.17889, 2std=0.35778
+simulations=256, mean_reward=1.73339, std_reward=0.0286413, 2std=0.0572826
+simulations=512, mean_reward=1.74789, std_reward=0.00940375, 2std=0.0188075
+simulations=1024, mean_reward=1.74989, std_reward=0.0019245, 2std=0.003849
+simulations=2048, mean_reward=1.98883, std_reward=0.390681, 2std=0.781361
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: factored_river_swim
+num_rivers: 3
+nlocations: 5
+time_limit: 35
+tau: 0.25
+epsilon: 0.5
+c2: 2.0
+c3: 2.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=1.35678, std_reward=0.691693, 2std=1.38339
+simulations=32, mean_reward=1.63561, std_reward=0.520061, 2std=1.04012
+simulations=64, mean_reward=1.66033, std_reward=0.333549, 2std=0.667098
+simulations=128, mean_reward=1.70706, std_reward=0.0909263, 2std=0.181853
+simulations=256, mean_reward=1.73644, std_reward=0.0246029, 2std=0.0492058
+simulations=512, mean_reward=1.74839, std_reward=0.00852329, 2std=0.0170466
+simulations=1024, mean_reward=1.74989, std_reward=0.0019245, 2std=0.003849
+simulations=2048, mean_reward=1.99878, std_reward=0.387975, 2std=0.775949
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.01
+epsilon: 0.05
+c2: 0.0
+c3: 0.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.57917, std_reward=1.42417, 2std=2.84835
+simulations=32, mean_reward=8.858, std_reward=1.31465, 2std=2.62929
+simulations=64, mean_reward=8.76767, std_reward=1.40606, 2std=2.81211
+simulations=128, mean_reward=8.95467, std_reward=1.41709, 2std=2.83418
+simulations=256, mean_reward=9.35117, std_reward=1.69373, 2std=3.38746
+simulations=512, mean_reward=9.80733, std_reward=1.706, 2std=3.41201
+simulations=1024, mean_reward=10.0493, std_reward=1.89943, 2std=3.79886
+simulations=2048, mean_reward=10.9412, std_reward=2.19063, 2std=4.38125
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.01
+epsilon: 0.05
+c2: 0.1
+c3: 0.1
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.6125, std_reward=1.53868, 2std=3.07737
+simulations=32, mean_reward=8.84133, std_reward=1.38135, 2std=2.76269
+simulations=64, mean_reward=8.82567, std_reward=1.41157, 2std=2.82313
+simulations=128, mean_reward=9.1245, std_reward=1.46138, 2std=2.92277
+simulations=256, mean_reward=9.28217, std_reward=1.60938, 2std=3.21875
+simulations=512, mean_reward=9.69, std_reward=1.83591, 2std=3.67181
+simulations=1024, mean_reward=10.0248, std_reward=1.9124, 2std=3.8248
+simulations=2048, mean_reward=10.5783, std_reward=1.96032, 2std=3.92065
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.01
+epsilon: 0.05
+c2: 0.5
+c3: 0.5
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.70367, std_reward=1.37043, 2std=2.74086
+simulations=32, mean_reward=8.74183, std_reward=1.47439, 2std=2.94879
+simulations=64, mean_reward=8.91367, std_reward=1.3989, 2std=2.7978
+simulations=128, mean_reward=8.96317, std_reward=1.43811, 2std=2.87622
+simulations=256, mean_reward=9.3665, std_reward=1.62193, 2std=3.24387
+simulations=512, mean_reward=9.5325, std_reward=1.69451, 2std=3.38902
+simulations=1024, mean_reward=9.91417, std_reward=1.88341, 2std=3.76683
+simulations=2048, mean_reward=10.3577, std_reward=1.95451, 2std=3.90901
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.01
+epsilon: 0.05
+c2: 1.0
+c3: 1.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.71, std_reward=1.33006, 2std=2.66011
+simulations=32, mean_reward=8.82833, std_reward=1.35354, 2std=2.70708
+simulations=64, mean_reward=8.91167, std_reward=1.42237, 2std=2.84474
+simulations=128, mean_reward=8.926, std_reward=1.44152, 2std=2.88304
+simulations=256, mean_reward=9.35067, std_reward=1.64096, 2std=3.28193
+simulations=512, mean_reward=9.51083, std_reward=1.71735, 2std=3.43471
+simulations=1024, mean_reward=9.6845, std_reward=1.85832, 2std=3.71664
+simulations=2048, mean_reward=10.3308, std_reward=2.02073, 2std=4.04145
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.01
+epsilon: 0.05
+c2: 2.0
+c3: 2.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.6855, std_reward=1.31109, 2std=2.62217
+simulations=32, mean_reward=8.9065, std_reward=1.48242, 2std=2.96483
+simulations=64, mean_reward=8.91583, std_reward=1.48392, 2std=2.96784
+simulations=128, mean_reward=8.69467, std_reward=1.44353, 2std=2.88705
+simulations=256, mean_reward=8.96317, std_reward=1.58552, 2std=3.17103
+simulations=512, mean_reward=9.19767, std_reward=1.62478, 2std=3.24956
+simulations=1024, mean_reward=9.63133, std_reward=1.67236, 2std=3.34471
+simulations=2048, mean_reward=10.3658, std_reward=1.95707, 2std=3.91415
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.01
+epsilon: 0.1
+c2: 0.0
+c3: 0.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.51917, std_reward=1.30197, 2std=2.60394
+simulations=32, mean_reward=8.7365, std_reward=1.34487, 2std=2.68975
+simulations=64, mean_reward=8.95233, std_reward=1.39499, 2std=2.78998
+simulations=128, mean_reward=8.72983, std_reward=1.49461, 2std=2.98921
+simulations=256, mean_reward=9.07667, std_reward=1.54603, 2std=3.09206
+simulations=512, mean_reward=9.61783, std_reward=1.81078, 2std=3.62156
+simulations=1024, mean_reward=10.2132, std_reward=2.22271, 2std=4.44542
+simulations=2048, mean_reward=10.938, std_reward=2.38391, 2std=4.76782
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.01
+epsilon: 0.1
+c2: 0.1
+c3: 0.1
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.60367, std_reward=1.3065, 2std=2.613
+simulations=32, mean_reward=8.83033, std_reward=1.32587, 2std=2.65173
+simulations=64, mean_reward=8.8495, std_reward=1.45014, 2std=2.90029
+simulations=128, mean_reward=8.838, std_reward=1.3914, 2std=2.7828
+simulations=256, mean_reward=9.075, std_reward=1.61183, 2std=3.22365
+simulations=512, mean_reward=9.77267, std_reward=1.80588, 2std=3.61175
+simulations=1024, mean_reward=10.2192, std_reward=2.13289, 2std=4.26578
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+simulations=2048, mean_reward=10.7992, std_reward=2.15578, 2std=4.31157
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.01
+epsilon: 0.1
+c2: 0.5
+c3: 0.5
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.7235, std_reward=1.3616, 2std=2.7232
+simulations=32, mean_reward=8.7965, std_reward=1.31434, 2std=2.62868
+simulations=64, mean_reward=8.953, std_reward=1.50947, 2std=3.01894
+simulations=128, mean_reward=8.74617, std_reward=1.42669, 2std=2.85338
+simulations=256, mean_reward=9.06067, std_reward=1.43874, 2std=2.87749
+simulations=512, mean_reward=9.54967, std_reward=1.69245, 2std=3.3849
+simulations=1024, mean_reward=9.94783, std_reward=1.93792, 2std=3.87583
+simulations=2048, mean_reward=10.3828, std_reward=1.96929, 2std=3.93857
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.01
+epsilon: 0.1
+c2: 1.0
+c3: 1.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.64117, std_reward=1.32083, 2std=2.64165
+simulations=32, mean_reward=8.82583, std_reward=1.41903, 2std=2.83806
+simulations=64, mean_reward=8.92433, std_reward=1.50659, 2std=3.01319
+simulations=128, mean_reward=8.72017, std_reward=1.24422, 2std=2.48845
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+simulations=256, mean_reward=8.896, std_reward=1.36906, 2std=2.73812
+simulations=512, mean_reward=9.2545, std_reward=1.66982, 2std=3.33963
+simulations=1024, mean_reward=9.81217, std_reward=2.04783, 2std=4.09565
+simulations=2048, mean_reward=10.3325, std_reward=2.00698, 2std=4.01396
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.01
+epsilon: 0.1
+c2: 2.0
+c3: 2.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.6045, std_reward=1.34828, 2std=2.69655
+simulations=32, mean_reward=8.80517, std_reward=1.40573, 2std=2.81145
+simulations=64, mean_reward=8.85383, std_reward=1.48193, 2std=2.96386
+simulations=128, mean_reward=8.6605, std_reward=1.44642, 2std=2.89285
+simulations=256, mean_reward=8.78283, std_reward=1.52645, 2std=3.0529
+simulations=512, mean_reward=8.969, std_reward=1.55406, 2std=3.10812
+simulations=1024, mean_reward=9.21567, std_reward=1.60245, 2std=3.20489
+simulations=2048, mean_reward=10.2898, std_reward=1.9582, 2std=3.91639
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.01
+epsilon: 0.5
+c2: 0.0
+c3: 0.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.59617, std_reward=1.31598, 2std=2.63196
+simulations=32, mean_reward=8.72067, std_reward=1.50494, 2std=3.00989
+simulations=64, mean_reward=8.91233, std_reward=1.43483, 2std=2.86965
+simulations=128, mean_reward=8.9935, std_reward=1.56561, 2std=3.13121
+simulations=256, mean_reward=8.63033, std_reward=1.51, 2std=3.02
+simulations=512, mean_reward=8.24217, std_reward=1.32527, 2std=2.65055
+simulations=1024, mean_reward=8.72, std_reward=1.57612, 2std=3.15224
+simulations=2048, mean_reward=9.46317, std_reward=1.77572, 2std=3.55144
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.01
+epsilon: 0.5
+c2: 0.1
+c3: 0.1
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.59617, std_reward=1.31598, 2std=2.63196
+simulations=32, mean_reward=8.72067, std_reward=1.50494, 2std=3.00989
+simulations=64, mean_reward=8.91233, std_reward=1.43483, 2std=2.86965
+simulations=128, mean_reward=8.9935, std_reward=1.56561, 2std=3.13121
+simulations=256, mean_reward=8.63033, std_reward=1.51, 2std=3.02
+simulations=512, mean_reward=8.24217, std_reward=1.32527, 2std=2.65055
+simulations=1024, mean_reward=8.72, std_reward=1.57612, 2std=3.15224
+simulations=2048, mean_reward=9.46317, std_reward=1.77572, 2std=3.55144
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.01
+epsilon: 0.5
+c2: 0.5
+c3: 0.5
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.59617, std_reward=1.31598, 2std=2.63196
+simulations=32, mean_reward=8.72067, std_reward=1.50494, 2std=3.00989
+simulations=64, mean_reward=8.91233, std_reward=1.43483, 2std=2.86965
+simulations=128, mean_reward=8.9935, std_reward=1.56561, 2std=3.13121
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+Shutting down the worker
+simulations=256, mean_reward=8.63033, std_reward=1.51, 2std=3.02
+simulations=512, mean_reward=8.24217, std_reward=1.32527, 2std=2.65055
+simulations=1024, mean_reward=8.72, std_reward=1.57612, 2std=3.15224
+simulations=2048, mean_reward=9.46317, std_reward=1.77572, 2std=3.55144
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.01
+epsilon: 0.5
+c2: 1.0
+c3: 1.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.59617, std_reward=1.31598, 2std=2.63196
+simulations=32, mean_reward=8.72067, std_reward=1.50494, 2std=3.00989
+simulations=64, mean_reward=8.91233, std_reward=1.43483, 2std=2.86965
+simulations=128, mean_reward=8.9935, std_reward=1.56561, 2std=3.13121
+simulations=256, mean_reward=8.63033, std_reward=1.51, 2std=3.02
+simulations=512, mean_reward=8.24217, std_reward=1.32527, 2std=2.65055
+simulations=1024, mean_reward=8.72, std_reward=1.57612, 2std=3.15224
+simulations=2048, mean_reward=9.46317, std_reward=1.77572, 2std=3.55144
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.01
+epsilon: 0.5
+c2: 2.0
+c3: 2.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.59617, std_reward=1.31598, 2std=2.63196
+simulations=32, mean_reward=8.72067, std_reward=1.50494, 2std=3.00989
+simulations=64, mean_reward=8.91233, std_reward=1.43483, 2std=2.86965
+simulations=128, mean_reward=8.9935, std_reward=1.56561, 2std=3.13121
+simulations=256, mean_reward=8.63033, std_reward=1.51, 2std=3.02
+simulations=512, mean_reward=8.24217, std_reward=1.32527, 2std=2.65055
+simulations=1024, mean_reward=8.72, std_reward=1.57612, 2std=3.15224
+simulations=2048, mean_reward=9.46317, std_reward=1.77572, 2std=3.55144
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.25
+epsilon: 0.05
+c2: 0.0
+c3: 0.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.70383, std_reward=1.29784, 2std=2.59568
+simulations=32, mean_reward=8.7205, std_reward=1.36506, 2std=2.73013
+simulations=64, mean_reward=8.93767, std_reward=1.43456, 2std=2.86912
+simulations=128, mean_reward=9.07317, std_reward=1.5371, 2std=3.0742
+simulations=256, mean_reward=9.37367, std_reward=1.72507, 2std=3.45015
+simulations=512, mean_reward=9.89217, std_reward=1.79201, 2std=3.58401
+simulations=1024, mean_reward=10.2018, std_reward=1.82382, 2std=3.64763
+simulations=2048, mean_reward=10.5915, std_reward=1.98651, 2std=3.97301
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.25
+epsilon: 0.05
+c2: 0.1
+c3: 0.1
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.6835, std_reward=1.40551, 2std=2.81102
+simulations=32, mean_reward=8.7925, std_reward=1.45545, 2std=2.9109
+simulations=64, mean_reward=8.94233, std_reward=1.37226, 2std=2.74452
+simulations=128, mean_reward=8.98067, std_reward=1.48916, 2std=2.97831
+simulations=256, mean_reward=9.32983, std_reward=1.49109, 2std=2.98218
+simulations=512, mean_reward=9.58283, std_reward=1.65475, 2std=3.3095
+simulations=1024, mean_reward=10.1535, std_reward=2.00358, 2std=4.00717
+simulations=2048, mean_reward=10.5387, std_reward=2.07888, 2std=4.15775
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.25
+epsilon: 0.05
+c2: 0.5
+c3: 0.5
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.65933, std_reward=1.36755, 2std=2.7351
+simulations=32, mean_reward=8.79233, std_reward=1.42689, 2std=2.85379
+simulations=64, mean_reward=8.89467, std_reward=1.45807, 2std=2.91614
+simulations=128, mean_reward=9.08933, std_reward=1.42233, 2std=2.84465
+simulations=256, mean_reward=9.456, std_reward=1.6229, 2std=3.2458
+simulations=512, mean_reward=9.67817, std_reward=1.70316, 2std=3.40633
+simulations=1024, mean_reward=10.2633, std_reward=2.01876, 2std=4.03752
+simulations=2048, mean_reward=10.6373, std_reward=2.01289, 2std=4.02578
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.25
+epsilon: 0.05
+c2: 1.0
+c3: 1.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.67183, std_reward=1.4101, 2std=2.82021
+simulations=32, mean_reward=8.839, std_reward=1.38751, 2std=2.77503
+simulations=64, mean_reward=8.99817, std_reward=1.47549, 2std=2.95099
+simulations=128, mean_reward=9.1595, std_reward=1.46298, 2std=2.92595
+simulations=256, mean_reward=9.369, std_reward=1.60709, 2std=3.21418
+simulations=512, mean_reward=9.66167, std_reward=1.78108, 2std=3.56216
+simulations=1024, mean_reward=10.4547, std_reward=2.10079, 2std=4.20157
+simulations=2048, mean_reward=10.9377, std_reward=2.13749, 2std=4.27498
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.25
+epsilon: 0.05
+c2: 2.0
+c3: 2.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.6695, std_reward=1.40428, 2std=2.80856
+simulations=32, mean_reward=8.80683, std_reward=1.39817, 2std=2.79634
+simulations=64, mean_reward=9.086, std_reward=1.5676, 2std=3.13519
+simulations=128, mean_reward=9.13933, std_reward=1.37805, 2std=2.7561
+simulations=256, mean_reward=9.39583, std_reward=1.57238, 2std=3.14475
+simulations=512, mean_reward=9.65883, std_reward=1.73023, 2std=3.46046
+simulations=1024, mean_reward=10.348, std_reward=1.97892, 2std=3.95784
+simulations=2048, mean_reward=10.948, std_reward=2.17575, 2std=4.3515
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.25
+epsilon: 0.1
+c2: 0.0
+c3: 0.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.66333, std_reward=1.23635, 2std=2.47269
+simulations=32, mean_reward=8.79283, std_reward=1.37066, 2std=2.74132
+simulations=64, mean_reward=9.03183, std_reward=1.57609, 2std=3.15219
+simulations=128, mean_reward=9.03333, std_reward=1.5698, 2std=3.1396
+simulations=256, mean_reward=9.01433, std_reward=1.59154, 2std=3.18308
+simulations=512, mean_reward=9.67083, std_reward=1.65998, 2std=3.31996
+simulations=1024, mean_reward=10.3668, std_reward=2.08585, 2std=4.1717
+simulations=2048, mean_reward=10.6747, std_reward=2.11349, 2std=4.22698
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.25
+epsilon: 0.1
+c2: 0.1
+c3: 0.1
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.64467, std_reward=1.28465, 2std=2.5693
+simulations=32, mean_reward=8.87517, std_reward=1.41923, 2std=2.83847
+simulations=64, mean_reward=8.952, std_reward=1.44645, 2std=2.8929
+simulations=128, mean_reward=9.038, std_reward=1.45738, 2std=2.91477
+simulations=256, mean_reward=9.02683, std_reward=1.54119, 2std=3.08237
+simulations=512, mean_reward=9.5925, std_reward=1.68016, 2std=3.36032
+simulations=1024, mean_reward=10.3388, std_reward=2.04498, 2std=4.08997
+simulations=2048, mean_reward=10.7043, std_reward=2.14282, 2std=4.28564
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.25
+epsilon: 0.1
+c2: 0.5
+c3: 0.5
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.71067, std_reward=1.32567, 2std=2.65133
+simulations=32, mean_reward=8.84883, std_reward=1.40409, 2std=2.80819
+simulations=64, mean_reward=8.98317, std_reward=1.3734, 2std=2.7468
+simulations=128, mean_reward=8.94367, std_reward=1.55486, 2std=3.10973
+simulations=256, mean_reward=9.09233, std_reward=1.57433, 2std=3.14865
+simulations=512, mean_reward=9.55317, std_reward=1.64919, 2std=3.29837
+simulations=1024, mean_reward=10.4657, std_reward=2.19521, 2std=4.39043
+simulations=2048, mean_reward=10.9837, std_reward=2.3966, 2std=4.7932
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.25
+epsilon: 0.1
+c2: 1.0
+c3: 1.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.61617, std_reward=1.34998, 2std=2.69997
+simulations=32, mean_reward=8.838, std_reward=1.55236, 2std=3.10472
+simulations=64, mean_reward=8.95317, std_reward=1.53834, 2std=3.07668
+simulations=128, mean_reward=8.999, std_reward=1.49815, 2std=2.9963
+simulations=256, mean_reward=8.8835, std_reward=1.45731, 2std=2.91462
+simulations=512, mean_reward=9.4825, std_reward=1.66651, 2std=3.33301
+simulations=1024, mean_reward=10.2485, std_reward=2.00445, 2std=4.0089
+simulations=2048, mean_reward=11.0367, std_reward=2.43426, 2std=4.86851
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.25
+epsilon: 0.1
+c2: 2.0
+c3: 2.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.63683, std_reward=1.37154, 2std=2.74308
+simulations=32, mean_reward=8.8165, std_reward=1.3297, 2std=2.6594
+simulations=64, mean_reward=9.05267, std_reward=1.45116, 2std=2.90232
+simulations=128, mean_reward=8.94767, std_reward=1.54199, 2std=3.08398
+simulations=256, mean_reward=8.93783, std_reward=1.5524, 2std=3.1048
+simulations=512, mean_reward=9.28467, std_reward=1.57425, 2std=3.14851
+simulations=1024, mean_reward=10.1335, std_reward=1.9582, 2std=3.9164
+simulations=2048, mean_reward=11.0958, std_reward=2.50022, 2std=5.00043
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.25
+epsilon: 0.5
+c2: 0.0
+c3: 0.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.58117, std_reward=1.29319, 2std=2.58638
+simulations=32, mean_reward=8.7025, std_reward=1.45049, 2std=2.90099
+simulations=64, mean_reward=8.8355, std_reward=1.40157, 2std=2.80314
+simulations=128, mean_reward=9.0465, std_reward=1.58794, 2std=3.17589
+simulations=256, mean_reward=8.84467, std_reward=1.52257, 2std=3.04515
+simulations=512, mean_reward=8.6485, std_reward=1.3806, 2std=2.7612
+simulations=1024, mean_reward=9.05, std_reward=1.70027, 2std=3.40053
+simulations=2048, mean_reward=10.2305, std_reward=2.04387, 2std=4.08773
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.25
+epsilon: 0.5
+c2: 0.1
+c3: 0.1
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.58117, std_reward=1.29319, 2std=2.58638
+simulations=32, mean_reward=8.7025, std_reward=1.45049, 2std=2.90099
+simulations=64, mean_reward=8.8355, std_reward=1.40157, 2std=2.80314
+simulations=128, mean_reward=9.0465, std_reward=1.58794, 2std=3.17589
+simulations=256, mean_reward=8.84467, std_reward=1.52257, 2std=3.04515
+simulations=512, mean_reward=8.6485, std_reward=1.3806, 2std=2.7612
+simulations=1024, mean_reward=9.05, std_reward=1.70027, 2std=3.40053
+simulations=2048, mean_reward=10.2305, std_reward=2.04387, 2std=4.08773
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.25
+epsilon: 0.5
+c2: 0.5
+c3: 0.5
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.58117, std_reward=1.29319, 2std=2.58638
+simulations=32, mean_reward=8.7025, std_reward=1.45049, 2std=2.90099
+simulations=64, mean_reward=8.8355, std_reward=1.40157, 2std=2.80314
+simulations=128, mean_reward=9.0465, std_reward=1.58794, 2std=3.17589
+Shutting down the worker
+simulations=256, mean_reward=8.84467, std_reward=1.52257, 2std=3.04515
+simulations=512, mean_reward=8.6485, std_reward=1.3806, 2std=2.7612
+simulations=1024, mean_reward=9.05, std_reward=1.70027, 2std=3.40053
+simulations=2048, mean_reward=10.2305, std_reward=2.04387, 2std=4.08773
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.25
+epsilon: 0.5
+c2: 1.0
+c3: 1.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.58117, std_reward=1.29319, 2std=2.58638
+simulations=32, mean_reward=8.7025, std_reward=1.45049, 2std=2.90099
+simulations=64, mean_reward=8.8355, std_reward=1.40157, 2std=2.80314
+simulations=128, mean_reward=9.0465, std_reward=1.58794, 2std=3.17589
+simulations=256, mean_reward=8.84467, std_reward=1.52257, 2std=3.04515
+simulations=512, mean_reward=8.6485, std_reward=1.3806, 2std=2.7612
+simulations=1024, mean_reward=9.05, std_reward=1.70027, 2std=3.40053
+simulations=2048, mean_reward=10.2305, std_reward=2.04387, 2std=4.08773
+=======================
+
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_rents_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.25
+epsilon: 0.5
+c2: 2.0
+c3: 2.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.58117, std_reward=1.29319, 2std=2.58638
+simulations=32, mean_reward=8.7025, std_reward=1.45049, 2std=2.90099
+simulations=64, mean_reward=8.8355, std_reward=1.40157, 2std=2.80314
+simulations=128, mean_reward=9.0465, std_reward=1.58794, 2std=3.17589
+simulations=256, mean_reward=8.84467, std_reward=1.52257, 2std=3.04515
+simulations=512, mean_reward=8.6485, std_reward=1.3806, 2std=2.7612
+simulations=1024, mean_reward=9.05, std_reward=1.70027, 2std=3.40053
+simulations=2048, mean_reward=10.2305, std_reward=2.04387, 2std=4.08773
+=======================
+

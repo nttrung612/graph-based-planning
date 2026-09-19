@@ -1,0 +1,21 @@
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_power_uct_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+c: 0.5
+p: 2.5
+c2: 0.5
+c3: 0.5
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.58833, std_reward=1.28602, 2std=2.57204
+simulations=32, mean_reward=9.01533, std_reward=1.42227, 2std=2.84454
+simulations=64, mean_reward=9.22967, std_reward=1.536, 2std=3.07199
+simulations=128, mean_reward=9.9835, std_reward=1.72352, 2std=3.44705
+simulations=256, mean_reward=11.0263, std_reward=2.22549, 2std=4.45098
+simulations=512, mean_reward=13.06, std_reward=2.90857, 2std=5.81714
+simulations=1024, mean_reward=15.4125, std_reward=3.09269, 2std=6.18537
+simulations=2048, mean_reward=17.0352, std_reward=2.95816, 2std=5.91632
+=======================
+

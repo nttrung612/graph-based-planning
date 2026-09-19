@@ -1,0 +1,21 @@
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_ments_er
+environment: sysadmin_ring
+ncomps: 20
+time_limit: 50
+tau: 0.01
+epsilon: 0.05
+c2: 2.0
+c3: 2.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=8.47933, std_reward=1.38562, 2std=2.77124
+simulations=32, mean_reward=8.6165, std_reward=1.42142, 2std=2.84284
+simulations=64, mean_reward=8.58367, std_reward=1.35975, 2std=2.71951
+simulations=128, mean_reward=8.6835, std_reward=1.43868, 2std=2.87736
+simulations=256, mean_reward=8.51633, std_reward=1.42473, 2std=2.84946
+simulations=512, mean_reward=8.70917, std_reward=1.57997, 2std=3.15993
+simulations=1024, mean_reward=9.07467, std_reward=1.92444, 2std=3.84887
+simulations=2048, mean_reward=10.1858, std_reward=2.35139, 2std=4.70279
+=======================
+

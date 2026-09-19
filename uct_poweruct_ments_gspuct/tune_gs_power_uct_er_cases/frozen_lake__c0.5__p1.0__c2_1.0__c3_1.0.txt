@@ -1,0 +1,19 @@
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_power_uct_er
+environment: frozen_lake
+c: 0.5
+p: 1.0
+c2: 1.0
+c3: 1.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.03, std_reward=0.170872, 2std=0.341744
+simulations=32, mean_reward=0.0433333, std_reward=0.203947, 2std=0.407893
+simulations=64, mean_reward=0.0633333, std_reward=0.243968, 2std=0.487937
+simulations=128, mean_reward=0.12, std_reward=0.325504, 2std=0.651009
+simulations=256, mean_reward=0.133333, std_reward=0.340503, 2std=0.681005
+simulations=512, mean_reward=0.226667, std_reward=0.419375, 2std=0.838749
+simulations=1024, mean_reward=0.296667, std_reward=0.457552, 2std=0.915103
+simulations=2048, mean_reward=0.38, std_reward=0.486197, 2std=0.972395
+=======================
+

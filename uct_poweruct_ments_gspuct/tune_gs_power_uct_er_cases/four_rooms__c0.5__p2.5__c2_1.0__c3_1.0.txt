@@ -1,0 +1,22 @@
+===== Run Summary =====
+n_experiments: 300
+algorithm: gs_power_uct_er
+environment: four_rooms
+n: 5
+grid_size: 11
+time_limit: 50
+c: 0.5
+p: 2.5
+c2: 1.0
+c3: 1.0
+mean_performance_by_simulations:
+simulations=16, mean_reward=0.37212, std_reward=0.330481, 2std=0.660961
+simulations=32, mean_reward=0.444987, std_reward=0.314934, 2std=0.629868
+simulations=64, mean_reward=0.498713, std_reward=0.295488, 2std=0.590975
+simulations=128, mean_reward=0.53456, std_reward=0.277867, 2std=0.555735
+simulations=256, mean_reward=0.54834, std_reward=0.269785, 2std=0.53957
+simulations=512, mean_reward=0.563167, std_reward=0.26739, 2std=0.53478
+simulations=1024, mean_reward=0.568107, std_reward=0.256058, 2std=0.512117
+simulations=2048, mean_reward=0.572453, std_reward=0.253291, 2std=0.506583
+=======================
+
