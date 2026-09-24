@@ -227,9 +227,10 @@ namespace poweruct {
      * algorithm on the same regularized fixed point (V*_Omega, Q*_Omega) as its base -- see
      * evaluate_operator's 'perturb' flag, which is true at exactly one call site.
      *
-     * Like GS-Power-UCT-ER, ER is available in the layered Depth mode only; the constructor
-     * enforces it, because the resistance the bonus truncates is a topological recursion over a
-     * DAG and cross-depth merging can close cycles.
+     * In Depth mode the bonus truncates a resistance recursion over a layered DAG. Full mode
+     * retains the same finite one-step count bonus as an exploration heuristic on the merged
+     * graph; cycles there do not support the recursive-resistance interpretation. Full-mode ER
+     * requires explicit opt-in so existing constructor calls keep their previous behavior.
      */
     template<typename S>
     class MCGraphE3WSearchTree : public AbstractSearchTree<S> {
@@ -239,7 +240,7 @@ namespace poweruct {
                              double discount_factor, double tau, double epsilon, RegularizerType regularizer,
                              GraphSearchMode mode, bool bias_correct = true, double max_explore_prob = 1.0,
                              double default_q_value = 0.0, double c2 = 0., double c3 = 0.,
-                             double lambda_log_offset = 1.)
+                             double lambda_log_offset = 1., bool allow_full_er = false)
                 : env(std::move(env)), na(this->env->getNumberOfActions()), discount_factor(discount_factor),
                   tau(tau), epsilon(epsilon), regularizer(regularizer), mode(mode), bias_correct(bias_correct),
                   max_explore_prob(max_explore_prob), default_q_value(default_q_value), c2(c2), c3(c3),
@@ -259,10 +260,11 @@ namespace poweruct {
             if (lambda_log_offset < 1.) {
                 throw std::runtime_error("MCGraphE3WSearchTree requires lambda_log_offset >= 1");
             }
-            if ((c2 > 0. || c3 > 0.) && mode != GraphSearchMode::Depth) {
+            if ((c2 > 0. || c3 > 0.) && mode != GraphSearchMode::Depth && !allow_full_er) {
                 throw std::runtime_error("The effective-resistance bonus requires the layered "
                                          "depth-augmented graph (GraphSearchMode::Depth); the "
-                                         "recursive resistance is undefined under cross-depth merging");
+                                         "recursive resistance is undefined under cross-depth merging "
+                                         "unless the one-step full-graph heuristic is explicitly enabled");
             }
 
             ensure_node(current_state);
@@ -380,7 +382,8 @@ namespace poweruct {
         }
 
         /**
-         * The effective-resistance bonus of eq. (8), identical to the one GS-Power-UCT-ER pays:
+         * The one-step effective-resistance bonus of eq. (8), also used as a local count-based
+         * exploration heuristic in Full mode:
          *
          *                     c2                    N(s,a,s')        1
          *      B^ER(s,h,a) = ------ + c3 * sum_s' ------------ * ----------

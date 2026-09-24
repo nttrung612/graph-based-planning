@@ -56,9 +56,13 @@ bool is_graph_e3w_algorithm(const string &type) {
            type == "gs_tents" || type == "gs_tents_f";
 }
 
-// Like GS-Power-UCT-ER, the E3W-ER family is depth-augmented only.
+bool is_graph_e3w_full_er_algorithm(const string &type) {
+    return type == "gs_ments_f_er" || type == "gs_rents_f_er" || type == "gs_tents_f_er";
+}
+
 bool is_graph_e3w_er_algorithm(const string &type) {
-    return type == "gs_ments_er" || type == "gs_rents_er" || type == "gs_tents_er";
+    return type == "gs_ments_er" || type == "gs_rents_er" || type == "gs_tents_er" ||
+           is_graph_e3w_full_er_algorithm(type);
 }
 
 // GS-Power-UCT-ER exists in the depth-augmented variant only: the recursive resistance behind
@@ -223,9 +227,11 @@ shared_ptr<AbstractSearchTree<S>> create_search_tree(shared_ptr<Environment<S>> 
         auto epsilon = stod(argv[1]);
 
         RegularizerType regularizer;
-        if (type == "gs_ments" || type == "gs_ments_f" || type == "gs_ments_er") {
+        if (type == "gs_ments" || type == "gs_ments_f" ||
+            type == "gs_ments_er" || type == "gs_ments_f_er") {
             regularizer = RegularizerType::MaxEntropy;
-        } else if (type == "gs_rents" || type == "gs_rents_f" || type == "gs_rents_er") {
+        } else if (type == "gs_rents" || type == "gs_rents_f" ||
+                   type == "gs_rents_er" || type == "gs_rents_f_er") {
             regularizer = RegularizerType::RelativeEntropy;
         } else {
             regularizer = RegularizerType::TsallisEntropy;
@@ -236,14 +242,16 @@ shared_ptr<AbstractSearchTree<S>> create_search_tree(shared_ptr<Environment<S>> 
             auto c3 = stod(argv[3]);
 
             // lambda_log_offset = 2 is eq. (13)'s schedule, epsilon*K/log(2 + N(s)). The
-            // unperturbed '_er' run (C2 = C3 = 0) is therefore the paper's own GS-E3W and the
-            // apples-to-apples baseline for an ER ablation; plain gs_ments/gs_rents/gs_tents keep
-            // the tree-level log(N + 1) schedule this suite has always used.
+            // zero-coefficient ER runs provide an unperturbed baseline with the same graph mode
+            // and schedule; plain gs_ments/gs_rents/gs_tents keep the tree-level log(N + 1)
+            // schedule this suite has always used.
+            bool full_er = is_graph_e3w_full_er_algorithm(type);
+            auto mode = full_er ? GraphSearchMode::Full : GraphSearchMode::Depth;
             return make_shared<MCGraphE3WSearchTree<S>>(search_env, search_env->getInitialState(),
                                                         search_env->getInitialObservation(),
                                                         discount_factor, tau, epsilon, regularizer,
-                                                        GraphSearchMode::Depth, true, 1.0, 0.0,
-                                                        c2, c3, 2.0);
+                                                        mode, true, 1.0, 0.0,
+                                                        c2, c3, 2.0, full_er);
         }
 
         // '_f' merges a state across depths, which can close cycles; the bias-corrected
@@ -403,6 +411,8 @@ int main(int argc, char *argv[]) {
         cout << "\t\tN_EXPERIMENTS gs_tents ENV TAU EPSILON      (also gs_tents_f)" << endl;
         cout << "\t\tN_EXPERIMENTS gs_ments_er ENV TAU EPSILON C2 C3   (also gs_rents_er, gs_tents_er;" << endl;
         cout << "\t\t                                                   depth-augmented graph only)" << endl;
+        cout << "\t\tN_EXPERIMENTS gs_ments_f_er ENV TAU EPSILON C2 C3   (also gs_rents_f_er, gs_tents_f_er;" << endl;
+        cout << "\t\t                                                     full graph, one-step ER bonus)" << endl;
         cout << "\t\tENV=factored_river_swim uses fixed compile-time parameters with no extra env arguments" << endl;
         cout << "\t\tENV=four_rooms uses fixed compile-time parameters with no extra env arguments" << endl;
         cout << "\t\tENV=sysadmin_ring uses fixed compile-time parameters with no extra env arguments" << endl;

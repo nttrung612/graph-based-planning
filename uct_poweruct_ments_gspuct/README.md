@@ -18,7 +18,8 @@ The current experimental suite includes five environments and the following algo
 - Algorithms: `max_uct`, `power_uct`, `ments`, `gs_power_uct`, `gs_power_uct_f`, the
   graph-regularized family `gs_ments`, `gs_rents`, `gs_tents` (each with a `_f`
   variant), and the effective-resistance variants `gs_power_uct_er`, `gs_ments_er`,
-  `gs_rents_er`, `gs_tents_er`.
+  `gs_rents_er`, `gs_tents_er`, and the full-graph variants `gs_ments_f_er`,
+  `gs_rents_f_er`, `gs_tents_f_er`.
 
 All experiments executed through `dummy` use discount factor `1.0` and replan at
 every environment step. At each step, the planner receives the current rollout
@@ -168,12 +169,23 @@ advances the corresponding tree or graph state.
   `c2 = c3 = 0` is the paper's own GS-E3W**, and is the apples-to-apples baseline for
   an ER ablation; plain `gs_ments` keeps the older `log(N + 1)` schedule so previously
   collected results stay comparable.
-- Depth-augmented graph only, for the same reason as `gs_power_uct_er`; there are no
-  `_er_f` variants and the constructor rejects the combination.
+- These original `_er` names still use the depth-augmented graph. Constructor calls
+  with positive ER coefficients and Full mode still require explicit opt-in.
 - Under MENTS the perturbation multiplies softmax weights by `exp(B_ER/tau)`. Under
   TENTS sparsemax is shift-invariant, so only the *differential* bonus across actions
   acts — which on a graph is precisely the signal wanted, since transposed children
   carry small bonuses and fresh branches large ones.
+
+`gs_ments_f_er`, `gs_rents_f_er`, `gs_tents_f_er`
+
+- GS-E3W-F-ER uses the corresponding regularizer with `GraphSearchMode::Full`, which
+  merges matching states across depths. Command-line parameters: `tau epsilon c2 c3`.
+- The policy uses the same finite one-step bonus and `log(2 + N(s))` exploration
+  schedule as the depth-augmented ER modes. The bias-corrected value operator remains
+  enabled for cycles. Backups, stored values, and recommendations use unperturbed Q.
+- On a graph with cycles, this bonus is a local count-based exploration heuristic;
+  the recursive-resistance interpretation and its layered-DAG argument do not apply.
+  The `(c2, c3) = (0, 0)` row is the full-graph GS-E3W baseline with the same schedule.
 
 ## Environments
 
@@ -321,10 +333,12 @@ mpirun -np <NP> ./c++/build/dummy N_EXPERIMENTS gs_power_uct_f ENV C P
 mpirun -np <NP> ./c++/build/dummy N_EXPERIMENTS gs_power_uct_er ENV C P C2 C3
 mpirun -np <NP> ./c++/build/dummy N_EXPERIMENTS gs_ments ENV TAU EPSILON
 mpirun -np <NP> ./c++/build/dummy N_EXPERIMENTS gs_ments_er ENV TAU EPSILON C2 C3
+mpirun -np <NP> ./c++/build/dummy N_EXPERIMENTS gs_ments_f_er ENV TAU EPSILON C2 C3
 ```
 
 `gs_ments` above stands for any of `gs_ments`, `gs_rents`, `gs_tents` (plus `_f`), and
-`gs_ments_er` for any of `gs_ments_er`, `gs_rents_er`, `gs_tents_er`.
+`gs_ments_er` for any of `gs_ments_er`, `gs_rents_er`, `gs_tents_er`, and
+`gs_ments_f_er` for any of `gs_ments_f_er`, `gs_rents_f_er`, `gs_tents_f_er`.
 
 For `passenger_grid`, add `TIME_LIMIT` immediately after the environment name:
 
@@ -437,6 +451,13 @@ Default settings in `run_tune.sh`:
 
 After inspecting `tune_result.txt`, select the best parameters for each
 `(environment, algorithm)` pair and enter them in `run_final_config.sh`.
+
+For the new full-graph ER modes, run `bash run_tune_e3w_f_er_all.sh` from this
+directory. It sweeps `tau` in `{0.01, 0.25}`, uses `epsilon=0.5` (plus `0.05` and
+`0.1` for `sysadmin_ring`), and ties `(c2, c3)` over `{0, 0.1, 0.5, 1, 2}`.
+Completed cases are skipped on rerun. Per-case outputs are stored in
+`tune_gs_*_f_er_cases/` and each algorithm's summaries in
+`tune_gs_*_f_er_result.txt`. It uses `MPI_CMD` from `run_batch_common.sh`.
 
 ## Final Experiments
 
