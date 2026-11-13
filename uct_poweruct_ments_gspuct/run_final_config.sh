@@ -10,6 +10,10 @@
 # run actually exercises the ER term. That substitution applies to gs_ments_er:sysadmin_ring and
 # gs_power_uct_er:four_rooms below.
 
+# gs_{ments,rents,tents}[_f] (no ER args, TAU EPSILON) come from analyze_tune_results.py over
+# tune_gs_{ments,rents,tents}[_f]_result.txt (BEST per algorithm/env by summed mean_reward over the budget
+# sweep; epsilon was fixed to 0.5). sysadmin_ring was not tuned for these, so it has no entries.
+
 FINAL_PARAMS=()
 
 get_final_params() {
@@ -29,6 +33,12 @@ get_final_params() {
         frozen_lake:gs_ments_er) FINAL_PARAMS=("0.01" "0.5" "0.5" "0.5") ;;
         frozen_lake:gs_rents_er) FINAL_PARAMS=("0.01" "0.5" "0.1" "0.1") ;;
         frozen_lake:gs_tents_er) FINAL_PARAMS=("0.01" "0.5" "0.1" "0.1") ;;
+        frozen_lake:gs_ments) FINAL_PARAMS=("0.01" "0.5") ;;
+        frozen_lake:gs_rents) FINAL_PARAMS=("0.01" "0.5") ;;
+        frozen_lake:gs_tents) FINAL_PARAMS=("0.01" "0.5") ;;
+        frozen_lake:gs_ments_f) FINAL_PARAMS=("0.01" "0.5") ;;
+        frozen_lake:gs_rents_f) FINAL_PARAMS=("0.01" "0.5") ;;
+        frozen_lake:gs_tents_f) FINAL_PARAMS=("0.01" "0.5") ;;
 
         four_rooms:max_uct) FINAL_PARAMS=("1.0") ;;
         four_rooms:power_uct) FINAL_PARAMS=("1.0" "3.0") ;;
@@ -40,6 +50,12 @@ get_final_params() {
         four_rooms:gs_ments_er) FINAL_PARAMS=("0.01" "0.5" "0.1" "0.1") ;;
         four_rooms:gs_rents_er) FINAL_PARAMS=("0.25" "0.5" "0.1" "0.1") ;;
         four_rooms:gs_tents_er) FINAL_PARAMS=("0.01" "0.5" "0.1" "0.1") ;;
+        four_rooms:gs_ments) FINAL_PARAMS=("0.01" "0.5") ;;
+        four_rooms:gs_rents) FINAL_PARAMS=("0.25" "0.5") ;;
+        four_rooms:gs_tents) FINAL_PARAMS=("0.01" "0.5") ;;
+        four_rooms:gs_ments_f) FINAL_PARAMS=("0.25" "0.5") ;;
+        four_rooms:gs_rents_f) FINAL_PARAMS=("0.25" "0.5") ;;
+        four_rooms:gs_tents_f) FINAL_PARAMS=("0.25" "0.5") ;;
 
         passenger_grid:max_uct) FINAL_PARAMS=("1.5") ;;
         passenger_grid:power_uct) FINAL_PARAMS=("1.5" "2.5") ;;
@@ -50,6 +66,12 @@ get_final_params() {
         passenger_grid:gs_ments_er) FINAL_PARAMS=("0.01" "0.5" "1.0" "1.0") ;;
         passenger_grid:gs_rents_er) FINAL_PARAMS=("0.01" "0.5" "0.1" "0.1") ;;
         passenger_grid:gs_tents_er) FINAL_PARAMS=("0.25" "0.5" "0.1" "0.1") ;;
+        passenger_grid:gs_ments) FINAL_PARAMS=("0.01" "0.5") ;;
+        passenger_grid:gs_rents) FINAL_PARAMS=("0.01" "0.5") ;;
+        passenger_grid:gs_tents) FINAL_PARAMS=("0.25" "0.5") ;;
+        passenger_grid:gs_ments_f) FINAL_PARAMS=("0.01" "0.5") ;;
+        passenger_grid:gs_rents_f) FINAL_PARAMS=("0.25" "0.5") ;;
+        passenger_grid:gs_tents_f) FINAL_PARAMS=("0.25" "0.5") ;;
 
         factored_river_swim:max_uct) FINAL_PARAMS=("0.5");;
         factored_river_swim:power_uct) FINAL_PARAMS=("0.5" "2.5") ;;
@@ -60,6 +82,12 @@ get_final_params() {
         factored_river_swim:gs_ments_er) FINAL_PARAMS=("0.01" "0.5" "2.0" "2.0") ;;
         factored_river_swim:gs_rents_er) FINAL_PARAMS=("0.25" "0.5" "2.0" "2.0") ;;
         factored_river_swim:gs_tents_er) FINAL_PARAMS=("0.25" "0.5" "1.0" "1.0") ;;
+        factored_river_swim:gs_ments) FINAL_PARAMS=("0.01" "0.5") ;;
+        factored_river_swim:gs_rents) FINAL_PARAMS=("0.25" "0.5") ;;
+        factored_river_swim:gs_tents) FINAL_PARAMS=("0.25" "0.5") ;;
+        factored_river_swim:gs_ments_f) FINAL_PARAMS=("0.01" "0.5") ;;
+        factored_river_swim:gs_rents_f) FINAL_PARAMS=("0.01" "0.5") ;;
+        factored_river_swim:gs_tents_f) FINAL_PARAMS=("0.25" "0.5") ;;
 
         sysadmin_ring:max_uct) FINAL_PARAMS=("1.5");;
         sysadmin_ring:power_uct) FINAL_PARAMS=("0.5" "3.0") ;;

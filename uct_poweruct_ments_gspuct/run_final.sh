@@ -8,7 +8,7 @@ source "$SCRIPT_DIR/run_final_config.sh"
 
 ensure_dummy_binary
 
-RESULT_FILE="$SCRIPT_DIR/run_result.txt"
+RESULT_FILE="$SCRIPT_DIR/run_result_e3w_noer.txt"
 N_EXPERIMENTS=1000
 
 environments=(
@@ -17,19 +17,25 @@ environments=(
     four_rooms
     passenger_grid
     factored_river_swim
-    sysadmin_ring
+    # sysadmin_ring (not tuned for the no-ER gs_* variants)
 )
 
 algorithms=(
     # max_uct
     # power_uct
     # ments
-    gs_power_uct
-    gs_power_uct_f
-    gs_power_uct_er
-    gs_ments_er
-    gs_rents_er
-    gs_tents_er
+    # gs_power_uct
+    # gs_power_uct_f
+    # gs_power_uct_er
+    # gs_ments_er
+    # gs_rents_er
+    # gs_tents_er
+    gs_ments
+    gs_rents
+    gs_tents
+    gs_ments_f
+    gs_rents_f
+    gs_tents_f
 )
 
 reset_result_file "$RESULT_FILE"
