@@ -11,7 +11,7 @@ ensure_dummy_binary
 
 N_EXPERIMENTS=300
 algorithms=(gs_ments gs_rents gs_tents gs_ments_f gs_rents_f gs_tents_f)
-environments=(frozen_lake four_rooms passenger_grid factored_river_swim sysadmin_ring)
+environments=(frozen_lake four_rooms passenger_grid factored_river_swim)
 taus=(0.01 0.25)
 default_epsilons=(0.5)
 sysadmin_ring_epsilons=(0.05 0.1 0.5)
